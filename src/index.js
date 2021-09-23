@@ -11,7 +11,7 @@ import './assets/styles/main.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-   <Provider >
+   <Provider store={store}>
       <Router>
         <RootCmp />
       </Router>
