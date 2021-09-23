@@ -1,5 +1,5 @@
 {
-  "service": [
+  "gig": [
     {
       "_id": "s101",
       "seller": {
@@ -7,7 +7,7 @@
         "fullname": "user1",
         "imgUrl": "/img/img1.jpg"
       },
-      "title": "Batata Ksbia",
+      "title": "Design Logo",
       "description": "Web Designer, Logo Designer",
       "price": 120,
       "currncyCode": "$",
@@ -55,9 +55,9 @@
         }
       ],
       "wishList": [
-        "serviceId1",
-        "serviceId2",
-        "serviceId3"
+        "gigId1",
+        "gigId2",
+        "gigId3"
       ]
     },
     {
@@ -68,9 +68,9 @@
       "username": "user2",
       "password": "secret",
       "wishList": [
-        "serviceId1",
-        "serviceId2",
-        "serviceId3"
+        "gigId1",
+        "gigId2",
+        "gigId3"
       ]
     },
     {
