@@ -43,7 +43,17 @@
       "isSeller": true,
       "username": "user1",
       "password": "secret",
-      "messages": null,
+      "messages": [
+        {
+          "withUser": "u102",
+          "chat": [
+            {"isSent": true, "msg": "HelloShaul", "sentAt": 123123},
+            {"isSent": false, "msg": "HelloOren", "sentAt": 123133},
+            {"isSent": true, "msg": "AtaBaBeshabat?", "sentAt": 123163},
+            {"isSent": false, "msg": "Lo:(", "sentAt": 123163}
+          ]
+        }
+      ],
       "wishList": [
         "serviceId1",
         "serviceId2",
@@ -94,8 +104,6 @@
       "totalPrice": 200,
       "status": "pending"
     }
-  ],
-  "messages": [
-    {}
   ]
+ 
 }
