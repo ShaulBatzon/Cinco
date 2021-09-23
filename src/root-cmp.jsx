@@ -4,9 +4,9 @@ import { Switch, Route } from 'react-router'
 
 import routes from './routes'
 
-import {AppHeader} from './cmps/app-header'
-import {AppFooter} from './cmps/app-footer'
-import {UserDetails} from './pages/user-details'
+import { AppHeader } from './cmps/AppHeader'
+// import { AppFooter } from './cmps/app-footer'
+// import {UserDetails} from './pages/user-details'
 
 
 export class RootCmp extends React.Component {
@@ -17,11 +17,11 @@ export class RootCmp extends React.Component {
                 <AppHeader />
                 <main>
                     <Switch>
-                        {routes.map(route=> <Route key={route.path} exact component={route.component} path={route.path} /> )}
+                        {routes.map(route => <Route key={route.path} exact component={route.component} path={route.path} />)}
                         {/* <Route path="/user/:id" component={UserDetails} /> */}
                     </Switch>
                 </main>
-                <AppFooter />
+                {/* <AppFooter /> */}
             </div>
         )
     }

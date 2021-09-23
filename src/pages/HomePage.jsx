@@ -1,9 +1,15 @@
+import React from 'react'
+
+
 
 export class HomePage extends React.Component {
-    state = {}
-    
+    state = {
+    }
+
     render() {
-        <h1>lala</h1>
+        return (
+            <h1>Home Page</h1>
+        )
     }
 }
 
