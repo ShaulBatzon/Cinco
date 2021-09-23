@@ -10,7 +10,7 @@
       "title": "Batata Ksbia",
       "description": "Web Designer, Logo Designer",
       "price": 120,
-      "unit": "$",
+      "currncyCode": "$",
       "tags": [
         "logo",
         "design",
@@ -43,7 +43,7 @@
       "isSeller": true,
       "username": "user1",
       "password": "secret",
-      "backoffice": null,
+      "messages": null,
       "wishList": [
         "serviceId1",
         "serviceId2",
@@ -57,7 +57,6 @@
       "isSeller": false,
       "username": "user2",
       "password": "secret",
-      "backoffice": null,
       "wishList": [
         "serviceId1",
         "serviceId2",
@@ -71,7 +70,7 @@
       "isSeller": false,
       "username": "user3",
       "password": "secret",
-      "backoffice": null,
+      "messages": null,
       "wishList": []
     }
   ],
@@ -83,7 +82,6 @@
         "_id": "v102",
         "name": "Hapirat Hadebil"
       },
-      "totalPrice": 200,
       "seller": {
         "_id": "v102",
         "name": "Hapirat Hadebil"
@@ -93,7 +91,11 @@
         "name": "Web Design",
         "package": "basic"
       },
+      "totalPrice": 200,
       "status": "pending"
     }
+  ],
+  "messages": [
+    {}
   ]
 }
