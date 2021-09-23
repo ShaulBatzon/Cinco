@@ -1,21 +1,21 @@
-import {HomePage} from './pages/HomePage.jsx'
-import {Explore} from './pages/Explore.jsx'
+import { HomePage } from './pages/HomePage.jsx'
+import { Explore } from './pages/Explore.jsx'
 import { BecomeASeller } from './pages/BecomeASeller.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
     {
-        path:'/',
+        path: '/',
         component: HomePage,
         label: 'Home',
     },
     {
-        path:'/explore',
+        path: '/explore',
         component: Explore,
         label: 'Explore'
     },
     {
-        path:'/seller',
+        path: '/seller',
         component: BecomeASeller,
         label: 'Become a Seller'
     }

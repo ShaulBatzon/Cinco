@@ -1,109 +1,156 @@
-{
-  "gig": [
-    {
-      "_id": "s101",
-      "seller": {
-        "_id": "u101",
-        "fullname": "user1",
-        "imgUrl": "/img/img1.jpg"
-      },
-      "title": "Design Logo",
-      "description": "Web Designer, Logo Designer",
-      "price": 120,
-      "currncyCode": "$",
-      "tags": [
-        "logo",
-        "design",
-        "web"
-      ],
-      "imgUrls": [
-        "shop.jpg",
-        "more1.jpg",
-        "more2.jpg"
-      ],
-      "reviews": [
-        {
-          "id": "madeId",
-          "txt": "a great place to dine..",
-          "rate": 4,
-          "by": {
-            "_id": "u102",
-            "fullname": "user2",
-            "imgUrl": "/img/img2.jpg"
+  {
+    "gig": [
+      {
+        "_id": "s101",
+        "seller": {
+          "_id": "u101",
+          "fullname": "user1",
+          "imgUrl": "/img/img1.jpg"
+        },
+        "title": "Design Logo",
+        "description": "Web Designer, Logo Designer",
+        "price": 120,
+        "currncyCode": "$",
+        "tags": [
+          "logo",
+          "design",
+          "web"
+        ],
+        "imgUrls": [
+          "shop.jpg",
+          "more1.jpg",
+          "more2.jpg"
+        ],
+        "reviews": [
+          {
+            "id": "madeId",
+            "txt": "a great place to dine..",
+            "rate": 4,
+            "by": {
+              "_id": "u102",
+              "fullname": "user2",
+              "imgUrl": "/img/img2.jpg"
+            }
           }
-        }
-      ]
-    }
-  ],
-  "user": [
-    {
-      "_id": "u101",
-      "fullname": "User 1",
-      "imgUrl": "/img/img1.jpg",
-      "isSeller": true,
-      "username": "user1",
-      "password": "secret",
-      "messages": [
-        {
-          "withUser": "u102",
-          "chat": [
-            {"isSent": true, "msg": "HelloShaul", "sentAt": 123123},
-            {"isSent": false, "msg": "HelloOren", "sentAt": 123133},
-            {"isSent": true, "msg": "AtaBaBeshabat?", "sentAt": 123163},
-            {"isSent": false, "msg": "Lo:(", "sentAt": 123163}
-          ]
-        }
-      ],
-      "wishList": [
-        "gigId1",
-        "gigId2",
-        "gigId3"
-      ]
-    },
-    {
-      "_id": "u102",
-      "fullname": "User 2",
-      "imgUrl": "/img/img2.jpg",
-      "isSeller": false,
-      "username": "user2",
-      "password": "secret",
-      "wishList": [
-        "gigId1",
-        "gigId2",
-        "gigId3"
-      ]
-    },
-    {
-      "_id": "u103",
-      "fullname": "User 3",
-      "imgUrl": "/img/img3.jpg",
-      "isSeller": false,
-      "username": "user3",
-      "password": "secret",
-      "messages": null,
-      "wishList": []
-    }
-  ],
-  "order": [
-    {
-      "_id": "o1225",
-      "createdAt": 9898989,
-      "buyer": {
-        "_id": "v102",
-        "name": "Hapirat Hadebil"
+        ]
       },
-      "seller": {
-        "_id": "v102",
-        "name": "Hapirat Hadebil"
+      {
+        "_id": "s102",
+        "seller": {
+          "_id": "u102",
+          "fullname": "user2",
+          "imgUrl": "/img/img1.jpg"
+        },
+        "title": "Design Logo",
+        "description": "Web Designer, Logo Designer",
+        "price": 20,
+        "currncyCode": "$",
+        "tags": [
+          "logo"
+        ],
+        "imgUrls": [
+          "shop.jpg",
+          "more1.jpg",
+          "more2.jpg"
+        ],
+        "reviews": [
+          {
+            "id": "madeId",
+            "txt": "a great place to dine..",
+            "rate": 4,
+            "by": {
+              "_id": "u102",
+              "fullname": "user2",
+              "imgUrl": "/img/img2.jpg"
+            }
+          }
+        ]
+      }
+    ],
+    "user": [
+      {
+        "_id": "u101",
+        "fullname": "User 1",
+        "imgUrl": "/img/img1.jpg",
+        "isSeller": true,
+        "username": "user1",
+        "password": "secret",
+        "messages": [
+          {
+            "withUser": "u102",
+            "chat": [
+              {
+                "isSent": true,
+                "msg": "HelloShaul",
+                "sentAt": 123123
+              },
+              {
+                "isSent": false,
+                "msg": "HelloOren",
+                "sentAt": 123133
+              },
+              {
+                "isSent": true,
+                "msg": "AtaBaBeshabat?",
+                "sentAt": 123163
+              },
+              {
+                "isSent": false,
+                "msg": "Lo:(",
+                "sentAt": 123163
+              }
+            ]
+          }
+        ],
+        "wishList": [
+          "gigId1",
+          "gigId2",
+          "gigId3"
+        ]
       },
-      "item": {
-        "_id": "v140",
-        "name": "Web Design",
-        "package": "basic"
+      {
+        "_id": "u102",
+        "fullname": "User 2",
+        "imgUrl": "/img/img2.jpg",
+        "isSeller": false,
+        "username": "user2",
+        "password": "secret",
+        "wishList": [
+          "gigId1",
+          "gigId2",
+          "gigId3"
+        ]
       },
-      "totalPrice": 200,
-      "status": "pending"
-    }
-  ]
- 
-}
+      {
+        "_id": "u103",
+        "fullname": "User 3",
+        "imgUrl": "/img/img3.jpg",
+        "isSeller": false,
+        "username": "user3",
+        "password": "secret",
+        "messages": null,
+        "wishList": []
+      }
+    ],
+    "order": [
+      {
+        "_id": "o1225",
+        "createdAt": 9898989,
+        "buyer": {
+          "_id": "v102",
+          "name": "Hapirat Hadebil"
+        },
+        "seller": {
+          "_id": "v102",
+          "name": "Hapirat Hadebil"
+        },
+        "item": {
+          "_id": "v140",
+          "name": "Web Design",
+          "package": "basic"
+        },
+        "totalPrice": 200,
+        "status": "pending"
+      }
+    ]
+  }
