@@ -1,5 +1,6 @@
 import { HomePage } from './pages/HomePage.jsx'
 import { Explore } from './pages/Explore.jsx'
+import { LoginSignUp } from './cmps/LoginSignUp'
 import { BecomeASeller } from './pages/BecomeASeller.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
@@ -18,6 +19,12 @@ const routes = [
         path: '/seller',
         component: BecomeASeller,
         label: 'Become a Seller'
+    },
+
+    {
+        path: '/join',
+        component: LoginSignUp,
+        label: 'join'
     }
 ]
 

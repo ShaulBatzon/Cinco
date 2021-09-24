@@ -1,3 +1,45 @@
-.main-header {
-    height: 50px;
+.navbar-logo {
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  font-family: Macan-Bold;
+  &::after {
+    content: ".";
+    color: green;
+  }
+}
+
+.page-navbar {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+  padding-top: 20px;
+  font-family: Macan-Bold;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 150px;
+
+  .navbar-links-items {
+    color: white;
+    text-decoration: none;
+    // &:last-child {
+    //   border-radius: גק5px;
+    //   border: 1px solid white;
+    //   padding: 5px 10px;
+    //   font-size: 0.9rem;
+    // }
+    transition: 0.4s;
+    &:not(:last-child) {
+      margin-inline-end: 15px;
+    }
+    &:hover {
+      color: #1dbf73;
+    }
+  }
 }
