@@ -1,12 +1,17 @@
 .clean-link {
-    text-decoration: none;
-    color: unset;
+  text-decoration: none;
+  color: unset;
 }
 
-.flex{
-    display: flex;
+.flex {
+  display: flex;
 }
 
-.align-center{
-    align-items: center;
+.align-center {
+  align-items: center;
+}
+
+.card-seller-img {
+  width: 24px;
+  border-radius: 50%;
 }

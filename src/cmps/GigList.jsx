@@ -1,7 +1,5 @@
 import React from 'react'
-
 import { gigService } from '../services/gig.service'
-
 import { GigPreview } from './GigPreview'
 
 export class GigList extends React.Component {
@@ -16,8 +14,8 @@ export class GigList extends React.Component {
     render() {
         const { gigs } = this.state
         return (
-            <div>
-                {gigs.map(gig => <GigPreview gig={gig} />)}
+            <div className="gig-list main-layout card-grid">
+                {gigs.map((gig,idx) => <GigPreview key={idx} gig={gig} />)}
             </div>
         )
     }
