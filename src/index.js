@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 // import { store } from './store/store'
 import { RootCmp } from './root-cmp';
 // import './assets/styles/main.scss';
+import './styles/styles.scss';
 
 
 

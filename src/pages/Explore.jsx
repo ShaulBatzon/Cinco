@@ -10,7 +10,9 @@ export class Explore extends React.Component {
         return (
             <div>
                 <h1>Explore</h1>
-                <GigList />
+                <div className="main-container">
+                    <GigList />
+                </div>
             </div>
         )
     }
