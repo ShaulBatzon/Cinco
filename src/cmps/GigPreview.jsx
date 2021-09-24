@@ -7,7 +7,7 @@ export class GigPreview extends React.Component {
         const { gig } = this.props
         return (
             <div>
-                {/* {gig.imgUrls} */}
+                <img src="../assets/appLogo.png"/>
                 ------------
                 {gig.seller.fullname}
                 {/* {gig.seller.imgUrl} */}

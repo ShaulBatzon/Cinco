@@ -1,7 +1,5 @@
 import React from 'react'
-
 import { gigService } from '../services/gig.service'
-
 import { GigPreview } from './GigPreview'
 
 export class GigList extends React.Component {
@@ -17,7 +15,7 @@ export class GigList extends React.Component {
         const { gigs } = this.state
         return (
             <div>
-                {gigs.map(gig => <GigPreview gig={gig} />)}
+                {gigs.map((gig,idx) => <GigPreview key={idx} gig={gig} />)}
             </div>
         )
     }
