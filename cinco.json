@@ -4,7 +4,7 @@
         "_id": "s101",
         "seller": {
           "_id": "u101",
-          "fullname": "user1",
+          "fullname": "Omer Morag",
           "imgUrl": "/img/img1.jpg"
         },
         "title": "Design Logo",
