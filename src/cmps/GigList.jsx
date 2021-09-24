@@ -14,7 +14,7 @@ export class GigList extends React.Component {
     render() {
         const { gigs } = this.state
         return (
-            <div>
+            <div className="gig-list main-layout card-grid">
                 {gigs.map((gig,idx) => <GigPreview key={idx} gig={gig} />)}
             </div>
         )
