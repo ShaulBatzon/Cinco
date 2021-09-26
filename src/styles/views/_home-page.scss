@@ -1,6 +1,5 @@
 .content-container {
-  width: 1400px;
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   margin-bottom: 50px;
 }
@@ -8,7 +7,7 @@
 .hero-content-container {
   display: flex;
   flex-direction: column;
-  min-height: 680px;
+  height: 580px;
   color: white;
   position: relative;
 }
@@ -45,7 +44,7 @@
 .cards-list {
   font-family: Macan-Bold;
   h2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: #404145;
     font-size: 32px;
   }
@@ -53,4 +52,12 @@
 .cards-continer {
   display: flex;
   justify-content: space-between;
+}
+
+.icon-continer {
+  margin-left: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  gap: 30px;
+  font-family: Macan;
 }

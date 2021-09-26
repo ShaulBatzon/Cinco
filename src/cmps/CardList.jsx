@@ -39,9 +39,9 @@ export function CardList() {
     },
   ];
   return (
-    <section className="cards-list">
-      <h2 className="content-container">Popular professional services</h2>
-      <div className="cards-continer content-container">
+    <section className="cards-list content-container">
+      <h2>Popular professional services</h2>
+      <div className="cards-continer">
         {cards.map((card, idx) => (
           <CardPreview key={idx} {...card} />
         ))}
