@@ -1,12 +1,12 @@
 import React from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+// import Carousel from "react-multi-carousel";
+// import "react-multi-carousel/lib/styles.css";
 export class LoginSignUp extends React.Component {
   state = {};
   render() {
     return (
       <div>
-        <Carousel
+        {/* <Carousel
           additionalTransfrom={0}
           arrows
           autoPlay={this.props.deviceType !== "mobile" ? true : false}
@@ -96,7 +96,7 @@ export class LoginSignUp extends React.Component {
               width: "100%",
             }}
           />
-        </Carousel>
+        </Carousel> */}
       </div>
     );
   }
