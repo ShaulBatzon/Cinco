@@ -11,7 +11,9 @@
 @import "basics/buttons.scss";
 
 @import "views/home-page";
+@import "views/gig-page";
 // Components
+@import "components/navbar-gigPage";
 @import "components/main-header.scss";
 @import "components/card-preview.scss";
 @import "components/hero-from.scss";
