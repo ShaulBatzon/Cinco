@@ -17,7 +17,7 @@ export const gigs = [
       "web"
     ],
     "imgUrls": [
-      "https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/168010926/original/c944140b110095e349fbfe5934983124afe52d50.jpg",
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/99806061/original/3e7b24fb9dfae7647b55caa0b7d43b597d4fad7e.jpg",
       "more1.jpg",
       "more2.jpg"
     ],
@@ -135,7 +135,7 @@ export const gigs = [
     "seller": {
       "_id": "u102",
       "fullname": "user2",
-      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/61f8275c6d7be912c8e025bdafaac05f-1615100576618/5a39b2c8-7967-4a0e-bc11-1704a129d700.png"
+      "imgUrl": "/img/img1.jpg"
     },
     "title": "Design ",
     "description": "Web Designer, Logo Designer",

@@ -1,7 +1,7 @@
 .navbar-logo {
   font-size: 2rem;
   text-decoration: none;
-  color: white;
+  color: black;
   font-family: Macan-Bold;
   &::after {
     content: ".";
@@ -12,7 +12,6 @@
 .page-navbar {
   display: flex;
   justify-content: space-between;
-  color: white;
   align-items: center;
   padding-top: 20px;
   font-family: Macan-Bold;
@@ -23,10 +22,9 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-right: 150px;
 
   .navbar-links-items {
-    color: white;
+    color: black;
     text-decoration: none;
     // &:last-child {
     //   border-radius: גק5px;

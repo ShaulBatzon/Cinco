@@ -10,8 +10,10 @@ import routes from "../routes";
 class AppHeader extends React.Component {
   render() {
     return (
-      <div className="page-navbar">
-        <Link className="navbar-logo">Cinco</Link>
+      <div className="page-navbar content-container">
+        <Link to={"/"} className="navbar-logo">
+          Cinco
+        </Link>
         <nav className="navbar-links">
           {routes.map((route) => (
             <NavLink

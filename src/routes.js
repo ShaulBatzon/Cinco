@@ -20,6 +20,12 @@ const routes = [
         component: BecomeASeller,
         label: 'Become a Seller'
     },
+
+    {
+        path: '/join',
+        component: LoginSignUp,
+        label: 'join'
+    },
     {
         path: '/gig',
         component: GigPage,
