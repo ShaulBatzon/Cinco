@@ -14,7 +14,7 @@ export class GigPreview extends React.Component {
         const { gig } = this.props
         const { isCollect } = this.state
         return (
-            <div to="/gig" className="card-preview clean-link">
+            <div className="card-preview clean-link">
                 <Link to="/gig" >
                     <img src={gig.imgUrls[0]} />
                 </Link>
@@ -23,7 +23,7 @@ export class GigPreview extends React.Component {
                     <img className="card-seller-img" src={gig.seller.imgUrl} />
                     <a className="clean-link" href="/SellerDetails">{gig.seller.fullname}</a>
                 </div>
-                <a className="card-title" href="/GigDetails">{gig.title}</a>
+                <a className="clean-link card-title" href="/GigDetails">{gig.title}</a>
                 <span className="gig-rating content-info">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
                         <path fill="currentColor" d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 
