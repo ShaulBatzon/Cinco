@@ -94,7 +94,8 @@
     transition: 0.4s;
 
     &:hover {
-      color: #1dbf73;
+      color: black;
+      background-color: white;
     }
 
     &:not(:last-child) {

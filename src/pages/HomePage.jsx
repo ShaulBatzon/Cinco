@@ -11,7 +11,6 @@ export class HomePage extends React.Component {
       <section>
         <div className="hero-background"></div>
         <div className="content-container hero-content-container">
-          <AppHeader />
           <HeroFrom />
           <div class="hero-background-text">
             <div className="stars">⭐⭐⭐⭐⭐</div>

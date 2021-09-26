@@ -11,8 +11,8 @@
 }
 
 .card {
-  height: 345px;
-  width: 239px;
+  height: 21.562rem;
+  width: 13.75rem;
   border-radius: 5px;
   background-repeat: no-repeat;
   position: relative;
@@ -23,7 +23,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: #ffffff65;
+      background: #ffffff33;
       pointer-events: none;
       opacity: 1;
     }
@@ -37,7 +37,7 @@
     & h4 {
       margin: 0;
       font-family: Macan;
-      font-size: 24px;
+      font-size: 1.5rem;
       padding: 16px;
       & small {
         font-family: Macan-Light;
