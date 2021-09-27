@@ -12,7 +12,7 @@ export class HomePage extends React.Component {
         <div className="hero-background"></div>
         <div className="content-container hero-content-container">
           <HeroFrom />
-          <div class="hero-background-text">
+          <div className="hero-background-text">
             <div className="stars">⭐⭐⭐⭐⭐</div>
             <div>
               Gabrielle,<span>Video Editor</span>

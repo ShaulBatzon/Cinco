@@ -1,5 +1,5 @@
 import React from 'react'
-import { gigService } from '../services/gig.service'
+import { gigService } from '../services/gig.service.js'
 import { GigPreview } from './GigPreview'
 
 export class GigList extends React.Component {
@@ -9,7 +9,10 @@ export class GigList extends React.Component {
 
     componentDidMount() {
         const gigs = gigService.query()
-        this.setState({ gigs })
+        .then(res => {
+            console.log('gigs:', res);
+            this.setState({ gigs: res })
+        })
     }
     render() {
         const { gigs } = this.state
