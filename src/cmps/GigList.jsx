@@ -8,17 +8,17 @@ export class GigList extends React.Component {
     }
 
     componentDidMount() {
-        const gigs = gigService.query()
-        .then(res => {
-            console.log('gigs:', res);
-            this.setState({ gigs: res })
-        })
+        gigService.query()
+            .then(res => {
+                console.log('gigs:', res);
+                this.setState({ gigs: res })
+            })
     }
     render() {
         const { gigs } = this.state
         return (
             <div className="gig-list main-layout card-grid">
-                {gigs.map((gig,idx) => <GigPreview key={idx} gig={gig} />)}
+                {gigs.map((gig, idx) => <GigPreview key={idx} gig={gig} />)}
             </div>
         )
     }

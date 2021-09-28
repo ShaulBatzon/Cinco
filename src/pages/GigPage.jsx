@@ -1,22 +1,25 @@
 import { NavBarGigPage } from "../cmps/gigPage/NavBarGigPage";
 import { StarRate } from "../cmps/gigPage/StarRate";
 import React from "react";
+import { connect } from 'react-redux'
 
-export class GigPage extends React.Component {
-  state = {
-    gig: null,
-  };
+
+class _GigPage extends React.Component {
+  state = {};
 
   componentDidMount() {
-    const { gig } = this.props;
-    this.setState({ gig });
+    const { currGig } = this.props;
+    console.log('currGig: ',currGig);
+    // this.setState({gig: currGig})
   }
+  
 
   render() {
-    const { gig } = this.state;
+    const {gig} = this.state
+    console.log('gig: ',gig);
     return (
       <div className="gig-page-body">
-        <div className="gig-page-container">
+        {/* <div className="gig-page-container">
           <div className="container-navbar">
           <NavBarGigPage gig={gig} />
           </div>
@@ -29,7 +32,7 @@ export class GigPage extends React.Component {
             <div className="seller-overview">
               <div>
                 <img
-                  src="https://www.tzomet-hrz.co.il/wp-content/uploads/2019/12/1318c8c679a76a7dc58fd67c2714fe54-e1576169232593.jpg"
+                  src={gig.seller.imgUrl}
                   className="profile-pict-img"
                   alt="bibi"
                 />
@@ -41,7 +44,7 @@ export class GigPage extends React.Component {
 
             <div className="gig-photos">
               <img
-                src="https://microlancer.lancerassets.com/v2/services/b3/25f9956bab41098547a961166d740a/service_card_Simple_logos-02.jpg"
+                src={gig.imgUrls[0]}
                 className="gig-images"
                 alt=""
               />
@@ -70,8 +73,21 @@ export class GigPage extends React.Component {
               </div>
             </div>
             </div>
-          </div>
+          </div> */}
       </div>
     );
   }
 }
+
+
+function mapStateToProps(state) {
+  return {
+      currGig: state.gigModule.currGig
+  }
+}
+const mapDispatchToProps = {
+  
+}
+
+
+export const GigPage = connect(mapStateToProps, mapDispatchToProps)(_GigPage)

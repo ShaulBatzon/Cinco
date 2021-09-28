@@ -9,8 +9,7 @@ export const gigService = {
     save,
     remove,
     getEmptyGig,
-    subscribe
-    
+    // subscribe
 }
 window.gs = gigService;
 
@@ -23,23 +22,22 @@ function getById(gigId) {
     return storageService.get(STORAGE_KEY, gigId)
 }
 
-function remove(gigId) {
-    return storageService.remove(STORAGE_KEY, gigId)
+async function remove(gigId) {
+    return await storageService.remove(STORAGE_KEY, gigId)
 }
 
-function save(gig) {
+async function save(gig) {
     if (gig._id) {
-        return storageService.put(STORAGE_KEY, gig)
+        return await storageService.put(STORAGE_KEY, gig)
     } else {
         // gig.owner = userService.getLoggedinUser()
-        return storageService.post(STORAGE_KEY, gig)
+        return await storageService.post(STORAGE_KEY, gig)
     }
 }
 
 function getEmptyGig() {
     return {
-        vendor: 'Susita-' + (Date.now() % 1000),
-        // price: utilService.getRandomIntInclusive(1000, 9000),
+
     }
 }
 

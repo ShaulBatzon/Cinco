@@ -1,6 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
-export class GigPreview extends React.Component {
+import { onSelectGig} from '../store/gig.action'
+class _GigPreview extends React.Component {
     state = {
         isCollect: false
     }
@@ -10,12 +12,17 @@ export class GigPreview extends React.Component {
         this.setState({ isCollect: !isCollect })
     }
 
+    onSelectGig = () => {
+        this.props.onSelectGig()
+    }
+
+
     render() {
         const { gig } = this.props
         const { isCollect } = this.state
         return (
-            <div className="card-preview clean-link">
-                <Link to="/gig" >
+            <div onClick={this.onSelectGig} className="card-preview clean-link">
+                <Link to={`/gig/${gig._id}`} >
                     <img src={gig.imgUrls[0]} />
                 </Link>
 
@@ -55,3 +62,15 @@ export class GigPreview extends React.Component {
         )
     }
 }
+
+
+function mapStateToProps(state) {
+    return {
+    }
+}
+const mapDispatchToProps = {
+    onSelectGig
+}
+
+
+export const GigPreview = connect(mapStateToProps, mapDispatchToProps)(_GigPreview)

@@ -27,7 +27,7 @@ const routes = [
         label: 'join'
     },
     {
-        path: '/gig',
+        path: '/gig/:gigId',
         component: GigPage,
         label: 'Gig page'
     }

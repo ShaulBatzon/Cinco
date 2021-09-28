@@ -67,7 +67,7 @@ export const gigs = [
     ]
   },
   {
-    "_id": "s102",
+    "_id": "s103",
     "seller": {
       "_id": "u102",
       "fullname": "user2",
@@ -99,7 +99,7 @@ export const gigs = [
     ]
   },
   {
-    "_id": "s102",
+    "_id": "s104",
     "seller": {
       "_id": "u102",
       "fullname": "user2",
@@ -131,7 +131,7 @@ export const gigs = [
     ]
   },
   {
-    "_id": "s102",
+    "_id": "s105",
     "seller": {
       "_id": "u102",
       "fullname": "user2",
