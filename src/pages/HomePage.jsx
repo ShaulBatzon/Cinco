@@ -1,8 +1,8 @@
 import React from "react";
-import AppHeader from "../cmps/AppHeader";
 import CardList from "../cmps/CardList";
 import HeroFrom from "../cmps/HeroFrom";
 import IconList from "../cmps/IconList";
+import AppCarousel from "../cmps/AppCarousel.jsx";
 export class HomePage extends React.Component {
   state = {};
 
@@ -12,7 +12,7 @@ export class HomePage extends React.Component {
         <div className="hero-background"></div>
         <div className="content-container hero-content-container">
           <HeroFrom />
-          <div class="hero-background-text">
+          <div className="hero-background-text">
             <div className="stars">⭐⭐⭐⭐⭐</div>
             <div>
               Gabrielle,<span>Video Editor</span>

@@ -1,10 +1,7 @@
+.navbar-links {
+  display: flex;
 
-
-.navbar-links{
-    display:flex;
-
-
-    div{
+  div {
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
@@ -12,25 +9,24 @@
     padding-inline-start: 40px;
 
     a {
-            color: #95979d;
-            line-height: 53px;
-            text-decoration: none;
-            font: 600 16px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
+      color: #95979d;
+      line-height: 53px;
+      text-decoration: none;
+      font: 600 16px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
 
-            &:hover{
-                color:rgb(98, 100, 106);
-            }
-            &.selected{
-                color: #222325;
-            }
+      &:hover {
+        color: rgb(98, 100, 106);
+      }
+      &.selected {
+        color: #222325;
+      }
     }
-    }
+  }
 }
 
-.navbar-gigpage{
-    display:flex;
-    position:fixed;
-    background-color: white;
-    z-index: 5;
+.navbar-gigpage {
+  display: flex;
+  // position:fixed;
+  background-color: white;
+  // z-index: 5;
 }
-

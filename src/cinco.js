@@ -18,8 +18,8 @@ export const gigs = [
     ],
     "imgUrls": [
       "https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/99806061/original/3e7b24fb9dfae7647b55caa0b7d43b597d4fad7e.jpg",
-      "more1.jpg",
-      "more2.jpg"
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/3171448/original/a41a38f3733bb97279a49d1449f7337dece50693/create-3-original-logo-with-vector-source-file.jpg",
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/3171448/original/5e98e639d24a69bfd38c35f6aaa736837c3bda93/create-3-original-logo-with-vector-source-file.jpg"
     ],
     "reviews": [
       {

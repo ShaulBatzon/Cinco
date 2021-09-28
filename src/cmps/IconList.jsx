@@ -1,5 +1,5 @@
 import IconPreview from "./IconPreview";
-
+import img from "../assets/img/a2.svg";
 export function IconList() {
   const icons = [
     {
@@ -37,6 +37,23 @@ export function IconList() {
       url: "http://www.google.com",
       iconImgUrl:
         "https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg",
+    },
+    {
+      txt: "Business",
+      url: "http://www.google.com",
+      iconImgUrl:
+        "https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/business.bbdf319.svg",
+    },
+    {
+      txt: "Lifestyle",
+      url: "http://www.google.com",
+      iconImgUrl:
+        "https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lifestyle.745b575.svg",
+    },
+    {
+      txt: "Data",
+      url: "http://www.google.com",
+      iconImgUrl: img,
     },
   ];
   return (

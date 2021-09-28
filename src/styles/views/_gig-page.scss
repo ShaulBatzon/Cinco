@@ -1,51 +1,54 @@
-.gig-page-body{
-    max-width: 1200px;
-    margin: 0 auto;
+.gig-page-body {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.gig-page-container{
-    margin: 0 auto;
-    max-width: 80%;
+.gig-page-container {
+  margin: 0 auto;
+  max-width: 80%;
 }
 
-.container-navbar{
-    width: 100%;
-    height: 65px;
-    border-bottom: 1px solid #dddee0;
-    border-top:1px solid #dddee0 ;
-    position: absolute;
-    top:5px;
-    left:0;
+.container-navbar {
+  width: 100%;
+  height: 65px;
+  border-bottom: 1px solid #dddee0;
+  border-top: 1px solid #dddee0;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  padding: 10px;
+  position: fixed;
+  z-index: 5;
+  .navbar-gigpage {
+    margin: 0px 134px;
+  }
 }
-.gig-review-comtainer{
-    width: 100%;
-    height: 100%;
-    padding-top: 50px;
+.gig-review-comtainer {
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
 }
 h1 {
-    color: #404145;
+  color: #404145;
   font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-weight: 700;
   color: #404145;
-  width:rem(700px) ;
-  font-size:rem(28px) ;
+  width: rem(700px);
+  font-size: rem(28px);
   padding-bottom: 16px;
 }
 
 .seller-overview {
-
-    &>*{
-        margin-bottom:0;  
-        margin-top:0;
-        &:not(:first-child)::before{
-            content: "|";
-            color: #c5c6c9;
-            padding: 0 5px;
-            font-weight: 700;
-
-        } 
-      }
-      
+  & > * {
+    margin-bottom: 0;
+    margin-top: 0;
+    &:not(:first-child)::before {
+      content: "|";
+      color: #c5c6c9;
+      padding: 0 5px;
+      font-weight: 700;
+    }
+  }
 
   margin-bottom: 20px;
   height: 32px;
@@ -53,112 +56,108 @@ h1 {
   flex-direction: row;
   align-items: center;
 
-  div{
+  div {
     width: 32px;
     height: 32px;
-    font-size: 1em;  
+    font-size: 1em;
 
     .profile-pict-img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        border-radius: 50%;
-      }
-
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 50%;
+    }
   }
 
-  p{
+  p {
     color: #62646a;
   }
-  .seller-name{
+  .seller-name {
     color: #404145;
     font-weight: 700;
   }
- 
 }
 
-.gig-photos{
-    width:rem(630px) ;
-    height:rem(400px) ;
+.gig-photos {
+  width: rem(630px);
+  height: rem(400px);
 
-    img{
-        width:100% ;
-        height:100%; 
-    }
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
-.gallery{
-    width:rem(630px) ;
-    height:rem(60px) ;
-    margin-bottom: 20px;
-    background-color: salmon;
+.gallery {
+  width: rem(630px);
+  height: rem(60px);
+  margin-bottom: 20px;
+  background-color: salmon;
 }
 
-h2{
-    font-family: Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    color: #404145;
-    font-size: rem(20px);
+h2 {
+  font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: #404145;
+  font-size: rem(20px);
 }
 
+.gig-description {
+  color: #62646a;
+  font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-.gig-description{
+.about-seller {
+  font-family: 400 16px/24px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+  display: flex;
+  gap: 20px;
+}
+
+.about-the-seller-img {
+  width: rem(110px);
+  height: rem(131px);
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
+.about-the-seller-details {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin: 0;
+    font: 400 16px/24px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
     color: #62646a;
-    font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
 
-.about-seller{
-    font-family: 400 16px/24px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
-    display: flex;
-    gap: 20px;
-}
-
-.about-the-seller-img{
-    width:rem(110px) ;
-    height:rem(131px) ;
-
-    img{
-        width:100% ;
-        height:100%; 
-        border-radius: 50%;
+    &:first-of-type {
+      font-weight: 700;
     }
+  }
 }
 
-.about-the-seller-details{
-    display: flex;
-    flex-direction: column;
-
-    p{
-        margin: 0;
-        font: 400 16px/24px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
-        color: #62646a;
-
-        &:first-of-type{
-            font-weight: 700;
-        }
-        
-    }
+.star-rate {
+  display: inline;
 }
 
-.star-rate{
-    display: inline;
-}
+.contact-the-seller {
+  width: 120px;
+  height: 30px;
+  padding: 0px 20px;
+  border: 1px solid rgb(98, 100, 106);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #62646a;
+  background-color: #fff;
+  border-radius: 5px;
+  font-family: Macan-Bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: pointer;
 
-.contact-the-seller{
-    width: 120px;
-    height: 30px;
-    padding: 0px 20px;
-    border:1px solid rgb(98, 100, 106);
-    margin-top: 10px;
-    margin-bottom: 20px;
-    color: #62646a;
-    background-color: #fff;
-    border-radius: 5px;
-    font-family: Macan-Bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    cursor: pointer;
-
-    &:hover{
-        color: white; 
-        background-color: #62646a;
-    }
+  &:hover {
+    color: white;
+    background-color: #62646a;
+  }
 }

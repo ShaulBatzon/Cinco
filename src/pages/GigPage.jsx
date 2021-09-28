@@ -18,9 +18,9 @@ export class GigPage extends React.Component {
       <div className="gig-page-body">
         <div className="gig-page-container">
           <div className="container-navbar">
-          <NavBarGigPage gig={gig} />
+            <NavBarGigPage gig={gig} />
           </div>
-          <div  id="overview" className="gig-review-comtainer">
+          <div id="overview" className="gig-review-comtainer">
             <h1>
               I will fix search console, semrush, ahrefs, moz, errors to rank
               higher
@@ -45,6 +45,7 @@ export class GigPage extends React.Component {
                 className="gig-images"
                 alt=""
               />
+              {console.log(gig)}
             </div>
 
             <div className="gallery"></div>
@@ -61,7 +62,7 @@ export class GigPage extends React.Component {
                   alt="bibi"
                 />
               </div>
-              <div  id="aboutSeller"className="about-the-seller-details">
+              <div id="aboutSeller" className="about-the-seller-details">
                 <p>jeffreymsmith</p>
                 <p>Responsive Web Designer And WordPress Expert</p>
                 <StarRate reviews={null} />
@@ -69,8 +70,8 @@ export class GigPage extends React.Component {
                 <button className="contact-the-seller">Contact Me</button>
               </div>
             </div>
-            </div>
           </div>
+        </div>
       </div>
     );
   }
