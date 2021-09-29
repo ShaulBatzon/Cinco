@@ -1,7 +1,7 @@
 export const users = [
   {
     "_id": "u101",
-    "fullname": "User 1",
+    "fullname": "User1",
     "imgUrl": "/img/img1.jpg",
     "isSeller": false,
     "username": "user1",
@@ -62,4 +62,4 @@ export const users = [
     "messages": null,
     "wishList": []
   }
-],
+]
