@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { gigService } from "../services/gig.service";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { GigPackage } from "../cmps/GigPackege";
 
 export class GigPage extends React.Component {
   state = {
@@ -64,59 +65,61 @@ export class GigPage extends React.Component {
               <StarRate reviews={null} />
               <p>(16223)</p>
             </div>
-
-            <div className="gig-photos">
-              <Carousel
-                additionalTransfrom={0}
-                arrows
-                autoPlay
-                autoPlaySpeed={5000}
-                centerMode={false}
-                className=""
-                containerClass="gig-carousel-container"
-                customDot={<CustomDot />}
-                dotListClass="gig-dotList-container"
-                draggable
-                focusOnSelect={false}
-                infinite
-                itemClass=""
-                keyBoardControl
-                minimumTouchDrag={80}
-                renderButtonGroupOutside={false}
-                renderDotsOutside={false}
-                responsive={{
-                  desktop: {
-                    breakpoint: {
-                      max: 3000,
-                      min: 1024,
+            <div className="gig-flow">
+              <div className="gig-photos">
+                <Carousel
+                  additionalTransfrom={0}
+                  arrows
+                  autoPlay
+                  autoPlaySpeed={5000}
+                  centerMode={false}
+                  className=""
+                  containerClass="gig-carousel-container"
+                  customDot={<CustomDot />}
+                  dotListClass="gig-dotList-container"
+                  draggable
+                  focusOnSelect={false}
+                  infinite
+                  itemClass=""
+                  keyBoardControl
+                  minimumTouchDrag={80}
+                  renderButtonGroupOutside={false}
+                  renderDotsOutside={false}
+                  responsive={{
+                    desktop: {
+                      breakpoint: {
+                        max: 3000,
+                        min: 1024,
+                      },
+                      items: 1,
                     },
-                    items: 1,
-                  },
-                  mobile: {
-                    breakpoint: {
-                      max: 464,
-                      min: 0,
+                    mobile: {
+                      breakpoint: {
+                        max: 464,
+                        min: 0,
+                      },
+                      items: 1,
                     },
-                    items: 1,
-                  },
-                  tablet: {
-                    breakpoint: {
-                      max: 1024,
-                      min: 464,
+                    tablet: {
+                      breakpoint: {
+                        max: 1024,
+                        min: 464,
+                      },
+                      items: 1,
                     },
-                    items: 1,
-                  },
-                }}
-                showDots
-                sliderClass=""
-                slidesToSlide={1}
-                swipeable
-              >
-                {/* <img src={imgUrls[0]} className="gig-images" alt="" /> */}
-                {imgUrls.map((imgUrl) => (
-                  <img src={imgUrl} alt="" />
-                ))}
-              </Carousel>
+                  }}
+                  showDots
+                  sliderClass=""
+                  slidesToSlide={1}
+                  swipeable
+                >
+                  {/* <img src={imgUrls[0]} className="gig-images" alt="" /> */}
+                  {imgUrls.map((imgUrl) => (
+                    <img src={imgUrl} alt="" />
+                  ))}
+                </Carousel>
+              </div>
+              <GigPackage gig={gig} />
             </div>
 
             {/* <div className="gallery"></div> */}
@@ -136,7 +139,9 @@ export class GigPage extends React.Component {
               <div id="aboutSeller" className="about-the-seller-details">
                 <p>{seller.fullname}</p>
                 <p>{gig.description}</p>
-                <StarRate reviews={null} />
+                <p className="seller-star">
+                  <StarRate reviews={null} />
+                </p>
                 <p>(16223)</p>
                 <button className="contact-the-seller">Contact Me</button>
               </div>

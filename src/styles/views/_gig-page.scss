@@ -110,12 +110,17 @@ h2 {
   flex-direction: column;
 
   p {
-    margin: 0;
+    margin: 0 0 5px 0;
     font: 400 16px/24px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
     color: #62646a;
 
     &:first-of-type {
       font-weight: 700;
+    }
+  }
+  .seller-star {
+    .star-rate {
+      justify-content: start;
     }
   }
 }
@@ -150,6 +155,14 @@ h2 {
     color: white;
     background-color: #62646a;
   }
+}
+
+.gig-flow {
+  display: flex;
+  gap: 10%;
+  // .slidebar-packs {
+  //   margin-top: 80px;
+  // }
 }
 
 .gig-photos {
