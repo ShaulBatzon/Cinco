@@ -1,20 +1,17 @@
 import React from "react";
-import { gigService } from "../services/gig.service";
+import { connect } from "react-redux";
+import { gigService } from "../services/gig.service.js";
 import { GigPreview } from "./GigPreview";
-// import Carousel from "react-multi-carousel";
-// import "react-multi-carousel/lib/styles.css";
+import { loadGigs } from "../store/gig.action";
 
-export class GigList extends React.Component {
-  state = {
-    gigs: [],
-  };
+class _GigList extends React.Component {
+  state = {};
 
   componentDidMount() {
-    const gigs = gigService.query();
-    this.setState({ gigs });
+    this.props.loadGigs();
   }
   render() {
-    const { gigs } = this.state;
+    const { gigs } = this.props;
     return (
       <div className="gig-list main-layout card-grid">
         {gigs.map((gig, idx) => (
@@ -24,3 +21,14 @@ export class GigList extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    gigs: state.gigModule.gigs,
+  };
+}
+const mapDispatchToProps = {
+  loadGigs,
+};
+
+export const GigList = connect(mapStateToProps, mapDispatchToProps)(_GigList);

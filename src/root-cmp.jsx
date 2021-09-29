@@ -1,9 +1,6 @@
 import React from "react";
-
 import { Switch, Route } from "react-router";
-
 import routes from "./routes";
-
 import AppHeader from "./cmps/AppHeader";
 // import { AppFooter } from './cmps/app-footer'
 // import {UserDetails} from './pages/user-details'

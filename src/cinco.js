@@ -67,7 +67,7 @@ export const gigs = [
     ]
   },
   {
-    "_id": "s102",
+    "_id": "s103",
     "seller": {
       "_id": "u102",
       "fullname": "user2",
@@ -99,7 +99,7 @@ export const gigs = [
     ]
   },
   {
-    "_id": "s102",
+    "_id": "s104",
     "seller": {
       "_id": "u102",
       "fullname": "user2",
@@ -131,11 +131,11 @@ export const gigs = [
     ]
   },
   {
-    "_id": "s102",
+    "_id": "s105",
     "seller": {
       "_id": "u102",
       "fullname": "user2",
-      "imgUrl": "/img/img1.jpg"
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/bb0e6934d460365c2d2fb0db81db4859-1529312968983/737ea5a5-9689-4b2a-bf45-a308255959ae.png"
     },
     "title": "Design ",
     "description": "Web Designer, Logo Designer",
@@ -146,7 +146,7 @@ export const gigs = [
     ],
     "imgUrls": [
       "https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/182342201/original/02719afd21c3eeb0554f7f82c26f01daae862c2e.jpg",
-      "more1.jpg",
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/182342201/original/02719afd21c3eeb0554f7f82c26f01daae862c2e.jpg",
       "more2.jpg"
     ],
     "reviews": [

@@ -13,15 +13,11 @@
   height: 65px;
   border-bottom: 1px solid #dddee0;
   border-top: 1px solid #dddee0;
-  position: absolute;
   top: 80px;
   left: 0;
-  padding: 10px;
-  position: fixed;
+  // position: fixed;
   z-index: 5;
-  .navbar-gigpage {
-    margin: 0px 134px;
-  }
+  background: white;
 }
 .gig-review-comtainer {
   width: 100%;
@@ -78,33 +74,18 @@ h1 {
   }
 }
 
-.gig-photos {
-  width: rem(630px);
-  height: rem(400px);
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.gallery {
-  width: rem(630px);
-  height: rem(60px);
-  margin-bottom: 20px;
-  background-color: salmon;
-}
-
 h2 {
   font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-weight: 700;
   color: #404145;
   font-size: rem(20px);
+  margin-top: 120px;
 }
 
 .gig-description {
   color: #62646a;
   font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 80px;
 }
 
 .about-seller {
@@ -139,8 +120,18 @@ h2 {
   }
 }
 
+.about-the-seller-img {
+  width: 110px;
+  height: 110px;
+}
+
 .star-rate {
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  p {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .contact-the-seller {
@@ -155,9 +146,51 @@ h2 {
   border-radius: 5px;
   font-family: Macan-Bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
   cursor: pointer;
-
   &:hover {
     color: white;
     background-color: #62646a;
   }
+}
+
+.gig-photos {
+  border: 1px solid black;
+  width: rem(630px);
+  height: rem(400px);
+  position: relative;
+  .gig-carousel-container {
+    .react-multiple-carousel__arrow--right {
+      right: -25px;
+    }
+  }
+}
+
+.gig-dotList-container {
+  button {
+    img {
+      width: 100px;
+      height: 100%;
+    }
+    height: 60px;
+  }
+  .custom-dot {
+    padding: 0;
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+  }
+  .custom-dot--active {
+    padding: 0;
+    border: 2px solid black;
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+  }
+}
+
+.react-multi-carousel-dot-list {
+  bottom: -70px;
+}
+
+.seller-info-header {
+  margin-top: 0;
 }

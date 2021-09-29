@@ -3,6 +3,7 @@
 @import "setup/functions.scss";
 @import "setup/mixins.scss";
 @import "setup/typography.scss";
+@import "components/_app-carousel.scss";
 
 // Basics
 @import "basics/helpers.scss";
@@ -11,7 +12,6 @@
 @import "basics/buttons.scss";
 
 @import "views/home-page";
-@import "views/gig-page";
 // Components
 @import "components/navbar-gigPage";
 @import "components/main-header.scss";
@@ -21,4 +21,5 @@
 @import "components/gig-preview.scss";
 @import "components/gig-list.scss";
 @import "components/gig-package.scss";
-@import "components/_app-carousel.scss";
+@import "components/starRate.scss";
+@import "views/gig-page";

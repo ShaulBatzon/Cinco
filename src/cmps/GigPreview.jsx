@@ -2,10 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { onSelectGig } from "../store/gig.action";
+import { connect } from "react-redux";
 export class GigPreview extends React.Component {
   state = {
     isCollect: false,
   };
+
+  // onSelectGig = () => {
+  //   this.props.onSelectGig();
+  // };
 
   toggleListHrt = () => {
     const { isCollect } = this.state;
@@ -64,7 +70,7 @@ export class GigPreview extends React.Component {
         >
           {/* <img className="imge" src={gig.imgUrls} /> */}
           {gig.imgUrls.map((imgUrl) => (
-            <Link to="/gig">
+            <Link to={`/gig/?id=${gig._id}`}>
               <img className="gigs-imgs" src={imgUrl} />
             </Link>
           ))}

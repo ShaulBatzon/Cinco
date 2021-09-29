@@ -1,24 +1,20 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export function NavBarGigPage(props) {
   return (
-    <div className="navbar-gigpage" >
+    <div className="navbar-gigpage">
       <nav className="navbar-links">
-          <div className="nav-overview">
-            <a href="#overview">Overview</a>
-          </div>
-          <div className="nav-aboutSeller">
-            <a href="#aboutSeller">About The Seller</a>
-          </div>
-          <div className="nav-packegeTable">
-            <a href="#aboutSeller">Order Details</a>
-          </div>
-          <div className="nav-recommendations">
-            <a href="#recommendations">Reviews</a>
-          </div>
+        <a href="#overview">Overview</a>
+        <a href="#aboutSeller">About The Seller</a>
+        <a href="#aboutSeller">Order Details</a>
+        <a href="#recommendations">Reviews</a>
       </nav>
-      <button className="far fa-heart"></button>
+      <div className="icons-links">
+        <button className="far fa-heart"></button>
+        <button>20</button>
+        <button class="fas fa-share-alt"></button>
+      </div>
     </div>
   );
 }
