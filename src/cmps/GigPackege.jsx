@@ -1,4 +1,5 @@
 import React from "react";
+import { orderService } from "../services/order.service";
 
 export class GigPackage extends React.Component {
   state = {
@@ -19,8 +20,10 @@ export class GigPackage extends React.Component {
   };
 
   continue = (ev) => {
-    ev.preventDefult();
-    console.log("So you goona pay?");
+    ev.preventDefault();
+    const { gig } = this.props;
+    // orderService.save({ user: "b101", price: gig.price });
+    console.log("So you gona pay?");
   };
 
   onClick = () => {
@@ -36,7 +39,7 @@ export class GigPackage extends React.Component {
         <aside className="slidebar-packs">
           <div className="nav-container-pack">
             <label
-              className={`${isClicked ? "clicked-pack" : "unclicked-pack"}`}
+              className={isClicked ? "clicked-pack" : "unclicked-pack"}
               onClick={this.onClick}
             >
               Basic
@@ -48,7 +51,10 @@ export class GigPackage extends React.Component {
               Premium
             </label>
           </div>
-          <form className="packs-form" onSubmit={this.continue}>
+          <form
+            className="packs-form"
+            onSubmit={(event) => this.continue(event)}
+          >
             <h3>
               <b>{pack.name} Package</b>
               <span>

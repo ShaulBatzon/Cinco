@@ -6,16 +6,19 @@ export const storageService = {
     post,
     put,
     remove,
+    // postOrders
 }
 
+let orders = []
 
 
-function query(entityType, delay = 1200) {
-    var entities = JSON.parse(localStorage.getItem(entityType)) || []
+
+function query(entityType,entity, delay = 1200) {
+    let entities = JSON.parse(localStorage.getItem(entityType)) || []
     console.log('outside func' ,entities);
     if (entities && !entities.length ) {
      console.log('inside func');
-        _save(entityType, gigs)
+        _save(entityType, entity)
         entities = JSON.parse(localStorage.getItem(entityType))
     } 
 
@@ -28,12 +31,15 @@ function query(entityType, delay = 1200) {
     // return Promise.resolve(entities)
 }
 
+
+
+
 function get(entityType, entityId) {
     return query(entityType)
         .then(entities => entities.find(entity => entity._id === entityId))
 }
-
-function post(entityType, newEntity) {
+ 
+ function post(entityType, newEntity) {
     newEntity._id = _makeId()
     return query(entityType)
         .then(entities => {
