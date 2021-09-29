@@ -1,4 +1,4 @@
-import { gigs } from '../cinco.js'
+import { gigs } from '../assets/data/cinco.js'
 
 export const storageService = {
     query,
@@ -7,7 +7,6 @@ export const storageService = {
     put,
     remove,
 }
-
 
 
 function query(entityType, delay = 1200) {

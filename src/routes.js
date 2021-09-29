@@ -1,6 +1,6 @@
 import { HomePage } from './pages/HomePage.jsx'
 import { Explore } from './pages/Explore.jsx'
-import { LoginSignUp } from './cmps/LoginSignUp'
+import { LoginSignUp } from './cmps/LoginSignUp.jsx'
 import { BecomeASeller } from './pages/BecomeASeller.jsx'
 import { GigPage } from './pages/GigPage.jsx'
 // Routes accesible from the main navigation (in AppHeader)
