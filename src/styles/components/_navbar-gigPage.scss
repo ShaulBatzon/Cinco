@@ -28,7 +28,10 @@
 
   .icons-links {
     display: flex;
+    padding: 15px 0;
     button {
+      border-radius: 5px;
+      padding: 10px;
       background-color: transparent;
       border: 1px solid #dddee0;
       &:not(:last-child) {
