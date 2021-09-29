@@ -57,79 +57,79 @@ export class GigPage extends React.Component {
           <div id="overview" className="gig-review-container">
             <h1>{gig.title}</h1>
 
-            <div className="seller-overview">
-              <div>
-                <img
-                  src={seller.imgUrl}
-                  className="profile-pict-img"
-                  alt="bibi"
-                />
-              </div>
-              <p className="seller-name">{seller.fullname}</p>
-              <StarRate reviews={null} />
-              <p>(16223)</p>
+          <div className="seller-overview">
+            <div>
+              <img
+                src={seller.imgUrl}
+                className="profile-pict-img"
+                alt="bibi"
+              />
             </div>
-            <div className="gig-flow">
-              <div className="gig-photos">
-                <Carousel
-                  additionalTransfrom={0}
-                  arrows
-                  autoPlay
-                  autoPlaySpeed={5000}
-                  centerMode={false}
-                  className=""
-                  containerClass="gig-carousel-container"
-                  customDot={<CustomDot />}
-                  dotListClass="gig-dotList-container"
-                  draggable
-                  focusOnSelect={false}
-                  infinite
-                  itemClass=""
-                  keyBoardControl
-                  minimumTouchDrag={80}
-                  renderButtonGroupOutside={false}
-                  renderDotsOutside={false}
-                  responsive={{
-                    desktop: {
-                      breakpoint: {
-                        max: 3000,
-                        min: 1024,
-                      },
-                      items: 1,
+            <p className="seller-name">{seller.fullname}</p>
+            <StarRate reviews={null} />
+            <p>(16223)</p>
+          </div>
+          <div className="gig-flow">
+            <div className="gig-photos">
+              <Carousel
+                additionalTransfrom={0}
+                arrows
+                autoPlay
+                autoPlaySpeed={5000}
+                centerMode={false}
+                className=""
+                containerClass="gig-carousel-container"
+                customDot={<CustomDot />}
+                dotListClass="gig-dotList-container"
+                draggable
+                focusOnSelect={false}
+                infinite
+                itemClass=""
+                keyBoardControl
+                minimumTouchDrag={80}
+                renderButtonGroupOutside={false}
+                renderDotsOutside={false}
+                responsive={{
+                  desktop: {
+                    breakpoint: {
+                      max: 3000,
+                      min: 1024,
                     },
-                    mobile: {
-                      breakpoint: {
-                        max: 464,
-                        min: 0,
-                      },
-                      items: 1,
+                    items: 1,
+                  },
+                  mobile: {
+                    breakpoint: {
+                      max: 464,
+                      min: 0,
                     },
-                    tablet: {
-                      breakpoint: {
-                        max: 1024,
-                        min: 464,
-                      },
-                      items: 1,
+                    items: 1,
+                  },
+                  tablet: {
+                    breakpoint: {
+                      max: 1024,
+                      min: 464,
                     },
-                  }}
-                  showDots
-                  sliderClass=""
-                  slidesToSlide={1}
-                  swipeable
-                >
-                  {/* <img src={imgUrls[0]} className="gig-images" alt="" /> */}
-                  {imgUrls.map((imgUrl) => (
-                    <img src={imgUrl} alt="" />
-                  ))}
-                </Carousel>
-              </div>
-              <GigPackage gig={gig} />
+                    items: 1,
+                  },
+                }}
+                showDots
+                sliderClass=""
+                slidesToSlide={1}
+                swipeable
+              >
+                {/* <img src={imgUrls[0]} className="gig-images" alt="" /> */}
+                {imgUrls.map((imgUrl) => (
+                  <img src={imgUrl} alt="" />
+                ))}
+              </Carousel>
             </div>
+            <GigPackage gig={gig} />
+          </div>
 
-            {/* <div className="gallery"></div> */}
+          {/* <div className="gallery"></div> */}
 
-            <h2>About This Gig</h2>
-            <p className="gig-description">{` am a Professional voice over actor with a In House Vocal Booth and I would love to record whatever you need me to, up to 100 words, for $5!* I will deliver any voiceover less than 24 hours of your order. ONE DAY DELIVERY! NEED IT FAST? Purchase the VIP Express Delivery to get your order next! TV, For Video YouTube Video Voiceover Match audio to video Voice Over Online projects Phone greetings On hold Message Radio Commercials Internet Programs any projects Business`}</p>
+          <h2>About This Gig</h2>
+          <p className="gig-description">{` am a Professional voice over actor with a In House Vocal Booth and I would love to record whatever you need me to, up to 100 words, for $5!* I will deliver any voiceover less than 24 hours of your order. ONE DAY DELIVERY! NEED IT FAST? Purchase the VIP Express Delivery to get your order next! TV, For Video YouTube Video Voiceover Match audio to video Voice Over Online projects Phone greetings On hold Message Radio Commercials Internet Programs any projects Business`}</p>
 
             <h2 className="seller-info-header">About This Seller</h2>
             <div className="about-seller">
@@ -154,6 +154,7 @@ export class GigPage extends React.Component {
           <Reviews reviews={reviews} />
         </div>
       </div>
+      // </div>
     );
   }
 }
