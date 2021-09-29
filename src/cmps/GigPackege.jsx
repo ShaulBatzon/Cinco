@@ -16,19 +16,19 @@ export class GigPackage extends React.Component {
         "10 Products",
       ],
     },
-    isClicked: false,
+    isClicked: "Basic",
   };
 
   continue = (ev) => {
     ev.preventDefault();
     const { gig } = this.props;
-    // orderService.save({ user: "b101", price: gig.price });
-    console.log("So you gona pay?");
+    // const anser = confirm("So you gona pay?");
+    orderService.save({ user: "b101", price: gig.price });
   };
 
-  onClick = () => {
+  onClick = (currLabel) => {
     const { isClicked } = this.state;
-    this.setState({ isClicked: !isClicked });
+    this.setState({ isClicked: currLabel });
   };
 
   render() {
@@ -39,15 +39,27 @@ export class GigPackage extends React.Component {
         <aside className="slidebar-packs">
           <div className="nav-container-pack">
             <label
-              className={isClicked ? "clicked-pack" : "unclicked-pack"}
-              onClick={this.onClick}
+              className={
+                isClicked === "Basic" ? "clicked-pack" : "unclicked-pack"
+              }
+              onClick={() => this.onClick("Basic")}
             >
               Basic
             </label>
-            <label className="unclicked-pack" onClick={this.onClick}>
+            <label
+              className={
+                isClicked === "Standard" ? "clicked-pack" : "unclicked-pack"
+              }
+              onClick={() => this.onClick("Standard")}
+            >
               Standard
             </label>
-            <label className="unclicked-pack" onClick={this.onClick}>
+            <label
+              className={
+                isClicked === "Premium" ? "clicked-pack" : "unclicked-pack"
+              }
+              onClick={() => this.onClick("Premium")}
+            >
               Premium
             </label>
           </div>
@@ -55,35 +67,38 @@ export class GigPackage extends React.Component {
             className="packs-form"
             onSubmit={(event) => this.continue(event)}
           >
-            <h3>
-              <b>{pack.name} Package</b>
+            <div className="from-heder">
+              <p>{pack.name} Package</p>
               <span>
                 {gig.currncyCode}
                 {gig.price}
               </span>
-            </h3>
+            </div>
             <p>
               A Landing/Opening/Home page WordPress website deigns with
               essentials.
             </p>
             <div>
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path>
-                <path d="M9 4H7v5h5V7H9V4z"></path>
-              </svg>
-              <b> {pack.deliveryBy} Days Delivery</b>
+              <div className="time-dlivery-continer">
+                <svg
+                  fill="#62646a"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path>
+                  <path d="M9 4H7v5h5V7H9V4z"></path>
+                </svg>
+                <p className="time-dlivery"> {pack.deliveryBy} Days Delivery</p>
+              </div>
               <ul className="features">
                 {pack.features.map((feature) => {
                   return (
                     <li>
                       <svg
-                        width="11"
-                        height="9"
+                        width="16"
+                        height="16"
                         viewBox="0 0 11 9"
                         xmlns="http://www.w3.org/2000/svg"
                       >

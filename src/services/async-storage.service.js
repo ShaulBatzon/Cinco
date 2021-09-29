@@ -1,4 +1,5 @@
-import { gigs } from '../cinco.js'
+import { gigs } from '../assets/data/cinco.js'
+import {users} from '../assets/data/users.js'
 
 export const storageService = {
     query,
@@ -10,15 +11,18 @@ export const storageService = {
 }
 
 let orders = []
-
-
-
-function query(entityType,entity, delay = 1200) {
-    let entities = JSON.parse(localStorage.getItem(entityType)) || []
+function query(entityType, delay = 1200) {
+    var entities = JSON.parse(localStorage.getItem(entityType)) || []
     console.log('outside func' ,entities);
     if (entities && !entities.length ) {
      console.log('inside func');
-        _save(entityType, entity)
+     if (entityType==='gigs')
+     _save(entityType, gigs);
+     else if(entityType==='orders'){
+        _save(entityType, orders)
+     }
+     else
+     _save(entityType, users);
         entities = JSON.parse(localStorage.getItem(entityType))
     } 
 
@@ -38,8 +42,9 @@ function get(entityType, entityId) {
     return query(entityType)
         .then(entities => entities.find(entity => entity._id === entityId))
 }
- 
- function post(entityType, newEntity) {
+
+
+function post(entityType, newEntity) {
     newEntity._id = _makeId()
     return query(entityType)
         .then(entities => {

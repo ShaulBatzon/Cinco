@@ -10,9 +10,9 @@ export const orderService = {
 
 async function save(order) {
     if (order._id) {
-        return await storageService.postOrders(STORAGE_KEY, order)
+        return await storageService.put(STORAGE_KEY, order)
     } else {
         // gig.owner = userService.getLoggedinUser()
-        return await storageService.postOrders(STORAGE_KEY, order)
+        return await storageService.post(STORAGE_KEY, order)
     }
 }
