@@ -6,12 +6,14 @@ import { gigService } from "../services/gig.service";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { GigPackage } from "../cmps/GigPackege";
+import { Reviews } from "../cmps/gigPage/Reviews.jsx";
 
 export class GigPage extends React.Component {
   state = {
     gig: {},
     seller: {},
     imgUrls: [],
+    reviews: []
   };
 
   componentDidMount() {
@@ -23,12 +25,14 @@ export class GigPage extends React.Component {
       this.setState({ gig: { ...gig } });
       this.setState({ seller: gig.seller });
       this.setState({ imgUrls: gig.imgUrls });
+      this.setState({ reviews: gig.reviews });
     });
   }
 
   render() {
     // if(!this.state.gig) return <Loading />
-    const { gig, seller, imgUrls } = this.state;
+    const { gig, seller, imgUrls, reviews } = this.state;
+    console.log('gig: ', gig);
     const imgForCarousel = imgUrls.map((img) => <img src={img} />);
     const CustomDot = ({ index, onClick, active }) => {
       return (
@@ -50,7 +54,7 @@ export class GigPage extends React.Component {
           <div className="container-navbar">
             <NavBarGigPage gig={gig} />
           </div>
-          <div id="overview" className="gig-review-comtainer">
+          <div id="overview" className="gig-review-container">
             <h1>{gig.title}</h1>
 
             <div className="seller-overview">
@@ -142,11 +146,12 @@ export class GigPage extends React.Component {
                 <p className="seller-star">
                   <StarRate reviews={null} />
                 </p>
-                <p>(16223)</p>
+                <p>({reviews.length})</p>
                 <button className="contact-the-seller">Contact Me</button>
               </div>
             </div>
           </div>
+          <Reviews reviews={reviews} />
         </div>
       </div>
     );

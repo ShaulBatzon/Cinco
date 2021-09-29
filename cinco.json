@@ -23,9 +23,39 @@
         ],
         "reviews": [
           {
-            "id": "madeId",
+            "id": "001",
             "txt": "a great place to dine..",
             "rate": 4,
+            "by": {
+              "_id": "u102",
+              "fullname": "user2",
+              "imgUrl": "/img/img2.jpg"
+            }
+          },
+          {
+            "id": "002",
+            "txt": "a great place to dine..",
+            "rate": 3,
+            "by": {
+              "_id": "u102",
+              "fullname": "user2",
+              "imgUrl": "/img/img2.jpg"
+            }
+          },
+          {
+            "id": "003",
+            "txt": "He made me a nice logo, but was late for delivery",
+            "rate": 2,
+            "by": {
+              "_id": "u102",
+              "fullname": "user2",
+              "imgUrl": "/img/img2.jpg"
+            }
+          },
+          {
+            "id": "004",
+            "txt": "He made me a fantastic logo",
+            "rate": 5,
             "by": {
               "_id": "u102",
               "fullname": "user2",
