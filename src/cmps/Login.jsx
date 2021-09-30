@@ -34,9 +34,12 @@ export class Login extends React.Component {
 
   //change the set state event target nama
   handleChange = (ev) => {
-    if (ev.target.id === "username")
-      this.setState({ username: ev.target.value });
-    else this.setState({ password: ev.target.value });
+    let key = ev.target.id
+    let val = ev.target.value
+    let obj  = {}
+    obj[key] = val
+    this.setState(obj)
+    console.log (this.state);
   };
 
   
@@ -124,7 +127,7 @@ export class Login extends React.Component {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/signup" variant="body2">
                   {"Not a member yet? Join now"}
                 </Link>
               </Grid>
