@@ -15,7 +15,7 @@ import Container from "@material-ui/core/Container";
 import { userService } from "../services/user.service";
 import { createSelectorHook } from "react-redux";
 
-export class LoginSignUp extends React.Component {
+export class Login extends React.Component {
   state = {
     username: "",
     password: "",
