@@ -12,7 +12,8 @@ export const userService = {
     getById,
     remove,
     checkValidLogin,
-    login
+    login,
+    sigeOut
 
 }
 
@@ -48,6 +49,12 @@ async function checkValidLogin(username, password) {
     throw (_err)
     }
 }
+
+async function sigeOut() {
+    sessionStorage.clear()
+    window.location.href = '/';
+}
+
 
 
 

@@ -35,6 +35,9 @@ const routes = [
         path: '/gig/',
         component: GigPage,
     }
+    
+
+
 ]
 
 export default routes;
