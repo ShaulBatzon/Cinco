@@ -4,55 +4,55 @@ export function IconList() {
   const icons = [
     {
       txt: "Graphics & Design",
-      url: "http://www.google.com",
+      url: "/explore",
       iconImgUrl:
         "https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/graphics-design.d32a2f8.svg",
     },
     {
       txt: "Digital Marketing",
-      url: "http://www.google.com",
+      url: "/explore",
       iconImgUrl:
         "https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/online-marketing.74e221b.svg",
     },
     {
       txt: "Writing & Translation",
-      url: "http://www.google.com",
+      url: "/explore",
       iconImgUrl:
         "https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/writing-translation.32ebe2e.svg",
     },
     {
       txt: "Video & Animation",
-      url: "http://www.google.com",
+      url: "/explore",
       iconImgUrl:
         "https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/video-animation.f0d9d71.svg",
     },
     {
       txt: "Programming & Tech",
-      url: "http://www.google.com",
+      url: "/explore",
       iconImgUrl:
         "https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/programming.9362366.svg",
     },
     {
       txt: "Music & Audio",
-      url: "http://www.google.com",
+      url: "/explore",
       iconImgUrl:
         "https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg",
     },
     {
       txt: "Business",
-      url: "http://www.google.com",
+      url: "/explore",
       iconImgUrl:
         "https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/business.bbdf319.svg",
     },
     {
       txt: "Lifestyle",
-      url: "http://www.google.com",
+      url: "/explore",
       iconImgUrl:
         "https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lifestyle.745b575.svg",
     },
     {
       txt: "Data",
-      url: "http://www.google.com",
+      url: "/explore",
       iconImgUrl: img,
     },
   ];

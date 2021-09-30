@@ -7,7 +7,10 @@ export const storageService = {
     post,
     put,
     remove,
+    // postOrders
 }
+
+let orders = []
 function query(entityType, delay = 1200) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
     console.log('outside func' ,entities);
@@ -15,6 +18,9 @@ function query(entityType, delay = 1200) {
      console.log('inside func');
      if (entityType==='gigs')
      _save(entityType, gigs);
+     else if(entityType==='orders'){
+        _save(entityType, orders)
+     }
      else
      _save(entityType, users);
         entities = JSON.parse(localStorage.getItem(entityType))
@@ -28,6 +34,9 @@ function query(entityType, delay = 1200) {
     })
     // return Promise.resolve(entities)
 }
+
+
+
 
 function get(entityType, entityId) {
     return query(entityType)

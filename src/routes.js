@@ -29,7 +29,6 @@ const routes = [
     {
         path: '/gig/',
         component: GigPage,
-        label: 'Gig page'
     }
 ]
 

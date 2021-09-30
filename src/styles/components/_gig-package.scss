@@ -6,6 +6,8 @@ aside {
     background-color: $clr1;
     color: #fff;
     margin-top: 20px;
+    font-family: Macan;
+    font-size: 16px;
   }
 
   footer {
@@ -44,6 +46,7 @@ aside {
   color: #7a7d85;
   border: 1px solid #dadbdd;
   padding: 16px;
+  background-color: #fafafa;
 }
 
 .packs-form {
@@ -51,13 +54,46 @@ aside {
   flex-direction: column;
   padding-right: 24px;
   padding-left: 24px;
-}
+  color: #404145;
+  font-family: Macan;
+  .from-heder {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: black;
+      padding: 0;
+      font-size: 16px;
+    }
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+  p {
+    font-size: 14px;
+    padding: 40px 0;
+    margin: 0;
+  }
 
-.packs-form h3 {
-  display: flex;
-  justify-content: space-between;
-  span {
-    font-weight: 400;
+  .time-dlivery-continer {
+    display: flex;
+    .time-dlivery {
+      padding: 0 0 0 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #62646a;
+    }
   }
 }
 
@@ -67,7 +103,11 @@ aside {
   li {
     display: flex;
     align-items: center;
-    gap: 5px;
+    margin-bottom: 10px;
+    gap: 10px;
+    font-size: 14px;
+    color: #95979d;
+    font-weight: 100;
 
     svg {
       fill: $clr1;
