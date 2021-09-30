@@ -1,6 +1,6 @@
 import { HomePage } from './pages/HomePage.jsx'
 import { Explore } from './pages/Explore.jsx'
-import { LoginSignUp } from './cmps/LoginSignUp.jsx'
+import { Login } from './cmps/Login.jsx'
 import { BecomeASeller } from './pages/BecomeASeller.jsx'
 import { GigPage } from './pages/GigPage.jsx'
 import {userService} from './services/user.service'
@@ -28,7 +28,7 @@ const routes = [
 
     {
         path: username ? '/userPage':'/join', 
-        component:  username ? HomePage : LoginSignUp,
+        component:  username ? HomePage : Login,
         label: username ? ` Hello ${username}` : 'join'
     },
     {
