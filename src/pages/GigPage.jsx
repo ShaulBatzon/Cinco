@@ -55,7 +55,8 @@ export class GigPage extends React.Component {
         <div className="container-navbar ">
           <NavBarGigPage gig={gig} />
         </div>
-        <div id="overview" className="gig-review-comtainer">
+        <div></div>
+        <div id="overview" className="gig-review-container">
           <h1>{gig.title}</h1>
 
           <div className="seller-overview">
