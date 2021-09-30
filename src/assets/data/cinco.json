@@ -3,12 +3,13 @@
       {
         "_id": "s101",
         "seller": {
-          "_id": "u101",
-          "fullname": "Omer Morag",
-          "imgUrl": "/img/img1.jpg"
+          "_id": "234567890",
+          "fullname": "reduan_4u",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/5f69019e7789bed723c4edc6e4159a09-1612158388846/bd53169a-c9e1-427c-9713-55772d3eca68.jpg"
         },
-        "title": "Design Logo",
-        "description": "Web Designer, Logo Designer",
+        "title": "Logo Design",
+        "moto":"Let me illuminate your ideas through creations",
+        "description": "This Gig assures you for the logo designs with minimalism and smoothness This Gig is of one of many design kinds we offer. Flat design concepts are one of our fortes. For the logo to be timeless it doesn’t need to be with complex structures or patterns. It just needs to be simple, memorable and which gives a distinctive essence to your business A flat design is the one which defines your identity or your business but doesn’t get in way of your destination for your target audienceOur minimalistic logo designs will help in representing your company in a unique way. We believe that minimalism is not simple but has unlimited boundaries of its own",
         "price": 120,
         "currncyCode": "$",
         "tags": [
@@ -65,20 +66,22 @@
         ]
       },
       {
-        "_id": "s101",
+        "_id": "s102",
         "seller": {
-          "_id": "u101",
-          "fullname": "user1",
-          "imgUrl": "/img/img1.jpg"
+          "_id": "987654321",
+          "fullname": "josenroy",
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b588e4912b79a61d8986ab3bd5295ed9-1589089974499/6fb69579-17fe-4de6-b70a-55ccd32c0add.jpg"
         },
-        "title": "Design Logo",
-        "description": "Web Designer, Logo Designer",
-        "price": 120,
+        "moto":"Working with you for your success",
+        "title": "Proofreading & Editing",
+        "description": "Would you mind making sure to contact me before ordering to negotiate and come up with a deal that satisfies all?If you need to rewrite your book, ebook, kindle, Content, blog, email, statement, legal script, etc... you are in the right place; I will make sure to deliver high-quality work that will leave you impressed and satisfied.  My service includes: Rewriting contentHave new Plagiarism Free Content Restructuring sentences and paragraphs Keep the meaning Providing plagiarism report (before and after rewriting)",
+
+        "price": 70,
         "currncyCode": "$",
         "tags": [
-          "logo",
-          "design",
-          "web"
+          "translition",
+          "write",
+          "edit"
         ],
         "imgUrls": [
           "shop.jpg",

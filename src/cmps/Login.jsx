@@ -7,15 +7,15 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
+// import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { userService } from "../services/user.service";
-import { createSelectorHook } from "react-redux";
+// import { createSelectorHook } from "react-redux";
 
-export class LoginSignUp extends React.Component {
+export class Login extends React.Component {
   state = {
     username: "",
     password: "",
@@ -26,6 +26,7 @@ export class LoginSignUp extends React.Component {
     ev.preventDefault();
     try {
       userService.checkValidLogin(username, password);
+      this.setState({username:'',password:''});
     } catch (_err) {
       console.log(_err);
     }
@@ -33,16 +34,20 @@ export class LoginSignUp extends React.Component {
 
   //change the set state event target nama
   handleChange = (ev) => {
-    if (ev.target.id === "username")
-      this.setState({ username: ev.target.value });
-    else 
-    this.setState({ password: ev.target.value });
+    let key = ev.target.id
+    let val = ev.target.value
+    let obj  = {}
+    obj[key] = val
+    this.setState(obj)
+    console.log (this.state);
   };
 
+  
   render() {
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline />
+        <div className="login-container">
         <div
           style={{
             marginTop: "40px",
@@ -53,13 +58,13 @@ export class LoginSignUp extends React.Component {
         >
           <Avatar
             style={{
-              margin: "40px",
-              backgroundColor: "blue",
+              margin: "30px",
+              backgroundColor: "#1dbf73",
             }}
           >
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h5" style={{width: "auto"}}>
             Sign in
           </Typography>
           <form
@@ -106,6 +111,8 @@ export class LoginSignUp extends React.Component {
               color="secondary"
               style={{
                 margin: "40px 0",
+                backgroundColor: "#1dbf73",
+                height:"55px"
               }}
               onClick={(ev) => {
                 this.checkSignIn(ev);
@@ -120,12 +127,13 @@ export class LoginSignUp extends React.Component {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                <Link href="/signup" variant="body2">
+                  {"Not a member yet? Join now"}
                 </Link>
               </Grid>
             </Grid>
           </form>
+        </div>
         </div>
       </Container>
     );

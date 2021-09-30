@@ -1,7 +1,7 @@
 import { storageService } from './async-storage.service.js'
 
 const STORAGE_KEY = 'gigs'
-const listeners = []
+// const listeners = []
 
 export const gigService = {
     query,

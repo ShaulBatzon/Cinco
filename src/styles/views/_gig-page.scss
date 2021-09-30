@@ -19,8 +19,6 @@
   z-index: 5;
   background: white;
   position: absolute;
-  padding-left: 350px;
-  padding-right: 350px;
 }
 .gig-review-comtainer {
   width: 100%;
@@ -56,7 +54,6 @@ h1 {
   align-items: center;
 
   div {
-    width: 32px;
     height: 32px;
     font-size: 1em;
 
@@ -119,11 +116,6 @@ h2 {
 
     &:first-of-type {
       font-weight: 700;
-    }
-  }
-  .seller-star {
-    .star-rate {
-      justify-content: start;
     }
   }
 }

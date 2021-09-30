@@ -1,7 +1,7 @@
 import { NavBarGigPage } from "../cmps/gigPage/NavBarGigPage";
 import { StarRate } from "../cmps/gigPage/StarRate";
 import React from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { gigService } from "../services/gig.service";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -13,7 +13,7 @@ export class GigPage extends React.Component {
     gig: {},
     seller: {},
     imgUrls: [],
-    reviews: []
+    reviews: [],
   };
 
   componentDidMount() {
@@ -32,7 +32,9 @@ export class GigPage extends React.Component {
   render() {
     // if(!this.state.gig) return <Loading />
     const { gig, seller, imgUrls, reviews } = this.state;
-    const imgForCarousel = imgUrls.map((img) => <img src={img} />);
+    const imgForCarousel = imgUrls.map((img) => (
+      <img src={img} alt="gig-img" />
+    ));
     const CustomDot = ({ index, onClick, active }) => {
       return (
         <button
@@ -49,12 +51,12 @@ export class GigPage extends React.Component {
 
     return (
       <div className="gig-page-body">
-        <div className="gig-page-container">
-          <div className="container-navbar">
-            <NavBarGigPage gig={gig} />
-          </div>
-          <div id="overview" className="gig-review-container">
-            <h1>{gig.title}</h1>
+        {/* <div className="gig-page-container"> */}
+        <div className="container-navbar ">
+          <NavBarGigPage gig={gig} />
+        </div>
+        <div id="overview" className="gig-review-comtainer">
+          <h1>{gig.title}</h1>
 
           <div className="seller-overview">
             <div>
@@ -117,8 +119,8 @@ export class GigPage extends React.Component {
                 swipeable
               >
                 {/* <img src={imgUrls[0]} className="gig-images" alt="" /> */}
-                {imgUrls.map((imgUrl) => (
-                  <img src={imgUrl} alt="" />
+                {imgUrls.map((imgUrl, idx) => (
+                  <img key={idx} src={imgUrl} alt="" />
                 ))}
               </Carousel>
             </div>
@@ -130,24 +132,21 @@ export class GigPage extends React.Component {
           <h2>About This Gig</h2>
           <p className="gig-description">{` am a Professional voice over actor with a In House Vocal Booth and I would love to record whatever you need me to, up to 100 words, for $5!* I will deliver any voiceover less than 24 hours of your order. ONE DAY DELIVERY! NEED IT FAST? Purchase the VIP Express Delivery to get your order next! TV, For Video YouTube Video Voiceover Match audio to video Voice Over Online projects Phone greetings On hold Message Radio Commercials Internet Programs any projects Business`}</p>
 
-            <h2 className="seller-info-header">About This Seller</h2>
-            <div className="about-seller">
-              <div className="about-the-seller-img">
-                <img
-                  src={seller.imgUrl}
-                  className="profile-pict-img"
-                  alt="bibi"
-                />
-              </div>
-              <div id="aboutSeller" className="about-the-seller-details">
-                <p>{seller.fullname}</p>
-                <p>{gig.description}</p>
-                <p className="seller-star">
-                  <StarRate reviews={null} />
-                </p>
-                <p>({reviews.length})</p>
-                <button className="contact-the-seller">Contact Me</button>
-              </div>
+          <h2 className="seller-info-header">About This Seller</h2>
+          <div className="about-seller">
+            <div className="about-the-seller-img">
+              <img
+                src={seller.imgUrl}
+                className="profile-pict-img"
+                alt="seller"
+              />
+            </div>
+            <div id="aboutSeller" className="about-the-seller-details">
+              <p>{seller.fullname}</p>
+              <p>{gig.description}</p>
+              <StarRate reviews={null} />
+              <p>(16223)</p>
+              <button className="contact-the-seller">Contact Me</button>
             </div>
           </div>
           <Reviews reviews={reviews} />

@@ -5,7 +5,7 @@ function IconPreview({ txt, url, iconImgUrl }) {
   return (
     <div className="card-icon">
       <Link to={url}>
-        <div className="imge"> {<img src={iconImgUrl} />}</div>
+        <div className="imge"> {<img src={iconImgUrl} alt="icon-img" />}</div>
         <div className="line"></div>
         <p>{txt}</p>
       </Link>

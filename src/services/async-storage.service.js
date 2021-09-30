@@ -7,10 +7,12 @@ export const storageService = {
     post,
     put,
     remove,
-    // postOrders
 }
 
 let orders = []
+
+
+
 function query(entityType, delay = 1200) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
     if (entities && !entities.length ) {
