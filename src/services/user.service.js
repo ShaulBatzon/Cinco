@@ -45,7 +45,7 @@ async function checkValidLogin(username, password) {
         else throw 'wrong password'
     }
     catch (_err) {
-        throw (_err)
+    throw (_err)
     }
 }
 

@@ -6,12 +6,14 @@ import { gigService } from "../services/gig.service";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { GigPackage } from "../cmps/GigPackege";
+import { Reviews } from "../cmps/gigPage/Reviews.jsx";
 
 export class GigPage extends React.Component {
   state = {
     gig: {},
     seller: {},
     imgUrls: [],
+    reviews: [],
   };
 
   componentDidMount() {
@@ -23,6 +25,7 @@ export class GigPage extends React.Component {
       this.setState({ gig: { ...gig } });
       this.setState({ seller: gig.seller });
       this.setState({ imgUrls: gig.imgUrls });
+      this.setState({ reviews: gig.reviews });
     });
   }
 
@@ -146,6 +149,7 @@ export class GigPage extends React.Component {
               <button className="contact-the-seller">Contact Me</button>
             </div>
           </div>
+          <Reviews reviews={reviews} />
         </div>
       </div>
       // </div>

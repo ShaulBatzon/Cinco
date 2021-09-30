@@ -26,6 +26,7 @@ export class LoginSignUp extends React.Component {
     ev.preventDefault();
     try {
       userService.checkValidLogin(username, password);
+      this.setState({username:'',password:''});
     } catch (_err) {
       console.log(_err);
     }
@@ -38,10 +39,12 @@ export class LoginSignUp extends React.Component {
     else this.setState({ password: ev.target.value });
   };
 
+  
   render() {
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline />
+        <div className="login-container">
         <div
           style={{
             marginTop: "40px",
@@ -52,13 +55,13 @@ export class LoginSignUp extends React.Component {
         >
           <Avatar
             style={{
-              margin: "40px",
-              backgroundColor: "blue",
+              margin: "30px",
+              backgroundColor: "#1dbf73",
             }}
           >
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h5" style={{width: "auto"}}>
             Sign in
           </Typography>
           <form
@@ -105,6 +108,8 @@ export class LoginSignUp extends React.Component {
               color="secondary"
               style={{
                 margin: "40px 0",
+                backgroundColor: "#1dbf73",
+                height:"55px"
               }}
               onClick={(ev) => {
                 this.checkSignIn(ev);
@@ -120,11 +125,12 @@ export class LoginSignUp extends React.Component {
               </Grid>
               <Grid item>
                 <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                  {"Not a member yet? Join now"}
                 </Link>
               </Grid>
             </Grid>
           </form>
+        </div>
         </div>
       </Container>
     );

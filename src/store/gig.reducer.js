@@ -11,7 +11,6 @@ export function gigReducer(state = initialState, action) {
             break
         case 'SELECT_GIG':
             const currGig = state.gigs.find(gig => gig._id === action.gigId)
-            console.log('reducer gig:', currGig);
             newState = { ...state, currGig: currGig }
             break
         default:
