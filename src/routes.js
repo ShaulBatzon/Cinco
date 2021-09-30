@@ -26,20 +26,20 @@ const routes = [
         component: BecomeASeller,
         label: 'Become a Seller'
     },
-    {
-        path: '/signup',
-        component: SignUp,
-    },
-
+   
     {
         path: username ? '/userPage':'/join', 
         component:  username ? HomePage : Login,
-        label: username ? ` Hello ${username}` : 'join'
+        label: username ? `Hello ${username}` : 'join'
     },
     {
         path: '/gig/',
         component: GigPage,
-    }
+    },
+    {
+        path: '/signup',
+        component: SignUp,
+    },
     
 
 
