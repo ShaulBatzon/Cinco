@@ -131,7 +131,7 @@ export class GigPage extends React.Component {
           {/* <div className="gallery"></div> */}
 
           <h2>About This Gig</h2>
-          <p className="gig-description">{` am a Professional voice over actor with a In House Vocal Booth and I would love to record whatever you need me to, up to 100 words, for $5!* I will deliver any voiceover less than 24 hours of your order. ONE DAY DELIVERY! NEED IT FAST? Purchase the VIP Express Delivery to get your order next! TV, For Video YouTube Video Voiceover Match audio to video Voice Over Online projects Phone greetings On hold Message Radio Commercials Internet Programs any projects Business`}</p>
+          <p className="gig-description">{gig.description}</p>
 
           <h2 className="seller-info-header">About This Seller</h2>
           <div className="about-seller">
@@ -144,7 +144,7 @@ export class GigPage extends React.Component {
             </div>
             <div id="aboutSeller" className="about-the-seller-details">
               <p>{seller.fullname}</p>
-              <p>{gig.description}</p>
+              <p>{seller.description}</p>
               <StarRate reviews={null} />
               <p>(16223)</p>
               <button className="contact-the-seller">Contact Me</button>
