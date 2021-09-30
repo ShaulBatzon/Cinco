@@ -32,7 +32,6 @@ export class GigPage extends React.Component {
   render() {
     // if(!this.state.gig) return <Loading />
     const { gig, seller, imgUrls, reviews } = this.state;
-    console.log('gig: ', gig);
     const imgForCarousel = imgUrls.map((img) => <img src={img} />);
     const CustomDot = ({ index, onClick, active }) => {
       return (
@@ -67,7 +66,7 @@ export class GigPage extends React.Component {
             </div>
             <p className="seller-name">{seller.fullname}</p>
             <StarRate reviews={null} />
-            <p>(16223)</p>
+            <p>({reviews.length})</p>
           </div>
           <div className="gig-flow">
             <div className="gig-photos">

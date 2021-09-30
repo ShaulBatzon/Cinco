@@ -13,7 +13,6 @@ export const storageService = {
 let orders = []
 function query(entityType, delay = 1200) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
-    console.log('outside func' ,entities);
     if (entities && !entities.length ) {
      console.log('inside func');
      if (entityType==='gigs')
