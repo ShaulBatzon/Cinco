@@ -1,12 +1,12 @@
 export const users = [
   {
     "_id": "123456789",
-    "fullname": "Aali Yaan",
+    "fullname": "avishay etach",
     "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/2a23c21c3e54eefe93213653ed04d9db-1582405905281/6e3c6988-7cf8-4395-9f2c-ebfa022c4f02.jpg",
    "imgurl2": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/2a23c21c3e54eefe93213653ed04d9db-1582405905281/6e3c6988-7cf8-4395-9f2c-ebfa022c4f02.jpg-1582405905281/6e3c6988-7cf8-4395-9f2c-ebfa022c4f02.jpg",
     "isSeller": false,
-    "username": "aaliyaan",
-    "password": "secret1",
+    "username": "avishay1",
+    "password": "avishay1",
     "messages": [
       {
         "withUser": "u102",
@@ -42,11 +42,11 @@ export const users = [
   },
   {
     "_id": "987654321",
-    "fullname": "Jose Nroy",
+    "fullname": "omer morag",
     "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b588e4912b79a61d8986ab3bd5295ed9-1589089974499/6fb69579-17fe-4de6-b70a-55ccd32c0add.jpg",
     "imgUrl2":"https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/b588e4912b79a61d8986ab3bd5295ed9-1589089974499/6fb69579-17fe-4de6-b70a-55ccd32c0add.jpg",
     "isSeller": true,
-    "username": "josenroy",
+    "username": "omermorag",
     "password": "secret2",
     "wishList": [
       "gigId1",
@@ -56,12 +56,23 @@ export const users = [
   },
   {
     "_id": "234567890",
-    "fullname": "reduan alma",
+    "fullname": "shaul batzon",
     "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/5f69019e7789bed723c4edc6e4159a09-1612158388846/bd53169a-c9e1-427c-9713-55772d3eca68.jpg",
     "imgUrl2":"https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/b588e4912b79a61d8986ab3bhttps://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5f69019e7789bed723c4edc6e4159a09-1612158388846/bd53169a-c9e1-427c-9713-55772d3eca68.jpgd5295ed9-1589089974499/6fb69579-17fe-4de6-b70a-55ccd32c0add.jpg",
     "isSeller": true,
-    "username": "reduan_4u",
+    "username": "shaul2",
     "password": "secret3",
+    "messages": null,
+    "wishList": []
+  },
+  {
+    "_id": "345678901",
+    "fullname": "oren metargel",
+    "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/5f69019e7789bed723c4edc6e4159a09-1612158388846/bd53169a-c9e1-427c-9713-55772d3eca68.jpg",
+    "imgUrl2":"https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/b588e4912b79a61d8986ab3bhttps://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5f69019e7789bed723c4edc6e4159a09-1612158388846/bd53169a-c9e1-427c-9713-55772d3eca68.jpgd5295ed9-1589089974499/6fb69579-17fe-4de6-b70a-55ccd32c0add.jpg",
+    "isSeller": true,
+    "username": "orentheman",
+    "password": "secret4",
     "messages": null,
     "wishList": []
   }
