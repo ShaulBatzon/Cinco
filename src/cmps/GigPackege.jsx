@@ -1,5 +1,6 @@
 import React from "react";
 import { orderService } from "../services/order.service";
+import { userService } from "../services/user.service";
 
 export class GigPackage extends React.Component {
   state = {
@@ -22,12 +23,17 @@ export class GigPackage extends React.Component {
   continue = (ev) => {
     ev.preventDefault();
     const { gig } = this.props;
+    const { name } = this.state.pack;
     // const anser = confirm("So you gona pay?");
-    orderService.save({ user: "b101", price: gig.price });
+    orderService.save({
+      user: userService.login().username,
+      price: gig.price,
+      packName: name,
+    });
   };
 
   onClick = (currLabel) => {
-    const { isClicked } = this.state;
+    // const { isClicked } = this.state;
     this.setState({ isClicked: currLabel });
   };
 
@@ -93,9 +99,9 @@ export class GigPackage extends React.Component {
                 <p className="time-dlivery"> {pack.deliveryBy} Days Delivery</p>
               </div>
               <ul className="features">
-                {pack.features.map((feature) => {
+                {pack.features.map((feature, idx) => {
                   return (
-                    <li>
+                    <li key={idx}>
                       <svg
                         width="16"
                         height="16"

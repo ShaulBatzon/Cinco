@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { gigService } from "../services/gig.service.js";
+// import { gigService } from "../services/gig.service.js";
 import { GigPreview } from "./GigPreview";
 import { loadGigs } from "../store/gig.action";
 

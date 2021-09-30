@@ -1,7 +1,7 @@
 import { storageService } from './async-storage.service.js'
 
 const STORAGE_KEY = 'orders'
-const listeners = []
+// const listeners = []
 
 export const orderService = {
     save,

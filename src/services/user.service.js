@@ -11,8 +11,14 @@ export const userService = {
     query,
     getById,
     remove,
-    checkValidLogin
+    checkValidLogin,
+    login
 
+}
+
+function login() {
+    var loginUser = JSON.parse(sessionStorage.getItem('loginUser')) || {}
+    return loginUser
 }
 
 async function query() {
@@ -28,13 +34,13 @@ async function remove(userId) {
 
 async function checkValidLogin(username, password) {
     try {
-        debugger;
         const users = await query(STORAGE_KEY)
         console.log(users);
         const user = users.find(user => user.username === username)
         if (!user) throw 'No such username'
         if (user.password === password){
-            sessionStorage['user'] = JSON.stringify({_id:user._id, username:user.username});
+            sessionStorage['loginUser'] = JSON.stringify({_id:user._id, username:user.username});
+            window.location.href = '/';
         }
         else throw 'wrong password'
     }
@@ -42,6 +48,7 @@ async function checkValidLogin(username, password) {
         throw (_err)
     }
 }
+
 
 
 

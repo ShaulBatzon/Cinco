@@ -7,13 +7,13 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
+// import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { userService } from "../services/user.service";
-import { createSelectorHook } from "react-redux";
+// import { createSelectorHook } from "react-redux";
 
 export class LoginSignUp extends React.Component {
   state = {
@@ -35,8 +35,7 @@ export class LoginSignUp extends React.Component {
   handleChange = (ev) => {
     if (ev.target.id === "username")
       this.setState({ username: ev.target.value });
-    else 
-    this.setState({ password: ev.target.value });
+    else this.setState({ password: ev.target.value });
   };
 
   render() {

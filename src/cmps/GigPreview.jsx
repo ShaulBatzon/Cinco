@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { onSelectGig } from "../store/gig.action";
-import { connect } from "react-redux";
+// import { onSelectGig } from "../store/gig.action";
+// import { connect } from "react-redux";
 export class GigPreview extends React.Component {
   state = {
     isCollect: false,
@@ -71,13 +71,17 @@ export class GigPreview extends React.Component {
           {/* <img className="imge" src={gig.imgUrls} /> */}
           {gig.imgUrls.map((imgUrl) => (
             <Link to={`/gig/?id=${gig._id}`}>
-              <img className="gigs-imgs" src={imgUrl} />
+              <img className="gigs-imgs" src={imgUrl} alt="gig-img" />
             </Link>
           ))}
         </Carousel>
 
         <div className="card-mini-user">
-          <img className="card-seller-img" src={gig.seller.imgUrl} />
+          <img
+            className="card-seller-img"
+            src={gig.seller.imgUrl}
+            alt="gig-seller-img"
+          />
           <a className="clean-link" href="/SellerDetails">
             {gig.seller.fullname}
           </a>

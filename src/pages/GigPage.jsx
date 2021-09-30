@@ -1,7 +1,7 @@
 import { NavBarGigPage } from "../cmps/gigPage/NavBarGigPage";
 import { StarRate } from "../cmps/gigPage/StarRate";
 import React from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { gigService } from "../services/gig.service";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -29,7 +29,9 @@ export class GigPage extends React.Component {
   render() {
     // if(!this.state.gig) return <Loading />
     const { gig, seller, imgUrls } = this.state;
-    const imgForCarousel = imgUrls.map((img) => <img src={img} />);
+    const imgForCarousel = imgUrls.map((img) => (
+      <img src={img} alt="gig-img" />
+    ));
     const CustomDot = ({ index, onClick, active }) => {
       return (
         <button
@@ -47,7 +49,7 @@ export class GigPage extends React.Component {
     return (
       <div className="gig-page-body">
         {/* <div className="gig-page-container"> */}
-        <div className="container-navbar">
+        <div className="container-navbar ">
           <NavBarGigPage gig={gig} />
         </div>
         <div id="overview" className="gig-review-comtainer">
@@ -114,8 +116,8 @@ export class GigPage extends React.Component {
                 swipeable
               >
                 {/* <img src={imgUrls[0]} className="gig-images" alt="" /> */}
-                {imgUrls.map((imgUrl) => (
-                  <img src={imgUrl} alt="" />
+                {imgUrls.map((imgUrl, idx) => (
+                  <img key={idx} src={imgUrl} alt="" />
                 ))}
               </Carousel>
             </div>
@@ -133,15 +135,13 @@ export class GigPage extends React.Component {
               <img
                 src={seller.imgUrl}
                 className="profile-pict-img"
-                alt="bibi"
+                alt="seller"
               />
             </div>
             <div id="aboutSeller" className="about-the-seller-details">
               <p>{seller.fullname}</p>
               <p>{gig.description}</p>
-              <p className="seller-star">
-                <StarRate reviews={null} />
-              </p>
+              <StarRate reviews={null} />
               <p>(16223)</p>
               <button className="contact-the-seller">Contact Me</button>
             </div>

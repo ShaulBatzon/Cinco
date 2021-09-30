@@ -1,10 +1,10 @@
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+// import Carousel from "react-multi-carousel";
+// import "react-multi-carousel/lib/styles.css";
 
 export function AppCarousel() {
   return (
     <>
-      <div className="carousel-continer">
+      {/* <div className="carousel-continer">
         <Carousel
           additionalTransfrom={0}
           arrows
@@ -96,7 +96,7 @@ export function AppCarousel() {
             }}
           />
         </Carousel>
-      </div>
+      </div> */}
     </>
   );
 }
