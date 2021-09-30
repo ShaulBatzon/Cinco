@@ -4,6 +4,7 @@ import { Login } from './cmps/Login.jsx'
 import { BecomeASeller } from './pages/BecomeASeller.jsx'
 import { GigPage } from './pages/GigPage.jsx'
 import {userService} from './services/user.service'
+import {SignUp} from './cmps/SignUp.jsx'
 // Routes accesible from the main navigation (in AppHeader)
 
 const username = userService.login().username
@@ -24,6 +25,10 @@ const routes = [
         path: '/seller',
         component: BecomeASeller,
         label: 'Become a Seller'
+    },
+    {
+        path: '/signup',
+        component: SignUp,
     },
 
     {
