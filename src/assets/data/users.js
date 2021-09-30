@@ -1,11 +1,12 @@
 export const users = [
   {
-    "_id": "u101",
-    "fullname": "User1",
-    "imgUrl": "/img/img1.jpg",
+    "_id": "123456789",
+    "fullname": "Aali Yaan",
+    "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/2a23c21c3e54eefe93213653ed04d9db-1582405905281/6e3c6988-7cf8-4395-9f2c-ebfa022c4f02.jpg",
+   "imgurl2": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/2a23c21c3e54eefe93213653ed04d9db-1582405905281/6e3c6988-7cf8-4395-9f2c-ebfa022c4f02.jpg-1582405905281/6e3c6988-7cf8-4395-9f2c-ebfa022c4f02.jpg",
     "isSeller": false,
-    "username": "user1",
-    "password": "secret",
+    "username": "aaliyaan",
+    "password": "secret1",
     "messages": [
       {
         "withUser": "u102",
@@ -40,12 +41,13 @@ export const users = [
     ]
   },
   {
-    "_id": "u102",
-    "fullname": "User 2",
-    "imgUrl": "/img/img2.jpg",
-    "isSeller": false,
-    "username": "user2",
-    "password": "secret",
+    "_id": "987654321",
+    "fullname": "Jose Nroy",
+    "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b588e4912b79a61d8986ab3bd5295ed9-1589089974499/6fb69579-17fe-4de6-b70a-55ccd32c0add.jpg",
+    "imgUrl2":"https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/b588e4912b79a61d8986ab3bd5295ed9-1589089974499/6fb69579-17fe-4de6-b70a-55ccd32c0add.jpg",
+    "isSeller": true,
+    "username": "josenroy",
+    "password": "secret2",
     "wishList": [
       "gigId1",
       "gigId2",
@@ -53,12 +55,13 @@ export const users = [
     ]
   },
   {
-    "_id": "u103",
-    "fullname": "User 3",
-    "imgUrl": "/img/img3.jpg",
-    "isSeller": false,
-    "username": "user3",
-    "password": "secret",
+    "_id": "234567890",
+    "fullname": "reduan alma",
+    "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/5f69019e7789bed723c4edc6e4159a09-1612158388846/bd53169a-c9e1-427c-9713-55772d3eca68.jpg",
+    "imgUrl2":"https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/b588e4912b79a61d8986ab3bhttps://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5f69019e7789bed723c4edc6e4159a09-1612158388846/bd53169a-c9e1-427c-9713-55772d3eca68.jpgd5295ed9-1589089974499/6fb69579-17fe-4de6-b70a-55ccd32c0add.jpg",
+    "isSeller": true,
+    "username": "reduan_4u",
+    "password": "secret3",
     "messages": null,
     "wishList": []
   }

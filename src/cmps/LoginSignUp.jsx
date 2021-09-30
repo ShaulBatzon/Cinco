@@ -26,6 +26,7 @@ export class LoginSignUp extends React.Component {
     ev.preventDefault();
     try {
       userService.checkValidLogin(username, password);
+      this.setState({username:'',password:''});
     } catch (_err) {
       console.log(_err);
     }
