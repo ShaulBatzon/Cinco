@@ -35,11 +35,12 @@ async function checkValidLogin(username, password) {
         if (!user) throw 'No such username'
         if (user.password === password){
             sessionStorage['user'] = JSON.stringify({_id:user._id, username:user.username});
+            window.location.href = '/';
         }
         else throw 'wrong password'
     }
     catch (_err) {
-        throw (_err)
+    throw (_err)
     }
 }
 
