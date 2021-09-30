@@ -14,39 +14,48 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import {userService} from "../services/user.service";
+import { userService } from "../services/user.service";
 export class SignUp extends React.Component {
   state = {
     fullname: "",
-    Email: "",
+    email: "",
     username: "",
     password: "",
     confirmPassword: "",
+    terms:false,
   };
 
+  //change the set state event target nama
+  handleChange = (ev) => {
+    let key = ev.target.id;
+    let val = ev.target.value;
+    if (key==='terms')
+    val = ev.target.checked;
+    let obj = {};
+    obj[key] = val;
+    this.setState(obj);
+}
 
-    //change the set state event target nama
-    handleChange = (ev) => {
-        var key = ev.target.id;
-        let val = ev.target.value
-        let obj  = {}
-        obj[key] = val;
-        this.setState(obj);
-      };
+  checkSigUp = (ev) => {
+    ev.preventDefault();
+    const { fullname, email, username, password, confirmPassword,terms } = this.state;
+    if (password !== confirmPassword) throw "password not match";
+    if (!terms) throw "accept ths terms";
+    try {
+      userService.add({ fullname, username, email, password });
+      this.setState({
+        fullname: "",
+        email:"",
+        username: "",
+        password: "",
+        confirmPassword: "",
+        terms: false
+      });
+    } catch (_err) {
+      console.log(_err);
+    }
+  };
 
-
-      checkSigUp = (ev) => {
-        ev.preventDefault();
-        const {fullname,Email,username,password, confirmPassword} = this.state;
-        if (password!==confirmPassword) throw 'password not match'; 
-        try {
-            userService.add({fullname, username,Email,password});
-          this.setState({fullname:'',Email:'',username:'',password:'', confirmPassword:''});
-        } catch (_err) {
-          console.log(_err);
-        }
-      };
-    
   render() {
     const paperStyle = {
       padding: "30px 20px",
@@ -74,15 +83,8 @@ export class SignUp extends React.Component {
               value={this.state.fullname}
               onChange={this.handleChange}
               id="fullname"
-             
+              required
             />
-            <TextField
-             fullWidth label="Email" 
-             placeholder="Enter your email"     
-             onChange={this.handleChange}
-              type="email"
-              id="Email"
-             />
 
             <TextField
               fullWidth
@@ -90,8 +92,21 @@ export class SignUp extends React.Component {
               placeholder="Enter your username"
               value={this.state.username}
               onChange={this.handleChange}
-              id="username" 
+              id="username"
+              required
             />
+
+            <TextField
+              fullWidth
+              label="email"
+              placeholder="Enter your email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              type="email"
+              id="email"
+              required
+            />
+
             <TextField
               fullWidth
               label="Password"
@@ -100,6 +115,7 @@ export class SignUp extends React.Component {
               onChange={this.handleChange}
               id="password"
               type="password"
+              required
             />
             <TextField
               fullWidth
@@ -109,9 +125,10 @@ export class SignUp extends React.Component {
               onChange={this.handleChange}
               id="confirmPassword"
               type="password"
+              required
             />
             <FormControlLabel
-              control={<Checkbox name="checkedA" />}
+              control={<Checkbox    value={this.state.cheackBox}  onChange={this.handleChange}   id="terms" name="checkedA" />}
               label="I accept the terms"
             />
             <Button type="submit" variant="contained" color="primary">

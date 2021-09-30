@@ -30,7 +30,7 @@ export const gigs = [
         "by": {
           "_id": "u103",
           "fullname": "Waseem Henderson",
-          "imgUrl": "/img/img2.jpg"
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/26c7c4a5fb0d7f00117c66059a673699-1570772119630/e62ce888-a2da-4604-b40e-513384de070d.jpg"
         }
       },
       {
@@ -40,7 +40,7 @@ export const gigs = [
         "by": {
           "_id": "u102",
           "fullname": "Clarissa Mcgregor",
-          "imgUrl": "/img/img2.jpg"
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/a34e2ad32c2d9916005e67020c8bd430-1605607494183/0e9d4a34-8732-47fd-80f4-d6916b6a9469.jpg"
         }
       }
     ]
@@ -74,7 +74,7 @@ export const gigs = [
         "by": {
           "_id": "u104",
           "fullname": "Clarissa Mcgregor",
-          "imgUrl": "/img/img2.jpg"
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/bb0e6934d460365c2d2fb0db81db4859-1529312968983/737ea5a5-9689-4b2a-bf45-a308255959ae.png"
         }
       }
     ]
