@@ -28,7 +28,7 @@ const routes = [
 
     {
         path: username ? '/userPage':'/join', 
-        component: LoginSignUp, 
+        component:  username ? HomePage : LoginSignUp,
         label: username ? ` Hello ${username}` : 'join'
     },
     {
