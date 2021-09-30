@@ -18,6 +18,21 @@ export class GigPackage extends React.Component {
       ],
     },
     isClicked: "Basic",
+    packagePrice: "",
+  };
+
+  cheakPrice = (isClicked) => {
+    const { gig } = this.props;
+    const standardPirce = gig.price * 2;
+    const PremiumPirce = standardPirce * 2;
+    switch (isClicked) {
+      case "Basic":
+        return gig.price;
+      case "Standard":
+        return standardPirce;
+      case "Premium":
+        return PremiumPirce;
+    }
   };
 
   continue = (ev) => {
@@ -27,14 +42,27 @@ export class GigPackage extends React.Component {
     // const anser = confirm("So you gona pay?");
     orderService.save({
       user: userService.login().username,
-      price: gig.price,
-      packName: name,
+      price: this.state.packagePrice,
+      packName: this.state.isClicked,
     });
   };
 
   onClick = (currLabel) => {
     // const { isClicked } = this.state;
+    const { gig } = this.props;
+    const standardPirce = gig.price * 2;
+    const PremiumPirce = standardPirce * 2;
     this.setState({ isClicked: currLabel });
+    switch (currLabel) {
+      case "Basic":
+        this.setState({ packagePrice: gig.price });
+        break;
+      case "Standard":
+        this.setState({ packagePrice: standardPirce });
+        break;
+      case "Premium":
+        this.setState({ packagePrice: PremiumPirce });
+    }
   };
 
   render() {
@@ -74,10 +102,10 @@ export class GigPackage extends React.Component {
             onSubmit={(event) => this.continue(event)}
           >
             <div className="from-heder">
-              <p>{pack.name} Package</p>
+              <p>{isClicked} Package</p>
               <span>
                 {gig.currncyCode}
-                {gig.price}
+                {this.cheakPrice(isClicked)}
               </span>
             </div>
             <p>
@@ -123,7 +151,7 @@ export class GigPackage extends React.Component {
               <footer>
                 <button className="btn">
                   Continue ({gig.currncyCode}
-                  {gig.price})
+                  {this.cheakPrice(isClicked)})
                 </button>
               </footer>
             </div>

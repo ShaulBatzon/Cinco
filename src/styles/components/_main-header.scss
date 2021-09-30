@@ -33,7 +33,13 @@
     //   font-size: 0.9rem;
     // }
     transition: 0.4s;
-    &:not(:last-child) {
+    &:nth-of-type(5) {
+      display: none;
+    }
+    &:nth-of-type(6) {
+      display: none;
+    }
+    &:not(:nth-of-type(4)) {
       margin-inline-end: 15px;
     }
   }
