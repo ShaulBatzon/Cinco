@@ -1,8 +1,10 @@
 import React from "react";
+import { connect } from 'react-redux'
 import { orderService } from "../services/order.service";
 import { userService } from "../services/user.service";
+import {addOrder, loadOrders} from "../store/order.actions"
 
-export class GigPackage extends React.Component {
+class _GigPackage extends React.Component {
   state = {
     pack: {
       name: "Basic",
@@ -17,15 +19,19 @@ export class GigPackage extends React.Component {
         "10 Products",
       ],
     },
-    isClicked: "Basic",
+    packageSelected: "Basic",
     packagePrice: "",
   };
 
-  cheakPrice = (isClicked) => {
+  componentDidMount() {
+    this.props.loadOrders();
+  }
+
+  cheakPrice = (packageSelected) => {
     const { gig } = this.props;
     const standardPirce = gig.price * 2;
     const PremiumPirce = standardPirce * 2;
-    switch (isClicked) {
+    switch (packageSelected) {
       case "Basic":
         return gig.price;
       case "Standard":
@@ -39,20 +45,31 @@ export class GigPackage extends React.Component {
     ev.preventDefault();
     const { gig } = this.props;
     const { name } = this.state.pack;
-    // const anser = confirm("So you gona pay?");
     orderService.save({
       user: userService.login().username,
       price: this.state.packagePrice,
-      packName: this.state.isClicked,
+      packName: this.state.packageSelected,
     });
   };
 
+  addOrder = async ev => {
+    ev.preventDefault()
+    const { gig } = this.props;
+    await this.props.addOrder({
+      buyer: userService.login().username,
+      gigId: gig._id,
+      dueOn: new Date().getFullYear()+'-'+String(new Date().getMonth()+1).padStart(2,0)+'-'+String(new Date().getDate()).padStart(2,0),
+      price: this.state.packagePrice,
+      packName: this.state.packageSelected,
+    })
+  }
+
   onClick = (currLabel) => {
-    // const { isClicked } = this.state;
+    // const { packageSelected } = this.state;
     const { gig } = this.props;
     const standardPirce = gig.price * 2;
     const PremiumPirce = standardPirce * 2;
-    this.setState({ isClicked: currLabel });
+    this.setState({ packageSelected: currLabel });
     switch (currLabel) {
       case "Basic":
         this.setState({ packagePrice: gig.price });
@@ -66,7 +83,7 @@ export class GigPackage extends React.Component {
   };
 
   render() {
-    const { pack, isClicked } = this.state;
+    const { pack, packageSelected } = this.state;
     const { gig } = this.props;
     return (
       <div>
@@ -74,7 +91,7 @@ export class GigPackage extends React.Component {
           <div className="nav-container-pack">
             <label
               className={
-                isClicked === "Basic" ? "clicked-pack" : "unclicked-pack"
+                packageSelected === "Basic" ? "clicked-pack" : "unclicked-pack"
               }
               onClick={() => this.onClick("Basic")}
             >
@@ -82,7 +99,7 @@ export class GigPackage extends React.Component {
             </label>
             <label
               className={
-                isClicked === "Standard" ? "clicked-pack" : "unclicked-pack"
+                packageSelected === "Standard" ? "clicked-pack" : "unclicked-pack"
               }
               onClick={() => this.onClick("Standard")}
             >
@@ -90,22 +107,19 @@ export class GigPackage extends React.Component {
             </label>
             <label
               className={
-                isClicked === "Premium" ? "clicked-pack" : "unclicked-pack"
+                packageSelected === "Premium" ? "clicked-pack" : "unclicked-pack"
               }
               onClick={() => this.onClick("Premium")}
             >
               Premium
             </label>
           </div>
-          <form
-            className="packs-form"
-            onSubmit={(event) => this.continue(event)}
-          >
+          <form className="packs-form" onSubmit={(ev) => this.addOrder(ev)}>
             <div className="from-heder">
-              <p>{isClicked} Package</p>
+              <p>{packageSelected} Package</p>
               <span>
                 {gig.currncyCode}
-                {this.cheakPrice(isClicked)}
+                {this.cheakPrice(packageSelected)}
               </span>
             </div>
             <p>
@@ -151,7 +165,7 @@ export class GigPackage extends React.Component {
               <footer>
                 <button className="btn">
                   Continue ({gig.currncyCode}
-                  {this.cheakPrice(isClicked)})
+                  {this.cheakPrice(packageSelected)})
                 </button>
               </footer>
             </div>
@@ -161,3 +175,20 @@ export class GigPackage extends React.Component {
     );
   }
 }
+
+
+const mapStateToProps = state => {
+  return {
+    orders: state.orderModule.orders,
+    // users: state.userModule.users,
+    // loggedInUser: state.userModule.user
+  }
+}
+const mapDispatchToProps = {
+  loadOrders,
+  // loadUsers,
+  addOrder,
+  // removeOrder
+}
+
+export const GigPackage = connect(mapStateToProps, mapDispatchToProps)(_GigPackage)

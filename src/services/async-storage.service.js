@@ -16,7 +16,6 @@ let orders = []
 function query(entityType, delay = 1200) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
     if (entities && !entities.length ) {
-     console.log('inside func');
      if (entityType==='gigs')
      _save(entityType, gigs);
      else if(entityType==='orders'){
@@ -39,8 +38,8 @@ function query(entityType, delay = 1200) {
 
 
 
-function get(entityType, entityId) {
-    return query(entityType)
+async function get(entityType, entityId) {
+    return await query(entityType)
         .then(entities => entities.find(entity => entity._id === entityId))
 }
 

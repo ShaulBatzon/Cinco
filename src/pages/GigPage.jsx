@@ -7,6 +7,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { GigPackage } from "../cmps/GigPackege";
 import { Reviews } from "../cmps/gigPage/Reviews.jsx";
+import { Loader } from "../cmps/Loader.jsx";
 
 export class GigPage extends React.Component {
   state = {
@@ -30,7 +31,7 @@ export class GigPage extends React.Component {
   }
 
   render() {
-    // if(!this.state.gig) return <Loading />
+    if(!this.state.gig) return <Loader />
     const { gig, seller, imgUrls, reviews } = this.state;
     const imgForCarousel = imgUrls.map((img) => (
       <img src={img} alt="gig-img" />

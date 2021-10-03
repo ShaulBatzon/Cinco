@@ -39,7 +39,6 @@ export class Login extends React.Component {
     let obj = {};
     obj[key] = val;
     this.setState(obj);
-    console.log(this.state);
   };
 
   render() {

@@ -38,7 +38,10 @@ export const users = [
       "gigId1",
       "gigId2",
       "gigId3"
-    ]
+    ],
+    "gigs": [],
+    "description": '',
+    "languages": [],
   },
   {
     "_id": "987654321",
@@ -52,7 +55,10 @@ export const users = [
       "gigId1",
       "gigId2",
       "gigId3"
-    ]
+    ],
+    "gigs": [],
+    "description": '',
+    "languages": [],
   },
   {
     "_id": "234567890",
@@ -63,7 +69,10 @@ export const users = [
     "username": "shaul2",
     "password": "secret3",
     "messages": null,
-    "wishList": []
+    "wishList": [],
+    "gigs": [],
+    "description": '',
+    "languages": [],
   },
   {
     "_id": "345678901",
@@ -74,6 +83,9 @@ export const users = [
     "username": "orentheman",
     "password": "secret4",
     "messages": null,
-    "wishList": []
+    "wishList": [],
+    "gigs": [],
+    "description": '',
+    "languages": [],
   }
 ]
