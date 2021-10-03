@@ -1,34 +1,30 @@
 import React from "react";
 // import { connect } from 'react-redux'
 import { Link, NavLink } from "react-router-dom";
-
+import { AppHeaderW } from "./AppHeader-wihte";
+import { AppHeaderR } from "./AppHeaderR";
 import routes from "../routes";
 
 // import { onLogin, onLogout, onSignup, loadUsers, removeUser } from '../store/user.actions.js'
 // import { LoginSignup } from './login-signup.jsx'
 
-class AppHeader extends React.Component {
+export class AppHeader extends React.Component {
+  state = {
+    actvie: false,
+    comp: <AppHeaderR />,
+  };
+
+  change = () => {
+    if (window.scrollY >= 100) {
+      this.setState({ actvie: true, comp: <AppHeaderW /> });
+    } else {
+      this.setState({ actvie: false, comp: <AppHeaderR /> });
+    }
+  };
+
   render() {
-    return (
-      <div className="page-navbar content-container">
-        <Link to={"/"} className="navbar-logo">
-          Cinco
-        </Link>
-        <nav className="navbar-links">
-          {routes.map((route) => (
-            <NavLink
-              className="navbar-links-items"
-              exact
-              key={route.path}
-              to={route.path}
-            >
-              {route.label}
-            </NavLink>
-          ))}
-        </nav>
-      </div>
-    );
+    window.addEventListener("scroll", this.change);
+    const { comp } = this.state;
+    return <>{comp}</>;
   }
 }
-
-export default AppHeader;

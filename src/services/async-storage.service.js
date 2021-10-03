@@ -13,8 +13,21 @@ let orders = []
 
 
 
-function query(entityType, delay = 1200) {
+function query(entityType,delay = 1200) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
+    let searchParams = new URLSearchParams(window.location.search)
+    if( searchParams.has('filterBy')){
+        let filterBy = searchParams.get('filterBy')
+           if(filterBy){
+      var tags = entities.filter(entity=>
+        entity.tags.find((tag)=>
+         tag === filterBy
+        )
+        )
+        entities = tags
+      }
+    }
+
     if (entities && !entities.length ) {
      console.log('inside func');
      if (entityType==='gigs')

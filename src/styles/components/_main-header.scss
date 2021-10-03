@@ -15,6 +15,65 @@
   align-items: center;
   padding-top: 20px;
   font-family: Macan-Bold;
+  position: sticky;
+  z-index: 15;
+  top: 0;
+}
+
+.page-navbar-white {
+  align-items: center;
+  // padding-top: 20px;
+  font-family: Macan-Bold;
+  position: sticky;
+  z-index: 1001;
+  top: 0;
+  background-color: white;
+  color: black;
+  padding: 25px 0;
+  margin-bottom: 25px;
+  .content-container {
+    margin-bottom: 0;
+  }
+  border-bottom: 1px solid #dddee0;
+}
+
+.nav-cotiner {
+  display: flex;
+  justify-content: space-between;
+  // .nav-cotiner-logo-sreah {
+
+  // }
+  .navbar-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    .navbar-links-items {
+      color: #62646a;
+      text-decoration: none;
+      // &:last-child {
+      //   border-radius: גק5px;
+      //   border: 1px solid white;
+      //   padding: 5px 10px;
+      //   font-size: 0.9rem;
+      // }
+      transition: 0.4s;
+      &:nth-of-type(5) {
+        display: none;
+      }
+      &:nth-of-type(6) {
+        display: none;
+      }
+      &:not(:nth-of-type(4)) {
+        margin-inline-end: 15px;
+      }
+      &:hover {
+        color: $clr1;
+      }
+    }
+  }
 }
 
 .navbar-links {
@@ -42,5 +101,53 @@
     &:not(:nth-of-type(4)) {
       margin-inline-end: 15px;
     }
+  }
+}
+
+.nav-cotiner-logo-sreah {
+  display: flex;
+  gap: 30px;
+  .header-form-search-bar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.header-form-search-bar-wrapper {
+  position: relative;
+  input {
+    flex-grow: 1;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid rgb(218, 219, 221);
+    border-right: 0;
+    outline: none;
+    font-size: 1rem;
+    padding: 5px 0;
+    padding-left: 42px;
+    color: black;
+  }
+  button {
+    height: 30px;
+    background: #1dbf73;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    cursor: pointer;
+    transition: 0.4s;
+    font-weight: bold;
+    &:hover {
+      background: #1dbf73bd;
+    }
+  }
+  .header-form-search-bar-icon {
+    fill: gray;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
   }
 }
