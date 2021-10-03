@@ -22,10 +22,10 @@ export class GigPage extends React.Component {
     // this.setState({gig: currGig})
     const gigId = gigService.getGigId();
     gigService.getById(gigId).then((gig) => {
+      this.setState({ reviews: gig.reviews });
       this.setState({ gig: { ...gig } });
       this.setState({ seller: gig.seller });
       this.setState({ imgUrls: gig.imgUrls });
-      this.setState({ reviews: gig.reviews });
     });
   }
 
