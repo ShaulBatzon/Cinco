@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router";
 import routes from "./routes";
 import {userService} from './services/user.service'
 import routesH from "./routesH";
-import AppHeader from "./cmps/AppHeader";
+import {AppHeader} from "./cmps/AppHeader";
 import {HeaderSeller} from "./pages/sellerProfile/HeaderSeller.jsx";
 import { Loader } from "./cmps/Loader.jsx";
 // import { AppFooter } from './cmps/app-footer'

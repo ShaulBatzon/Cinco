@@ -8,11 +8,7 @@ export const gigs = [
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/26c7c4a5fb0d7f00117c66059a673699-1570772119630/e62ce888-a2da-4604-b40e-513384de070d.jpg",
      "description": "Web Designer, Logo Designer",
     },
-<<<<<<< HEAD
     "title": "I will design your perfecly logo",
-=======
-    "title": "I will provide a  Logo Design",
->>>>>>> 74cd1b6be99882cf9a1baf52af8785fb2718f66b
     "description": "Welcome to my gig and thanks for viewing our GiG. Are looking for a Modern Minimalist Business Logo Design for your Business/Website? You are at right place ! I am here to give life to your dreams :))) ",
     "price": 120,
     "currncyCode": "$",
