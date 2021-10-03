@@ -1,51 +1,31 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { star } from "../../imgs/star.js";
 
-export function StarRate(props) {
-  return (
-    <div className="star-rate">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1792 1792"
-        width="15"
-        height="15"
-      >
-        <path
-          fill="#ffb33e"
-          d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 
-                        35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 
-                        2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 
-                        56 46z"
-        ></path>
-      </svg>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1792 1792"
-        width="15"
-        height="15"
-      >
-        <path
-          fill="#ffb33e"
-          d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 
-                        35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 
-                        2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 
-                        56 46z"
-        ></path>
-      </svg>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1792 1792"
-        width="15"
-        height="15"
-      >
-        <path
-          fill="#ffb33e"
-          d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 
-                        35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 
-                        2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 
-                        56 46z"
-        ></path>
-      </svg>
-    </div>
-  );
+export class StarRate extends React.Component {
+  state = {};
+
+  rate = (reviews) => {
+    let rate = reviews.reduce((sum, review) => {
+      return (sum += review.rate);
+    }, 0);
+    return rate / reviews.length;
+  };
+
+  starts = (startsLeght) => {
+    var starts = [];
+    for (let i = 0; i < startsLeght; i++) {
+      starts[i] = star;
+    }
+    return starts;
+  };
+  render() {
+    if (!this.props.reviews || this.props.reviews.length === 0)
+      return <div>login</div>;
+    return (
+      <div className="star-rate">
+        <p>{this.starts(Math.ceil(this.rate(this.props.reviews)))}</p>
+        <p>{Number(this.rate(this.props.reviews).toFixed(1))}</p>
+      </div>
+    );
+  }
 }

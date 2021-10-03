@@ -34,7 +34,7 @@ export function IconList() {
     },
     {
       txt: "Music & Audio",
-      url: "/explore",
+      url: "/explore/?filterBy=voice",
       iconImgUrl:
         "https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg",
     },

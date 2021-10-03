@@ -25,6 +25,14 @@
   height: 100%;
   padding-top: 50px;
 }
+
+.gig-flow-continer {
+  display: flex;
+  gap: 50px;
+  .gig-info {
+    flex-grow: 1;
+  }
+}
 h1 {
   color: #404145;
   font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -177,21 +185,31 @@ h2 {
     img {
       width: 100px;
       height: 100%;
+      opacity: 0.5;
     }
     height: 60px;
   }
   .custom-dot {
     padding: 0;
+    border: 0;
     &:not(:first-child) {
       margin-left: 5px;
     }
   }
   .custom-dot--active {
     padding: 0;
-    border: 2px solid black;
     &:not(:first-child) {
       margin-left: 5px;
     }
+    img {
+      width: 100px;
+      height: 100%;
+      opacity: 1;
+    }
+  }
+  &.react-multi-carousel-dot-list {
+    bottom: -70px;
+    justify-content: start;
   }
 }
 

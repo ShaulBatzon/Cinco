@@ -2,6 +2,7 @@ import React from "react";
 import CardList from "../cmps/CardList";
 import HeroFrom from "../cmps/HeroFrom";
 import IconList from "../cmps/IconList";
+import { AppHeaderW } from "../cmps/AppHeader-wihte";
 // import AppCarousel from "../cmps/AppCarousel.jsx";
 export class HomePage extends React.Component {
   state = {};

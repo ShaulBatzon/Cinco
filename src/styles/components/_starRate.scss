@@ -1,5 +1,27 @@
 .star-rate {
   display: flex;
+  // justify-content: start;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5px;
+  p {
+    &:last-child {
+      color: #ffbe5b;
+      font-weight: bold;
+      margin-left: 5px;
+      font-size: 14px;
+    }
+  }
+}
+
+.about-seller {
+  .star-rate {
+    justify-content: start;
+    align-items: center;
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }

@@ -1,7 +1,12 @@
 aside {
   float: right;
   border: 1px solid #dadbdd;
-
+  margin-top: 25px;
+  position: sticky;
+  top: 120px;
+  order: 1;
+  flex-grow: 3;
+  height: 50%;
   button {
     background-color: $clr1;
     color: #fff;

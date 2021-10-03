@@ -8,7 +8,11 @@ export const gigs = [
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/26c7c4a5fb0d7f00117c66059a673699-1570772119630/e62ce888-a2da-4604-b40e-513384de070d.jpg",
      "description": "Web Designer, Logo Designer",
     },
+<<<<<<< HEAD
     "title": "I will design your perfecly logo",
+=======
+    "title": "I will provide a  Logo Design",
+>>>>>>> 74cd1b6be99882cf9a1baf52af8785fb2718f66b
     "description": "Welcome to my gig and thanks for viewing our GiG. Are looking for a Modern Minimalist Business Logo Design for your Business/Website? You are at right place ! I am here to give life to your dreams :))) ",
     "price": 120,
     "currncyCode": "$",
@@ -30,7 +34,7 @@ export const gigs = [
         "by": {
           "_id": "u103",
           "fullname": "Waseem Henderson",
-          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/26c7c4a5fb0d7f00117c66059a673699-1570772119630/e62ce888-a2da-4604-b40e-513384de070d.jpg"
+          "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/47968995/original/13173918_261321190883869_1570053392877747745_n.jpg"
         }
       },
       {
@@ -40,7 +44,7 @@ export const gigs = [
         "by": {
           "_id": "u102",
           "fullname": "Clarissa Mcgregor",
-          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/a34e2ad32c2d9916005e67020c8bd430-1605607494183/0e9d4a34-8732-47fd-80f4-d6916b6a9469.jpg"
+          "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/31eb19af36ea6adf4a6a05982cd3bf78-1621888718572/300156ca-04a8-4c34-8a2a-f5d1a8e27eda.jpg"
         }
       }
     ]
@@ -93,7 +97,7 @@ export const gigs = [
     "currncyCode": "$",
     "tags": [
       "music",
-      "sound"
+      "voice"
     ],
     "imgUrls": [
       "https://fiverr-res.cloudinary.com/q_auto,f_auto,dpr_2.0/general_assets/gig_gallery_package/assets/audio-delivery-bg.png",
@@ -203,8 +207,8 @@ export const gigs = [
     "price": 90,
     "currncyCode": "$",
     "tags": [
-      "Business",
-      "Virtual Assistant"
+      "business",
+      "virtual assistant"
     ],
     "imgUrls": [
       "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/157766416/original/7a66372bea4df2bb5d0da3e59018c38ac6da897b/do-general-administration-for-you-or-your-business.png",
@@ -237,8 +241,8 @@ export const gigs = [
     "price": 130,
     "currncyCode": "$",
     "tags": [
-      "Business",
-      "Virtual Assistant"
+      "business",
+      "virtual assistant"
     ],
     "imgUrls": [
       "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/211560330/original/05fee63812860f0f094f33817733507f53dd5a4a/publish-your-book-on-amazon-kindle-and-other-self-publishing-platforms.jpg",
@@ -270,8 +274,8 @@ export const gigs = [
     "price": 130,
     "currncyCode": "$",
     "tags": [
-      "Business",
-      "Virtual Assistant"
+      "business",
+      "virtual assistant"
     ],
     "imgUrls": [
       "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/189606474/original/c348a7183f63516ae423f97bbef4072e41c9162f/do-project-management-assignment-using-ms-project-and-make-gantt-chart.jpeg",
