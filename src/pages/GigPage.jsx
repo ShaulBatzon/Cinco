@@ -22,10 +22,10 @@ export class GigPage extends React.Component {
     // this.setState({gig: currGig})
     const gigId = gigService.getGigId();
     gigService.getById(gigId).then((gig) => {
+      this.setState({ reviews: gig.reviews });
       this.setState({ gig: { ...gig } });
       this.setState({ seller: gig.seller });
       this.setState({ imgUrls: gig.imgUrls });
-      this.setState({ reviews: gig.reviews });
     });
   }
 
@@ -144,7 +144,7 @@ export class GigPage extends React.Component {
             <div id="aboutSeller" className="about-the-seller-details">
               <p>{seller.fullname}</p>
               <p>{seller.description}</p>
-              <StarRate reviews={null} />
+              <StarRate reviews={reviews} />
               <p>(16223)</p>
               <button className="contact-the-seller">Contact Me</button>
             </div>
