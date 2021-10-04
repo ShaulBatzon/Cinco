@@ -10,7 +10,7 @@ class WishList extends React.Component {
 
 
   componentDidMount(){
-const user=
+// const user=;
   }
 
   render() {

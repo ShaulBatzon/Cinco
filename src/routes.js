@@ -5,6 +5,7 @@ import { BecomeASeller } from './pages/BecomeASeller.jsx'
 import { GigPage } from './pages/GigPage.jsx'
 import {userService} from './services/user.service'
 import {SignUp} from './cmps/SignUp.jsx'
+import {BuyerPage} from './pages/BuyerPage.jsx'
 // Routes accesible from the main navigation (in AppHeader)
 
 const username = userService.login().username
@@ -31,6 +32,11 @@ const routes = [
         path: username ? '/userPage':'/join', 
         component:  username ? HomePage : Login,
         label: username ? `Hello ${username}` : 'join'
+    },
+    {
+        path: '/buyerPage', 
+        component: BuyerPage,
+        label: 'buyer page'
     },
     {
         path: '/gig/',
