@@ -1,25 +1,39 @@
 import React from "react";
 import { connect } from 'react-redux'
-import {loadOrders} from "../../store/order.actions"
-
+import { loadOrders } from "../../store/order.actions"
+import { userService } from "../../services/user.service"
+import { gigService } from "../../services/gig.service"
+import { Loader } from "../../cmps/Loader.jsx";
 
 class _Orders extends React.Component {
     state = {
+        orders: [],
         selected: null
     }
 
     componentDidMount() {
-        this.props.loadOrders()
-        // this.props.loadUsers()
-      }
-
+        this.getUserOrders()
+    }
+    
+    
+    getUserOrders = async () => {
+        await this.props.loadOrders()
+        const { orders } = this.props
+        await console.log('userOrders: ', orders);
+        // this.setState({ orders: userOrders })
+    }
+    
+    
+    
     toggleSelected = (ev) => {
         console.log('val: ', ev.target.innerHTML);
     }
-
+    
     render() {
+        console.log('updated cmp')
         const { selected } = this.state
-        // const { orders } = this.props
+        // const { orders } = this.state
+        // if (!orders) return <Loader />
         return (
             <section>
                 <header className="header-row flex-between">
@@ -80,14 +94,14 @@ class _Orders extends React.Component {
 
 const mapStateToProps = state => {
     return {
-      orders: state.orderModule.orders,
-      // users: state.userModule.users,
-      // loggedInUser: state.userModule.user
+        orders: state.orderModule.orders,
+        // users: state.userModule.users,
+        // loggedInUser: state.userModule.user
     }
-  }
-  const mapDispatchToProps = {
+}
+const mapDispatchToProps = {
     loadOrders,
     // removeOrder
-  }
-  
-  export const Orders = connect(mapStateToProps, mapDispatchToProps)(_Orders)
+}
+
+export const Orders = connect(mapStateToProps, mapDispatchToProps)(_Orders)

@@ -9,11 +9,13 @@ export class Loader extends React.Component {
     render() {
         const { loading } = this.state;
         return (
+            <div className="loader">
                 <RingSpinner
                     size={40}
                     color="#1dbf73"
                     loading={loading}
                 />
+            </div>
         )
     }
 }

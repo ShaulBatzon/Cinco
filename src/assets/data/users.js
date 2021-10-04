@@ -1,7 +1,7 @@
 export const users = [
   {
     "_id": "123456789",
-    "fullname": "avishay etach",
+    "fullname": "Avishay Etach",
     "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/2a23c21c3e54eefe93213653ed04d9db-1582405905281/6e3c6988-7cf8-4395-9f2c-ebfa022c4f02.jpg",
    "imgurl2": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/2a23c21c3e54eefe93213653ed04d9db-1582405905281/6e3c6988-7cf8-4395-9f2c-ebfa022c4f02.jpg-1582405905281/6e3c6988-7cf8-4395-9f2c-ebfa022c4f02.jpg",
     "isSeller": false,
@@ -45,7 +45,7 @@ export const users = [
   },
   {
     "_id": "987654321",
-    "fullname": "omer morag",
+    "fullname": "Omer Morag",
     "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b588e4912b79a61d8986ab3bd5295ed9-1589089974499/6fb69579-17fe-4de6-b70a-55ccd32c0add.jpg",
     "imgUrl2":"https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/b588e4912b79a61d8986ab3bd5295ed9-1589089974499/6fb69579-17fe-4de6-b70a-55ccd32c0add.jpg",
     "isSeller": true,
@@ -62,7 +62,7 @@ export const users = [
   },
   {
     "_id": "234567890",
-    "fullname": "shaul batzon",
+    "fullname": "Shaul Batzon",
     "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/5f69019e7789bed723c4edc6e4159a09-1612158388846/bd53169a-c9e1-427c-9713-55772d3eca68.jpg",
     "imgUrl2":"https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/b588e4912b79a61d8986ab3bhttps://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5f69019e7789bed723c4edc6e4159a09-1612158388846/bd53169a-c9e1-427c-9713-55772d3eca68.jpgd5295ed9-1589089974499/6fb69579-17fe-4de6-b70a-55ccd32c0add.jpg",
     "isSeller": true,

@@ -86,7 +86,6 @@ class _GigPackage extends React.Component {
     const { pack, packageSelected } = this.state;
     const { gig } = this.props;
     return (
-      <div>
         <aside className="slidebar-packs">
           <div className="nav-container-pack">
             <label
@@ -152,7 +151,6 @@ class _GigPackage extends React.Component {
               </footer>
           </form>
         </aside>
-       </div>
     );
   }
 }

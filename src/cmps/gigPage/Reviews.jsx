@@ -101,8 +101,8 @@ export class Reviews extends React.Component {
                             </div>
                             <div>
                                 <ul>
-                                    {reviews.map(review => {
-                                        return <Review review={review} />
+                                    {reviews.map((review,idx) => {
+                                        return <Review key={idx} review={review} />
                                     })}
                                 </ul>
                             </div>
