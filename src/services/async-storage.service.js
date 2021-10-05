@@ -13,7 +13,7 @@ let orders = []
 
 
 
-function query(entityType,delay = 3200) {
+function query(entityType,delay = 1200) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
     let searchParams = new URLSearchParams(window.location.search)
     if( searchParams.has('filterBy')){
