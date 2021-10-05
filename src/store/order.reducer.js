@@ -1,11 +1,10 @@
 const initialState = {
-    orders: [],
+  orders: [],
   }
   
   export function orderReducer(state = initialState, action = {}) {
     switch (action.type) {
       case 'SET_ORDERS':
-        console.log('action.userOrders: ',action.userOrders);
         return { ...state, orders: action.userOrders }
       case 'ADD_ORDER':
         return { ...state, orders: [...state.orders, action.orders] }

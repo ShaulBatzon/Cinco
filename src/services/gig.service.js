@@ -21,8 +21,8 @@ async function query() {
         return await storageService.query(STORAGE_KEY)
 }
 
-function getById(gigId) {
-    return storageService.get(STORAGE_KEY, gigId)
+async function getById(gigId) {
+    return await storageService.get(STORAGE_KEY, gigId)
 }
 
 async function remove(gigId) {

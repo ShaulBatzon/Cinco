@@ -8,19 +8,15 @@ export function loadOrders() {
   return async dispatch => {
     try {
       const orders = await orderService.query()
-      const loggedinUser = userService.login()
-      console.log('orders: ', orders);
-      const userOrders = []
-      orders.map(order => {
-        gigService.getById(order.gigId).then(orderGig => {
-          // console.log('orderGig: ',orderGig);
+     
+      const userOrders = orders.filter(order => {
+        return gigService.getById(order.gigId).then(orderGig => {
+          const loggedinUser = userService.login()
           if (orderGig.seller._id === loggedinUser._id) {
-            userOrders.push(order)
+            return order
           }
         })
       })
-      // console.log('userOrders: ', userOrders);
-
       dispatch({ type: 'SET_ORDERS', userOrders })
       // socketService.on(SOCKET_EVENT_ORDER_ADDED, (order) =>{
       // dispatch({ type: 'ADD_ORDER', order: order })
