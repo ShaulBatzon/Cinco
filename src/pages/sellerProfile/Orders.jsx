@@ -1,39 +1,36 @@
 import React from "react";
 import { connect } from 'react-redux'
 import { loadOrders } from "../../store/order.actions"
-import { userService } from "../../services/user.service"
-import { gigService } from "../../services/gig.service"
+// import { userService } from "../../services/user.service"
+// import { gigService } from "../../services/gig.service"
 import { Loader } from "../../cmps/Loader.jsx";
 
 class _Orders extends React.Component {
     state = {
         orders: [],
-        selected: null
+        selected: 'active',
     }
 
-    componentDidMount() {
-        this.getUserOrders()
+    async componentDidMount() {
+        try {
+            this.props.loadOrders()
+        }
+        catch (_err) {
+            console.log(_err)
+        }
     }
-    
-    
-    getUserOrders = async () => {
-        await this.props.loadOrders()
-        const { orders } = this.props
-        await console.log('userOrders: ', orders);
-        // this.setState({ orders: userOrders })
-    }
-    
-    
-    
+
+
     toggleSelected = (ev) => {
-        console.log('val: ', ev.target.innerHTML);
+        const val = ev.target.innerHTML
+        this.setState({selected: val})
     }
-    
+
     render() {
-        console.log('updated cmp')
         const { selected } = this.state
-        // const { orders } = this.state
-        // if (!orders) return <Loader />
+        const { orders } = this.props
+        console.log('selected: ', selected);
+        if (!orders || !orders.length) return <Loader />
         return (
             <section>
                 <header className="header-row flex-between">
@@ -41,14 +38,14 @@ class _Orders extends React.Component {
                 </header>
                 <div className="orders-tabs">
                     <ul className="tabs flex">
-                        <li className="selected"><a className="clean-link" href="/orders/active" onClick={this.toggleSelected}>Active</a></li>
-                        <li className="selected"><a className="clean-link" href="/orders/delivered">Delivered</a></li>
-                        <li className="selected"><a className="clean-link" href="/orders/completed">Completed</a></li>
-                        <li className="selected"><a className="clean-link" href="/orders/cancelled">Cancelled</a></li>
+                        <li className="selected"><a className="clean-link" onClick={this.toggleSelected}>Active</a></li>
+                        <li className="selected"><a className="clean-link" onClick={this.toggleSelected}>Delivered</a></li>
+                        <li className="selected"><a className="clean-link" onClick={this.toggleSelected}>Completed</a></li>
+                        <li className="selected"><a className="clean-link" onClick={this.toggleSelected}>Cancelled</a></li>
                     </ul>
                 </div>
                 <div className="orders-table">
-                    <div>{selected}</div>
+                    <div className="order-filter-title">{selected}</div>
                     <table>
                         <thead>
                             <tr>
@@ -61,28 +58,31 @@ class _Orders extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {/* {orders.map(order => {
-                                <tr>
-                                    <td>
-                                        {order.buyer}
-                                    </td>
-                                    <td>
-                                        {order.gig}
-                                    </td>
-                                    <td>
-                                        {order.dueOn}
-                                    </td>
-                                    <td>
-                                        {order.price}
-                                    </td>
-                                    <td>
-                                        {order.note}
-                                    </td>
-                                    <td>
-                                        {order.status}
-                                    </td>
-                                </tr>
-                            })} */}
+                            {/* <tr><td>{orders[0]._id}</td></tr> */}
+                            {orders.map((order, idx) => {
+                                return (
+                                    <tr key={idx}>
+                                        <td>
+                                            {order.buyer}
+                                        </td>
+                                        <td>
+                                            {order.gigId}
+                                        </td>
+                                        <td>
+                                            {order.dueOn}
+                                        </td>
+                                        <td>
+                                            {order.price}
+                                        </td>
+                                        <td>
+                                            {order.note && order.note}
+                                        </td>
+                                        <td>
+                                            {order.status}
+                                        </td>
+                                    </tr>
+                                )
+                            })}
                         </tbody>
                     </table>
                 </div>

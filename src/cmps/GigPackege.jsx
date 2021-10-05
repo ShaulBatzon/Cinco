@@ -61,6 +61,7 @@ class _GigPackage extends React.Component {
       dueOn: new Date().getFullYear()+'-'+String(new Date().getMonth()+1).padStart(2,0)+'-'+String(new Date().getDate()).padStart(2,0),
       price: this.state.packagePrice,
       packName: this.state.packageSelected,
+      status: 'active'
     })
   }
 

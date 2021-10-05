@@ -1,6 +1,9 @@
 .main-profile {
     display: flex;
     gap: 20px;
+    justify-content: space-between;
+    gap: 100px;
+
     .seller-gigs {
         order: 1;
         flex: 1;

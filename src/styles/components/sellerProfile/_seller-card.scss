@@ -47,6 +47,27 @@
     }
 }
 
-.user-profile-info {
+.online-user-icon {
+    position: absolute;
+    right: 0;
+    height: 20px;
+    left: 74%;
+    &:first-child {
+        position: absolute;
+        right: 30px;
+        display: block;
+        z-index: 1;
+        border: 1px solid #1dbf73;
+        border-radius: 12px;
+        color: #1dbf73;
+        margin-bottom: 5px;
+        padding: 0 6px;
+        text-transform: capitalize;
 
+        & i::before {
+            font-size: 4px;
+            vertical-align: middle;
+            padding-right: 4px;
+        }
+    }
 }
