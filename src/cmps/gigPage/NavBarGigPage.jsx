@@ -12,7 +12,6 @@ export function NavBarGigPage(props) {
       </nav>
       <div className="icons-links">
         <button className="far fa-heart"></button>
-        <button>20</button>
         <button className="fas fa-share-alt"></button>
       </div>
     </div>

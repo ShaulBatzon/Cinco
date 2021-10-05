@@ -3,12 +3,12 @@ export const gigs = [
   {
     "_id": "s101",
     "seller": {
-      "_id": "u101",
-      "fullname": "Kean Trujillo",
-      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/26c7c4a5fb0d7f00117c66059a673699-1570772119630/e62ce888-a2da-4604-b40e-513384de070d.jpg",
+      "_id": "123456789",
+      "fullname": "Shaul Batzon",
+      "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0751316712af80d5728aecfac8d30dc0-1617115725506/1bdb512c-e6ab-4b4e-a394-8578328959b4.jpg",
      "description": "Web Designer, Logo Designer",
     },
-    "title": "I will provide a  Logo Design",
+    "title": "I will design your perfecly logo",
     "description": "Welcome to my gig and thanks for viewing our GiG. Are looking for a Modern Minimalist Business Logo Design for your Business/Website? You are at right place ! I am here to give life to your dreams :))) ",
     "price": 120,
     "currncyCode": "$",
@@ -48,7 +48,7 @@ export const gigs = [
   {
     "_id": "s102",
     "seller": {
-      "_id": "u102",
+      "_id": "123456789",
       "fullname": "Asif Lawson",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/profile/photos/15969333/original/Sandeep_Kakadiya.jpg",
       "description": "Emperor of Web Development and Designing",
@@ -82,7 +82,7 @@ export const gigs = [
   {
     "_id": "s103",
     "seller": {
-      "_id": "u102",
+      "_id": "123456789",
       "fullname": "Asif Lawson",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/profile/photos/15969333/original/Sandeep_Kakadiya.jpg",
       "description": "Emperor of Sound",
