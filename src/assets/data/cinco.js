@@ -3,7 +3,7 @@ export const gigs = [
   {
     "_id": "s101",
     "seller": {
-      "_id": "234567890",
+      "_id": "123456789",
       "fullname": "Shaul Batzon",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0751316712af80d5728aecfac8d30dc0-1617115725506/1bdb512c-e6ab-4b4e-a394-8578328959b4.jpg",
      "description": "Web Designer, Logo Designer",
@@ -48,7 +48,7 @@ export const gigs = [
   {
     "_id": "s102",
     "seller": {
-      "_id": "u102",
+      "_id": "123456789",
       "fullname": "Asif Lawson",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/profile/photos/15969333/original/Sandeep_Kakadiya.jpg",
       "description": "Emperor of Web Development and Designing",
@@ -82,7 +82,7 @@ export const gigs = [
   {
     "_id": "s103",
     "seller": {
-      "_id": "u102",
+      "_id": "123456789",
       "fullname": "Asif Lawson",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/profile/photos/15969333/original/Sandeep_Kakadiya.jpg",
       "description": "Emperor of Sound",

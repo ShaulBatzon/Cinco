@@ -28,3 +28,21 @@ export function onSelectGig(gigId) {
             })
     }
 }
+
+
+// export function loadGigsBySeller(sellerId) {
+//     return (dispatch, getState) => {
+//         gigService.query()
+//             .then((gigs) => {
+//                 // console.log('onSelectGig!!',gigId);
+//                 dispatch({
+//                     type: 'SELLER_GIG',
+//                     sellerId,
+//                     gigs
+//                 })
+//             })
+//             .catch(err => {
+//                 console.log('Cannot select Gig', err)
+//             })
+//     }
+// }

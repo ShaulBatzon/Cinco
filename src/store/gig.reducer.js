@@ -1,6 +1,7 @@
 const initialState = {
     gigs: [],
-    currGig: null
+    currGig: null,
+    gig:{}
 }
 
 export function gigReducer(state = initialState, action) {
@@ -14,6 +15,12 @@ export function gigReducer(state = initialState, action) {
             const currGig = state.gigs.find(gig => gig._id === action.gigId)
             newState = { ...state, currGig: currGig }
             break
+
+            // case 'SELLER_GIG':
+            //     // console.log('from re',action.sellerId);
+            // const gig = action.gigs.find(gig => gig.seller._id === action.sellerId )
+            // newState = { ...state, currGig: currGig }
+            // break
         default:
     }
     return newState
