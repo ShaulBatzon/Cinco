@@ -2,32 +2,6 @@ import { gigs } from "../assets/data/cinco.js";
 import { users } from "../assets/data/users.js";
 
 export const storageService = {
-<<<<<<< HEAD
-    query,
-    get,
-    post,
-    put,
-    remove,
-}
-
-let orders = []
-
-
-
-function query(entityType,delay = 1200) {
-    var entities = JSON.parse(localStorage.getItem(entityType)) || []
-    let searchParams = new URLSearchParams(window.location.search)
-    if( searchParams.has('filterBy')){
-        let filterBy = searchParams.get('filterBy')
-           if(filterBy){
-      var tags = entities.filter(entity=>
-        entity.tags.find((tag)=>
-         tag === filterBy
-        )
-        )
-        entities = tags
-      }
-=======
   query,
   get,
   post,
@@ -48,7 +22,6 @@ function query(entityType, delay = 1200) {
         entity.tags.find((tag) => tag === filterBy)
       );
       entities = tags;
->>>>>>> cf0d805af6d141b00a838afe115579d4efe19d76
     }
   }
 

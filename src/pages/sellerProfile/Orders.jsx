@@ -29,8 +29,8 @@ class _Orders extends React.Component {
     render() {
         const { selected } = this.state
         const { orders } = this.props
-        console.log('selected: ', selected);
-        if (!orders || !orders.length) return <Loader />
+        // console.log('selected: ', selected);
+        if (!orders) return <Loader />
         return (
             <section>
                 <header className="header-row flex-between">

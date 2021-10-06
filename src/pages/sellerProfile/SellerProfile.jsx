@@ -10,7 +10,7 @@ export class SellerProfile extends React.Component {
 
 
     async componentDidMount() {
-        const user = userService.login()
+        const user = userService.getLoginUser()
         try {
             const seller = await userService.getById(user._id)
             this.setState({ seller })
@@ -54,7 +54,6 @@ export class SellerProfile extends React.Component {
                             <section>
                                 <textarea className="textarea-description" name="description" maxLength="600" minLength="15" placeholder="Please tell us about any hobbies, additional expertise, or anything else you'd like to add."
                                     spellCheck="false" onChange={this.handleChange}>
-
                                 </textarea>
                                 <input type="button" value="Cancel" />
                                 <input type="submit" value="Update" />

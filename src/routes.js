@@ -9,11 +9,11 @@ import { BuyerPage } from "./pages/BuyerPage.jsx";
 import { SellerProfile } from "./pages/sellerProfile/SellerProfile.jsx";
 import { Orders } from "./pages/sellerProfile/Orders.jsx";
 import { SellerGigs } from "./pages/sellerProfile/SellerGigs.jsx";
-import { addNewGig } from "./pages/sellerProfile/addNewGig";
+import { AddGig } from "./pages/sellerProfile/AddGig";
 // Routes accesible from the main navigation (in AppHeader)
 
-const username = userService.login().username;
-const isSeller = userService.login().isSeller;
+const username = userService.getLoginUser().username;
+const isSeller = userService.getLoginUser().isSeller;
 const routes = [
   {
     path: "/",
@@ -56,12 +56,12 @@ const routes = [
     component: SellerGigs,
   },
   {
-    path: "/orders/",
+    path: "/sellerProfile/orders",
     component: Orders,
   },
   {
-    path: "/sellerProfile/gigs/addNewGig",
-    component: addNewGig,
+    path: "/sellerProfile/gigs/addGig",
+    component: AddGig,
   },
   // {
   //     path: '/buyerPage',
