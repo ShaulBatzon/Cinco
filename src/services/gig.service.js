@@ -9,7 +9,6 @@ export const gigService = {
     getById,
     save,
     remove,
-    // getEmptyGig,
     getGigId,
     getGigBySeller
     // subscribe
@@ -37,12 +36,6 @@ async function save(gig) {
         return await storageService.post(STORAGE_KEY, gig)
     }
 }
-
-// function getEmptyGig() {
-//     return {
-
-//     }
-// }
 
  function getGigId() {
     let searchParams = new URLSearchParams(window.location.search)

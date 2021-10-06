@@ -8,15 +8,8 @@ export function loadOrders() {
   return async dispatch => {
     try {
       const orders = await orderService.query()
-     
-      const userOrders = orders.filter(order => {
-        return gigService.getById(order.gigId).then(orderGig => {
-          const loggedinUser = userService.login()
-          if (orderGig.seller._id === loggedinUser._id) {
-            return order
-          }
-        })
-      })
+      const loggedinUser = await userService.getLoginUser()
+      const userOrders = orders.filter(order => order.sellerId === loggedinUser._id)
       dispatch({ type: 'SET_ORDERS', userOrders })
       // socketService.on(SOCKET_EVENT_ORDER_ADDED, (order) =>{
       // dispatch({ type: 'ADD_ORDER', order: order })

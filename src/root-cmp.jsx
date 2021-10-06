@@ -15,7 +15,7 @@ export class RootCmp extends React.Component {
     isSellerMode: null,
   };
   componentDidMount() {
-    const user = userService.login();
+    const user = userService.getLoginUser();
     if (user) {
       const { isSeller } = user;
       this.setState({ isSellerMode: isSeller });
@@ -28,9 +28,6 @@ export class RootCmp extends React.Component {
     return (
       <div>
         <main>
-          {/* {
-            this.state.isSellerMode ? <HeaderSeller /> : <AppHeader />
-          } */}
 
           {routesH.map((route) => (
             <Route
