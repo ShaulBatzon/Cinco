@@ -46,7 +46,7 @@ class _GigPackage extends React.Component {
     const { gig } = this.props;
     const { name } = this.state.pack;
     orderService.save({
-      user: userService.login().username,
+      user: userService.getLoginUser().username,
       price: this.state.packagePrice,
       packName: this.state.packageSelected,
     });
@@ -54,15 +54,19 @@ class _GigPackage extends React.Component {
 
   addOrder = async ev => {
     ev.preventDefault()
-    const { gig } = this.props;
-    await this.props.addOrder({
-      buyer: userService.login().username,
-      gigId: gig._id,
-      dueOn: new Date().getFullYear()+'-'+String(new Date().getMonth()+1).padStart(2,0)+'-'+String(new Date().getDate()).padStart(2,0),
-      price: this.state.packagePrice,
-      packName: this.state.packageSelected,
-      status: 'active'
-    })
+    const loginUser = userService.getLoginUser()
+    if (Object.keys(loginUser).length === 0) return
+      const { gig } = this.props;
+      await this.props.addOrder({
+        buyer: userService.getLoginUser().username,
+        gigId: gig._id,
+        sellerId: gig.seller._id,
+        dueOn: new Date().getFullYear()+'-'+String(new Date().getMonth()+1).padStart(2,0)+'-'+String(new Date().getDate()).padStart(2,0),
+        price: this.state.packagePrice,
+        packName: this.state.packageSelected,
+        status: 'active'
+      })
+    
   }
 
   onClick = (currLabel) => {

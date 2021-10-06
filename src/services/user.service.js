@@ -15,11 +15,11 @@ export const userService = {
     getById,
     remove,
     checkValidLogin,
-    login,
+    getLoginUser,
     add
 }
 
-function login() {
+function getLoginUser() {
     var loginUser = JSON.parse(sessionStorage.getItem('loginUser')) || {}
     return loginUser
 }

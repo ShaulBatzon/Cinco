@@ -37,11 +37,6 @@ export class HeaderSeller extends React.Component {
                 Earnings
               </a>
             </li>
-            <li className="selected">
-              <Link to="/sellerProfile/gigs/addNewGig">
-                <button>create a new gig</button>
-              </Link>
-            </li>
           </ul>
         </nav>
       </div>

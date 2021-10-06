@@ -8,11 +8,12 @@ export const gigService = {
     getById,
     save,
     remove,
-    // getEmptyGig,
-    getGigId
+    getGigId,
+    getGigBySeller
     // subscribe
 }
 window.gs = gigService;
+
 
 
 async function query() {
