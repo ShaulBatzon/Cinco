@@ -9,7 +9,7 @@ export class HeaderSeller extends React.Component {
           <ul className="tabs flex">
             <li className="active selected">
               <a className="clean-link" href="/sellerProfile/dashboard">
-                Dashboard
+                Profile
               </a>
             </li>
             <li className="selected">
@@ -36,11 +36,6 @@ export class HeaderSeller extends React.Component {
               <a className="clean-link" href="/sellerProfile/earnings">
                 Earnings
               </a>
-            </li>
-            <li className="selected">
-              <Link to="/sellerProfile/gigs/addNewGig">
-                <button>create a new gig</button>
-              </Link>
             </li>
           </ul>
         </nav>
