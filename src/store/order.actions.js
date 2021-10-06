@@ -43,3 +43,22 @@ export function removeOrder(orderId) {
     }
   }
 }
+
+export function acceptOrder(orders , acceptedOrder) {
+  return async dispatch => {
+    try {
+      console.log('orders: ',orders);
+      console.log('acceptedOrder: ',acceptedOrder);
+      orders.foreach(order => {
+        if (order._id === acceptedOrder._id) {
+          order.status = 'active'
+        }
+      })
+
+      const orderId = acceptedOrder._id
+      dispatch({ type: 'UPDATE_ORDER', orderId })
+    } catch (err) {
+      console.log('OrderActions: err in removeOrder', err)
+    }
+  }
+}

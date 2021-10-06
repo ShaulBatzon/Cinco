@@ -10,7 +10,6 @@ export const gigService = {
     save,
     remove,
     getGigId,
-    getGigBySeller
     // subscribe
 }
 window.gs = gigService;
@@ -46,15 +45,6 @@ async function save(gig) {
     }
 }
 
- function getGigBySeller(sellerId) {
-     storageService.query(STORAGE_KEY)
-     .then((gigs)=>{
-         console.log('gigs',gigs);
-         const crrgig =  gigs.filter(gig=>gig.seller._id === sellerId)
-         console.log('crr',crrgig);
-         return crrgig
-     })
-    }
 
 // function subscribe(listener) {
 //     listeners.push(listener)
