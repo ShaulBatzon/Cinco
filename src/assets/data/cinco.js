@@ -18,9 +18,9 @@ export const gigs = [
       "web"
     ],
     "imgUrls": [
-      "https://fiverr-res.cloudinary.com/t_gig_cards_web_x2,q_auto,f_auto/gigs/99806061/original/3e7b24fb9dfae7647b55caa0b7d43b597d4fad7e.jpg",
-      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/3171448/original/a41a38f3733bb97279a49d1449f7337dece50693/create-3-original-logo-with-vector-source-file.jpg",
-      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/3171448/original/5e98e639d24a69bfd38c35f6aaa736837c3bda93/create-3-original-logo-with-vector-source-file.jpg"
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/69345221/original/1dbf44ba01c1be3ea2d56acc0a2d9be1d4628cd7/create-brand-logo-identity-and-website.jpg",
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/69345221/original/3452f794d4aecdf1c40ca42a888fc201a6aa8b2e/create-brand-logo-identity-and-website.jpg",
+      "https://fiverr-res.cloudinary.com/images/t_gig_pdf_gallery_view_ver4,q_auto,f_auto/attachments/delivery/asset/76b5787b61d5bc96faf7a0a1fdd9a6ab-1632845713/14W/create-brand-logo-identity-and-website.pdf"
     ],
     "reviews": [
       {
