@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux'
-import { loadOrders } from "../../store/order.actions"
+import { loadOrders,  acceptOrder} from "../../store/order.actions"
 // import { userService } from "../../services/user.service"
 // import { gigService } from "../../services/gig.service"
 import { Loader } from "../../cmps/Loader.jsx";
@@ -20,10 +20,16 @@ class _Orders extends React.Component {
         }
     }
 
-
     toggleSelected = (ev) => {
         const val = ev.target.innerHTML
-        this.setState({selected: val})
+        this.setState({ selected: val })
+    }
+
+    acceptOrder = (orders, acceptedOrder) => {
+        // if (order.status === 'active') return
+        this.props.acceptOrder(orders, acceptedOrder)
+        const orderFromState = this.props.orders.filter(order => order._id === currOrder._id)
+        acceptedOrder.status = 'active'
     }
 
     render() {
@@ -58,28 +64,32 @@ class _Orders extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {/* <tr><td>{orders[0]._id}</td></tr> */}
                             {orders.map((order, idx) => {
                                 return (
                                     <tr key={idx}>
-                                        <td>
-                                            {order.buyer}
-                                        </td>
-                                        <td>
-                                            {order.gigId}
-                                        </td>
-                                        <td>
-                                            {order.dueOn}
-                                        </td>
-                                        <td>
-                                            {order.price}
-                                        </td>
-                                        <td>
-                                            {order.note && order.note}
-                                        </td>
-                                        <td>
-                                            {order.status}
-                                        </td>
+                                        {/* <div> */}
+                                            <td>
+                                                {order.buyer}
+                                            </td>
+                                            <td>
+                                                {order.gigId}
+                                            </td>
+                                            <td>
+                                                {order.dueOn}
+                                            </td>
+                                            <td>
+                                                {order.price}
+                                            </td>
+                                            <td>
+                                                {order.note && order.note}
+                                            </td>
+                                            <td>
+                                                {order.status}
+                                            </td>
+                                            <td>
+                                                <button onClick={() => this.acceptOrder(orders ,order)}>Accept</button>
+                                            </td>
+                                        {/* </div> */}
                                     </tr>
                                 )
                             })}
@@ -101,6 +111,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = {
     loadOrders,
+    acceptOrder
     // removeOrder
 }
 

@@ -94,27 +94,50 @@ export function CardList() {
           itemClass=""
           keyBoardControl
           minimumTouchDrag={80}
-          renderButtonGroupOutside={false}
+          renderButtonGroupOutside={true}
           renderDotsOutside={false}
           responsive={{
-            desktop: {
+            one: {
               breakpoint: {
-                max: 3000,
-                min: 1024,
-              },
-              items: 5,
-            },
-            mobile: {
-              breakpoint: {
-                max: 464,
                 min: 0,
+                max: 350,
               },
-              items: 5,
+              items: 1,
             },
-            tablet: {
+            two: {
               breakpoint: {
-                max: 1024,
-                min: 464,
+                min: 350,
+                max: 700,
+              },
+              items: 2,
+            },
+            three: {
+              breakpoint: {
+                min: 700,
+                max: 1050,
+              },
+              items: 3,
+            },
+
+            three: {
+              breakpoint: {
+                min: 700,
+                max: 1050,
+              },
+              items: 3,
+            },
+
+            four: {
+              breakpoint: {
+                min: 1050,
+                max: 1400,
+              },
+              items: 4,
+            },
+            cinco: {
+              breakpoint: {
+                min: 1400,
+                max: 5000,
               },
               items: 5,
             },

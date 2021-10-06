@@ -5,13 +5,12 @@ aside {
   position: sticky;
   top: 120px;
   order: 1;
-  flex-grow: 3;
-  height: 50%;
-  
+  flex-grow: 0.5;
+  height: 70%;
+
   button {
     background-color: $clr1;
     color: #fff;
-    margin-top: 20px;
     font-family: Macan;
     font-size: 16px;
   }
@@ -19,7 +18,7 @@ aside {
   footer {
     display: flex;
     flex-direction: column;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
   }
 
   .nav-container-pack {
@@ -58,8 +57,8 @@ aside {
 .packs-form {
   display: flex;
   flex-direction: column;
-  padding-right: 24px;
-  padding-left: 24px;
+  padding-right: 40px;
+  padding-left: 40px;
   color: #404145;
   font-family: Macan;
   .from-heder {
@@ -106,6 +105,7 @@ aside {
 .features {
   list-style-type: none;
   padding: unset;
+  margin: 20px 0;
   li {
     display: flex;
     align-items: center;

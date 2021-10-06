@@ -6,6 +6,7 @@
 .gig-page-container {
   margin: 0 auto;
   max-width: 80%;
+  margin-top: 20px;
 }
 
 .container-navbar {
@@ -13,12 +14,13 @@
   height: 53px;
   border-bottom: 1px solid #dddee0;
   border-top: 1px solid #dddee0;
-  top: 80px;
+  // top: 80px;
   left: 0;
   // position: fixed;
   z-index: 5;
   background: white;
   position: absolute;
+  top: 80px;
 }
 .gig-review-container {
   width: 100%;
@@ -29,8 +31,10 @@
 .gig-flow-continer {
   display: flex;
   gap: 50px;
+  margin-top: 60px;
+  justify-content: space-between;
   .gig-info {
-    flex-grow: 1;
+    width: 60%;
   }
 }
 h1 {

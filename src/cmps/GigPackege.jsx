@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { orderService } from "../services/order.service";
 import { userService } from "../services/user.service";
 import {addOrder, loadOrders} from "../store/order.actions"
+import {utilService} from "../services/util.service"
 
 class _GigPackage extends React.Component {
   state = {
@@ -58,13 +59,13 @@ class _GigPackage extends React.Component {
     if (Object.keys(loginUser).length === 0) return
       const { gig } = this.props;
       await this.props.addOrder({
-        buyer: userService.getLoginUser().username,
+        buyer: loginUser.username,
         gigId: gig._id,
         sellerId: gig.seller._id,
-        dueOn: new Date().getFullYear()+'-'+String(new Date().getMonth()+1).padStart(2,0)+'-'+String(new Date().getDate()).padStart(2,0),
+        dueOn: utilService.getDate(),
         price: this.state.packagePrice,
         packName: this.state.packageSelected,
-        status: 'active'
+        status: 'pending'
       })
     
   }

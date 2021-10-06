@@ -13,8 +13,8 @@ const initialState = {
       case 'UPDATE_ORDER':
         return {
           ...state,
-          orders: state.orders.map(orders =>
-            orders._id === action.orders._id ? action.orders : orders
+          orders: state.orders.map(order =>
+            order._id === action.order._id ? action.order : order
           )}
       default:
         return state
