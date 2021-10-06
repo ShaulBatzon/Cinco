@@ -1,5 +1,7 @@
+import { httpService } from './http.service.js'
 import { storageService } from './async-storage.service.js'
 const STORAGE_KEY = 'users'
+
 
 
 //function user-service
@@ -23,19 +25,23 @@ function login() {
 }
 
 async function query() {
-    return await storageService.query(STORAGE_KEY)
+    //return await storageService.query(STORAGE_KEY)
+    return await httpService.get(`user`);
 }
 
 async function getById(userId) {
-    return await storageService.get(STORAGE_KEY, userId)
+    return httpService.get(`user/${userId}`)
+    //return await storageService.get(STORAGE_KEY, userId)
 }
 async function remove(userId) {
-    return await storageService.remove(STORAGE_KEY, userId)
+   // return await storageService.remove(STORAGE_KEY, userId)
+    return httpService.delete(`user/${userId}`);
 }
 
 async function checkValidLogin(username, password) {
     try {
-        const users = await query(STORAGE_KEY)
+        const users = await query()
+        console.log(users);
         const user = users.find(user => user.username === username)
         if (!user) throw 'No such username'
         if (user.password === password){
