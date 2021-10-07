@@ -23,7 +23,7 @@ class _GigPackage extends React.Component {
       ],
     },
     packageSelected: "Basic",
-    packagePrice: "",
+    packagePrice: this.props.gig.price,
   };
 
   componentDidMount() {
@@ -39,6 +39,7 @@ class _GigPackage extends React.Component {
     const { gig } = this.props;
     const standardPirce = gig.price * 2;
     const PremiumPirce = standardPirce * 2;
+    // eslint-disable-next-line default-case
     switch (packageSelected) {
       case "Basic":
         return gig.price;
@@ -63,7 +64,7 @@ class _GigPackage extends React.Component {
   addOrder = async ev => {
     ev.preventDefault()
     const loginUser = userService.getLoginUser()
-    if (Object.keys(loginUser).length === 0) return
+    if (Object.keys(loginUser).length === 0) return null;
       const { gig } = this.props;
       await this.props.addOrder({
         buyer: loginUser.username,
