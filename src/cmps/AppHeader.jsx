@@ -14,17 +14,17 @@ export class AppHeader extends React.Component {
     comp: <AppHeaderR />,
   };
 
-  componentDidMount() {
-    connectSocket()
-  }
+  // componentDidMount() {
+  //   connectSocket()
+  // }
   
-  componentWillUnmount() {
-    disconnectSocket()
-  }
+  // componentWillUnmount() {
+  //   disconnectSocket()
+  // }
   
-  connectSocket = () => {
+  // connectSocket = () => {
     
-  }
+  // }
 
   change = () => {
     if (window.scrollY >= 100) {

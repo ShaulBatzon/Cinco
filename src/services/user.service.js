@@ -16,14 +16,13 @@ export const userService = {
     query,
     getById,
     remove,
-    checkValidLogin,
     getLoginUser,
     // add,
     login
 }
 
 function getLoginUser() {
-    var loginUser = JSON.parse(sessionStorage.getItem('loginUser')) || {}
+    var loginUser = JSON.parse(sessionStorage.getItem('loggedinUser')) || {}
     return loginUser
 }
 
@@ -50,16 +49,17 @@ async function login(userCred) {
     // const user = users.find(user => user.username === userCred.username)
     // return _saveLocalUser(user)
     try {
-
+        console.log('user: ',userCred);
         const user = await httpService.post('auth/login', userCred)
-        console.log('user: ',user);
         socketService.emit('set-user-socket', user._id);
-        if (user) return _saveLocalUser(user)
-    }catch (err) {
+        _saveLocalUser(user);
+        window.location.href = '/';
+        return user;
+          }catch (err) {
         console.log(err);
     }
 }
-
+    
 async function signup(userCred) {
     // const user = await storageService.post('user', userCred)
     const user = await httpService.post('auth/signup', userCred)
@@ -73,23 +73,23 @@ async function logout() {
     return await httpService.post('auth/logout')
 }
 
-async function checkValidLogin(username, password) {
-    try {
-        const users = await query()
-        console.log(users);
-        const user = users.find(user => user.username === username)
-        if (!user) throw 'No such username'
-        if (user.password === password) {
-            user.password = ''
-            sessionStorage['loginUser'] = JSON.stringify(user);
-            window.location.href = '/';
-        }
-        else throw 'wrong password'
-    }
-    catch (_err) {
-        throw (_err)
-    }
-}
+// async function checkValidLogin(username, password) {
+//     try {
+//         const users = await query()
+//         console.log(users);
+//         const user = users.find(user => user.username === username)
+//         if (!user) throw 'No such username'
+//         if (user.password === password) {
+//             user.password = ''
+//             sessionStorage['loginUser'] = JSON.stringify(user);
+//             window.location.href = '/';
+//         }
+//         else throw 'wrong password'
+//     }
+//     catch (_err) {
+//         throw (_err)
+//     }
+// }
 
 
 // async function add(user) {
@@ -104,9 +104,7 @@ async function checkValidLogin(username, password) {
 //   }
 
 function _saveLocalUser(user) {
-    console.log('user: ', user);
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
-    return user
 }
 
 function getLoggedinUser() {
