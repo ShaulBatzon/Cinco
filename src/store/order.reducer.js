@@ -7,6 +7,7 @@ const initialState = {
       case 'SET_ORDERS':
         return { ...state, orders: action.userOrders }
       case 'ADD_ORDER':
+        console.log("from action omer",action.orders);
         return { ...state, orders: [...state.orders, action.orders] }
       case 'REMOVE_ORDER':
         return { ...state, orders: state.orders.filter(order => order._id !== action.ordersId) }

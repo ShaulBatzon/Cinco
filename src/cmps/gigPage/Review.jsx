@@ -17,11 +17,11 @@ export class Review extends React.Component {
           <div className="user-name">
             <p>{review.by.fullname}</p>
             {star}
-            <p>{Math.floor(Math.random() * 5)}</p>
+            <p>{review.rate}</p>
           </div>
           <p>{review.txt}</p>
           <span>
-            <time>Published 1 day ago</time>
+            <time>Published {Math.floor(Math.random() * 20)} day ago</time>
           </span>
         </header>
       </li>
