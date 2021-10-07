@@ -1,6 +1,9 @@
 .gig-page-body {
   max-width: 1200px;
   margin: 0 auto;
+  @media (max-width: $mobile-breakpoint) {
+    max-width: $mobile-breakpoint;
+  }
 }
 
 .gig-page-container {
@@ -21,6 +24,9 @@
   background: white;
   position: absolute;
   top: 80px;
+  @media (max-width: $mobile-breakpoint) {
+    display: none;
+  }
 }
 .gig-review-container {
   width: 100%;
@@ -35,6 +41,16 @@
   justify-content: space-between;
   .gig-info {
     width: 60%;
+    @media (max-width: $mobile-breakpoint) {
+      width: 100%;
+    }
+  }
+  @media (max-width: $mobile-breakpoint) {
+    // margin-top: 10px;
+    flex-direction: column;
+    > * {
+      width: 100%;
+    }
   }
 }
 h1 {
@@ -45,6 +61,12 @@ h1 {
   width: rem(700px);
   font-size: rem(28px);
   padding-bottom: 16px;
+  @media (max-width: $mobile-breakpoint) {
+    margin-top: 95px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    width: 100%;
+  }
 }
 
 .seller-overview {
@@ -98,6 +120,7 @@ h2 {
   color: #62646a;
   font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-bottom: 80px;
+  line-height: 28px;
 }
 
 .about-seller {
@@ -181,6 +204,10 @@ h2 {
     .react-multiple-carousel__arrow--right {
       right: -25px;
     }
+  }
+  @media (max-width: $mobile-breakpoint) {
+    width: 100%;
+    height: rem(200px);
   }
 }
 

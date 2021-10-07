@@ -7,6 +7,8 @@ aside {
   order: 1;
   flex-grow: 0.5;
   height: 70%;
+  z-index: 10001;
+  background-color: white;
 
   button {
     background-color: $clr1;
@@ -57,8 +59,7 @@ aside {
 .packs-form {
   display: flex;
   flex-direction: column;
-  padding-right: 40px;
-  padding-left: 40px;
+  margin: 0 30px;
   color: #404145;
   font-family: Macan;
   .from-heder {

@@ -1,15 +1,34 @@
+.gig-list {
+  @media (max-width: $mobile-breakpoint) {
+    margin-top: 0;
+  }
+}
+
+.space {
+  height: 80px;
+}
+
 .card-preview {
   display: flex;
   flex-direction: column;
   border: 1px solid #e4e5e7;
   font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
   .gigs-imgs {
     width: 100%;
+  }
+  .card-title {
+    transition: 0.3s;
+  }
+  &:hover {
+    .card-title {
+      color: $clr1;
+    }
   }
 }
 
 .card-mini-user {
-  padding: 12px 12px 8px;
+  padding: 12px 12px 15px;
   height: 54px;
   width: 100%;
   display: flex;
@@ -23,8 +42,11 @@
   line-height: 22px;
   font-weight: 400;
   height: 43px;
-  overflow: hidden;
-  padding: 0 12px 5px;
+
+  width: 100%;
+  // overflow: hidden;
+  padding: 0px 8px;
+  margin-bottom: 15px;
 }
 
 .gig-rating {
@@ -33,10 +55,15 @@
   flex-grow: 1;
 }
 
-.gig-rating span {
-  color: #b5b6ba;
-  font-weight: 400;
-  margin-left: 2px;
+.gig-rating {
+  > span {
+    font-weight: 400;
+    padding-top: 2px;
+    &:last-child {
+      color: #b5b6ba;
+      padding-top: 0;
+    }
+  }
 }
 
 .content-info {
@@ -44,7 +71,9 @@
   justify-content: flex-start;
   gap: 5px;
   align-items: center;
-  padding: 10px 12px;
+  // padding: 10px 12px;
+  margin-bottom: 10px;
+  margin-left: 5px;
 }
 
 .preview-card-footer {
