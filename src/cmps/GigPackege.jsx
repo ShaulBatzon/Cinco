@@ -23,7 +23,7 @@ class _GigPackage extends React.Component {
       ],
     },
     packageSelected: "Basic",
-    packagePrice: this.props.gig.price,
+    packagePrice: "60",
   };
 
   componentDidMount() {

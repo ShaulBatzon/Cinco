@@ -7,6 +7,7 @@ import { Loader } from "../../cmps/Loader.jsx";
 
 class _Orders extends React.Component {
     state = {
+        orders: [],
         selected: 'active',
     }
 
