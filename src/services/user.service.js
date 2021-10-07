@@ -51,7 +51,7 @@ async function login(userCred) {
     try {
         console.log('user: ',userCred);
         const user = await httpService.post('auth/login', userCred)
-        // socketService.emit('set-user-socket', user._id);
+        socketService.emit('set-user-socket', user._id);
         _saveLocalUser(user);
         window.location.href = '/';
         return user;
@@ -104,8 +104,6 @@ async function logout() {
 //   }
 
 function _saveLocalUser(user) {
-    console.log(user);
-    debugger
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
 }
 

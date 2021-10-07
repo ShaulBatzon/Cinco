@@ -5,15 +5,14 @@ import { Loader } from "../../cmps/Loader.jsx";
 
 export class SellerProfile extends React.Component {
     state = {
-
+        seller: null
     }
 
 
     async componentDidMount() {
         const user = userService.getLoginUser()
         try {
-            const seller = await userService.getById(user._id)
-            this.setState({ seller })
+            this.setState({ seller: user})
         }
         catch (err) {
             console.log(err);
