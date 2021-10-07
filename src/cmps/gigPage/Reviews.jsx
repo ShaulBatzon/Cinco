@@ -2,6 +2,7 @@ import React from "react";
 import { star } from '../../imgs/star.js'
 import { utilService } from '../../services/util.service.js'
 import { Review } from "./Review.jsx";
+import {StarRate} from "./StarRate.jsx"
 export class Reviews extends React.Component {
     state = {
         ratingBreakdown: {
@@ -12,7 +13,7 @@ export class Reviews extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ ratingBreakdown: { sellerCommunicationLevel: utilService.getRandomIntInclusive(1, 5), friendRecommend: utilService.getRandomIntInclusive(1, 5), serviceAsDescribed: utilService.getRandomIntInclusive(1, 5) } })
+        this.setState({ ratingBreakdown: { sellerCommunicationLevel: utilService.getRandomIntInclusive(4, 5), friendRecommend: utilService.getRandomIntInclusive(4, 5), serviceAsDescribed: utilService.getRandomIntInclusive(4, 5) } })
 
     }
 
@@ -32,7 +33,7 @@ export class Reviews extends React.Component {
                                 </span>
                                 <small>
                                     <span className="total-rating">
-                                        <span>{star}{star}{star}{star}{star}</span><span>5</span>
+                                        <span><StarRate reviews={reviews}></StarRate></span>
                                     </span>
                                 </small>
                             </h2>
