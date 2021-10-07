@@ -1,9 +1,8 @@
 import io from 'socket.io-client'
-
 export const SOCKET_EMIT_USER_WATCH = 'user-watch';
 export const SOCKET_EVENT_USER_UPDATED = 'user-updated';
-export const SOCKET_EVENT_REVIEW_ADDED = 'review-added';
-export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you';
+export const SOCKET_EVENT_ORDER_ADDED = 'order-added';
+export const SOCKET_EVENT_YOU_GOT_ORDER = 'you-got-review';
 
 
 const baseUrl = (process.env.NODE_ENV === 'production') ? '' : '//localhost:3030'
@@ -39,8 +38,8 @@ function createSocketService() {
   return socketService
 }
 
-socketService.on(SOCKET_EVENT_REVIEW_ABOUT_YOU, review => {
-  console.log('Review about me!', review);
+socketService.on(SOCKET_EVENT_YOU_GOT_ORDER, order => {
+  console.log('I got order!', order);
 
 })
 
