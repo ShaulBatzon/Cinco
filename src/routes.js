@@ -12,8 +12,10 @@ import { SellerGigs } from "./pages/sellerProfile/SellerGigs.jsx";
 import { AddGig } from "./pages/sellerProfile/AddGig";
 // Routes accesible from the main navigation (in AppHeader)
 
-const username = userService.getLoginUser().username;
-const isSeller = userService.getLoginUser().isSeller;
+
+const username =  userService.getLoginUser().username;
+const isSeller =  userService.getLoginUser().isSeller;
+
 const routes = [
   {
     path: "/",
