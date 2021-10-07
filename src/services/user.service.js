@@ -40,7 +40,7 @@ async function getById(userId) {
 }
 
 async function remove(userId) {
-   // return await storageService.remove(STORAGE_KEY, userId)
+    // return await storageService.remove(STORAGE_KEY, userId)
     return httpService.delete(`users/${userId}`);
 }
 
@@ -49,10 +49,15 @@ async function login(userCred) {
     // const users = await storageService.query('user')
     // const user = users.find(user => user.username === userCred.username)
     // return _saveLocalUser(user)
+    try {
 
-    const user = await httpService.post('auth/login', userCred)
-    socketService.emit('set-user-socket', user._id);
-    if (user) return _saveLocalUser(user)
+        const user = await httpService.post('auth/login', userCred)
+        console.log('user: ',user);
+        socketService.emit('set-user-socket', user._id);
+        if (user) return _saveLocalUser(user)
+    }catch (err) {
+        console.log(err);
+    }
 }
 
 async function signup(userCred) {
@@ -74,7 +79,7 @@ async function checkValidLogin(username, password) {
         console.log(users);
         const user = users.find(user => user.username === username)
         if (!user) throw 'No such username'
-        if (user.password === password){
+        if (user.password === password) {
             user.password = ''
             sessionStorage['loginUser'] = JSON.stringify(user);
             window.location.href = '/';
@@ -82,7 +87,7 @@ async function checkValidLogin(username, password) {
         else throw 'wrong password'
     }
     catch (_err) {
-    throw (_err)
+        throw (_err)
     }
 }
 
@@ -98,7 +103,8 @@ async function checkValidLogin(username, password) {
 //   storageService.post(STORAGE_KEY,user);
 //   }
 
-  function _saveLocalUser(user) {
+function _saveLocalUser(user) {
+    console.log('user: ', user);
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }

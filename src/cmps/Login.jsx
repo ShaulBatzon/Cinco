@@ -25,7 +25,7 @@ export class Login extends React.Component {
     const { username, password } = this.state;
     ev.preventDefault();
     try {
-      userService.checkValidLogin(username, password);
+      userService.login({username, password});
       this.setState({ username: "", password: "" });
     } catch (_err) {
       console.log(_err);
