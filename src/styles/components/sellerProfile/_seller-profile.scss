@@ -3,11 +3,12 @@
   justify-content: space-between;
   max-width: 1300px;
   margin: 0 auto;
-  gap: 15px;
+  gap: 80px;
+  margin-top: 40px;
 
   .seller-gigs {
     order: 1;
-    flex: 1;
+    flex: 2;
   }
 }
 
@@ -27,7 +28,7 @@
   border: 1px solid #ddd;
   border-radius: 2px;
   padding: 0 25px;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
   position: relative;
   margin-top: unset;
 
@@ -88,6 +89,7 @@
     border-radius: 3px;
     resize: none;
     font-size: 16px;
+    margin-bottom: 15px;
   }
 
   input {
@@ -108,9 +110,19 @@
     border-radius: 3px;
   }
 
-  section :last-child {
-    background-color: #1dbf73;
-    color: #fff;
+  aside {
+    order: 0;
+    margin-bottom: 15px;
+    padding-left: 15px;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    input:last-of-type {
+      background-color: #1dbf73;
+      color: white;
+    }
   }
 }
 

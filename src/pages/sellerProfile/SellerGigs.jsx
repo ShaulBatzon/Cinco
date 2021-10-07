@@ -12,7 +12,6 @@ class _SellerGigs extends React.Component {
     this.props.loadGigs();
   }
   render() {
-
     const user = userService.getLoginUser()._id;
     const sellerGigs = this.props.gigs.filter((gig) => gig.seller._id === user);
     return (
@@ -20,9 +19,6 @@ class _SellerGigs extends React.Component {
         {sellerGigs.map((gig, idx) => (
           <GigPreview key={idx} gig={gig} />
         ))}
-        <Link to="/sellerProfile/gigs/AddGig">
-          <button>Create a new gig</button>
-        </Link>
       </div>
     );
   }

@@ -14,6 +14,18 @@ export class AppHeader extends React.Component {
     comp: <AppHeaderR />,
   };
 
+  // componentDidMount() {
+  //   connectSocket()
+  // }
+  
+  // componentWillUnmount() {
+  //   disconnectSocket()
+  // }
+  
+  // connectSocket = () => {
+    
+  // }
+
   change = () => {
     if (window.scrollY >= 100) {
       this.setState({ actvie: true, comp: <AppHeaderW /> });
