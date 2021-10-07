@@ -5,19 +5,13 @@ import { Loader } from "../../cmps/Loader.jsx";
 
 export class SellerProfile extends React.Component {
     state = {
-
+        seller: null
     }
 
 
-    async componentDidMount() {
+    componentDidMount() {
         const user = userService.getLoginUser()
-        try {
-            const seller = await userService.getById(user._id)
-            this.setState({ seller })
-        }
-        catch (err) {
-            console.log(err);
-        }
+        this.setState({seller: user})    
     }
 
     handleChange = (ev) => {

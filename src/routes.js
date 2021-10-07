@@ -41,18 +41,8 @@ const routes = [
         : "/join",
     component:
       username && isSeller ? SellerProfile : username ? HomePage : Login,
-    label: username ? `Hello ${username}` : "join",
+    label: username ? `${username}` : "join",
   },
-  // {
-  // username ? HomePage : Login,
-  //     path: (username && seller_mode) ? '/sellerPage':'/become_a_seller',
-  //     component:  (username && seller_mode) ? SellerPage : BecomeASeller,
-  //     // label: (username && seller_mode) ? `Hello ${username}` : 'join'
-  // },
-  // {
-  //     path: '/sellerProfile/',
-  //     component: SellerProfile,
-  // },
   {
     path: "/sellerProfile/gigs",
     component: SellerGigs,

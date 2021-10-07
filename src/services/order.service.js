@@ -12,8 +12,9 @@ export const orderService = {
 }
 
 async function query(filterBy) {
-    var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
-    return await httpService.get('order') // query to filter orders from db
+    // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
+    const orders = await httpService.get('order') // query to filter orders from db
+    return orders
     // return await storageService.query(STORAGE_KEY)
   }
 

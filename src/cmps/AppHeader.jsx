@@ -4,7 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 import { AppHeaderW } from "./AppHeader-wihte";
 import { AppHeaderR } from "./AppHeaderR";
 import routes from "../routes";
-import { socketService } from "../services/socket.service";
 
 // import { onLogin, onLogout, onSignup, loadUsers, removeUser } from '../store/user.actions.js'
 // import { LoginSignup } from './login-signup.jsx'
@@ -14,19 +13,6 @@ export class AppHeader extends React.Component {
     actvie: false,
     comp: <AppHeaderR />,
   };
-
-  // componentDidMount() {
-  //   socketService.setup()
-  //   socketService.on('got order')
-  // }
-  
-  // componentWillUnmount() {
-  //   socketService.terminate()
-  // }
-  
-  // connectSocket = () => {
-    
-  // }
 
   change = () => {
     if (window.scrollY >= 100) {

@@ -1,7 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { socketService } from "../../services/socket.service";
 
 export class HeaderSeller extends React.Component {
+  state = {
+    notify: 0,
+  }
+  
+  componentDidMount() {
+    socketService.setup()
+    socketService.on('got order', this.notify)
+  }
+  
+  componentWillUnmount() {
+    socketService.off('got order', this.notify)
+    socketService.terminate()
+  }
+  
+  notify = () => {
+    console.log('Yes you did it!!');
+    // const {notify} = this.state 
+    // this.setState({notify: notify+1})
+  }
+
   render() {
     return (
       <div>
@@ -18,6 +39,7 @@ export class HeaderSeller extends React.Component {
               </a>
             </li>
             <li className="selected">
+              {/* <label /> */}
               <a className="clean-link" href="/sellerProfile/orders">
                 Orders
               </a>
