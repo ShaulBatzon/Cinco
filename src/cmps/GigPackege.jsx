@@ -4,6 +4,8 @@ import { orderService } from "../services/order.service";
 import { userService } from "../services/user.service";
 import {addOrder, loadOrders} from "../store/order.actions"
 import {utilService} from "../services/util.service"
+import { sendOrder } from '../services/event-bus.service'
+import { socketService } from '../services/socket.service'
 
 class _GigPackage extends React.Component {
   state = {
@@ -25,8 +27,13 @@ class _GigPackage extends React.Component {
   };
 
   componentDidMount() {
+    socketService.on('store-update', this.updateSeller)
     this.props.loadOrders();
   }
+
+  updateSeller = order => {
+    sendOrder(order)
+}
 
   cheakPrice = (packageSelected) => {
     const { gig } = this.props;

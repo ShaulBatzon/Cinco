@@ -12,7 +12,7 @@ export class Reviews extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ ratingBreakdown: { sellerCommunicationLevel: utilService.getRandomIntInclusive(1, 5), friendRecommend: utilService.getRandomIntInclusive(1, 5), serviceAsDescribed: utilService.getRandomIntInclusive(1, 5) } })
+        this.setState({ ratingBreakdown: { sellerCommunicationLevel: utilService.getRandomIntInclusive(4, 5), friendRecommend: utilService.getRandomIntInclusive(4, 5), serviceAsDescribed: utilService.getRandomIntInclusive(4, 5) } })
 
     }
 
