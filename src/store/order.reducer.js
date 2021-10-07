@@ -25,7 +25,6 @@ export function orderReducer(state = initialState, action = {}) {
     default:
       return state
   }
-<<<<<<< HEAD
   
   export function orderReducer(state = initialState, action = {}) {
     switch (action.type) {
@@ -47,6 +46,3 @@ export function orderReducer(state = initialState, action = {}) {
     }
   }
   
-=======
-}
->>>>>>> 38d41f059050ded6a0aa7c452a2c96235ab7ae8f
