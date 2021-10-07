@@ -6,15 +6,15 @@ import { gigService } from '../services/gig.service'
 
 export function loadOrders() {
   return async dispatch => {
-    try { 
+    try {
       const orders = await orderService.query()
-      console.log('orders from actions: ', orders);
+      console.log('orders: ', orders);
       // const loggedinUser = await userService.getLoginUser()
       // const userOrders = orders.filter(order => order.sellerId === loggedinUser._id)
       dispatch({ type: 'SET_ORDERS', orders })
-      // socketService.on(SOCKET_EVENT_ORDER_ADDED, (order) => {
-      //   dispatch({ type: 'ADD_ORDER', order: order })
-      // })
+      socketService.on(SOCKET_EVENT_ORDER_ADDED, (order) => {
+        dispatch({ type: 'ADD_ORDER', order: order })
+      })
 
     } catch (err) {
       console.log('OrderActions: err in loadOrders', err)

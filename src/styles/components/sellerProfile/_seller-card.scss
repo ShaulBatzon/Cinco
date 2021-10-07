@@ -57,7 +57,7 @@
     margin: 0;
   }
   &:first-child {
-    width: 13%;
+    width: 18%;
     position: absolute;
     display: inline;
     z-index: 1;
@@ -74,4 +74,9 @@
       padding-right: 4px;
     }
   }
+}
+
+.gigSellerList {
+  display: grid;
+  grid-template-columns: repeat(220px);
 }
