@@ -31,7 +31,7 @@ export class GigPage extends React.Component {
   }
 
   render() {
-    if(!this.state.gig) return <Loader />
+    if (Object.keys(this.state.gig).length === 0) return <Loader />;
     const { gig, seller, imgUrls, reviews } = this.state;
     const imgForCarousel = imgUrls.map((img) => (
       <img src={img} alt="gig-img" />

@@ -21,6 +21,9 @@ export class GigPreview extends React.Component {
   render() {
     const { gig } = this.props;
     const { isCollect } = this.state;
+    const rate = gig.reviews.reduce((sum, review) => {
+      return (sum += review.rate);
+    }, 0);
     return (
       <div className="card-preview clean-link">
         <Carousel
@@ -82,7 +85,7 @@ export class GigPreview extends React.Component {
             src={gig.seller.imgUrl}
             alt="gig-seller-img"
           />
-          <a className="clean-link" href="/SellerDetails">
+          <a className="clean-link card-name" href="/SellerDetails">
             {gig.seller.fullname}
           </a>
         </div>
@@ -104,8 +107,8 @@ export class GigPreview extends React.Component {
                         56 46z"
             ></path>
           </svg>
-          5.0
-          <span>({gig.reviews.length})</span>
+          <span>{Number(rate.toFixed(1)) / gig.reviews.length}</span>
+          <span> ({gig.reviews.length}K+)</span>
         </span>
         <footer className="preview-card-footer">
           <svg

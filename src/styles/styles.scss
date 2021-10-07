@@ -3,7 +3,6 @@
 @import "setup/functions.scss";
 @import "setup/mixins.scss";
 @import "setup/typography.scss";
-@import "components/_app-carousel.scss";
 
 // Basics
 @import "basics/helpers.scss";
@@ -30,3 +29,4 @@
 @import "components/sellerProfile/orders.scss";
 @import "components/sellerProfile/add-gig.scss";
 @import "views/gig-page.scss";
+@import "components/app-carousel.scss";

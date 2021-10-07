@@ -2,6 +2,9 @@
   max-width: 1300px;
   margin: 0 auto;
   margin-bottom: 50px;
+  @media (max-width: $mobile-breakpoint) {
+    max-width: $mobile-breakpoint;
+  }
 }
 
 .hero-content-container {
