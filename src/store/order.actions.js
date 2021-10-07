@@ -27,7 +27,7 @@ export function addOrder(order) {
     try {
       const addedOrder = await orderService.add(order)
       dispatch({ type: 'ADD_ORDER', addedOrder })
-      socketService.emit(SOCKET_EVENT_ORDER_ADDED, (addedOrder)=>addedOrder)
+      socketService.on(SOCKET_EVENT_ORDER_ADDED, (addedOrder)=> addedOrder)
         
     } catch (err) {
       console.log('OrderActions: err in addOrder', err)
