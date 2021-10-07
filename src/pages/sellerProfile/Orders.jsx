@@ -28,7 +28,7 @@ class _Orders extends React.Component {
     acceptOrder = (orders, acceptedOrder) => {
         // if (order.status === 'active') return
         this.props.acceptOrder(orders, acceptedOrder)
-        const orderFromState = this.props.orders.filter(order => order._id === currOrder._id)
+        //const orderFromState = this.props.orders.filter(order => order._id === currOrder._id)
         acceptedOrder.status = 'active'
     }
 

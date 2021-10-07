@@ -11,11 +11,12 @@ export const orderService = {
 
 async function query() {
     return await storageService.query(STORAGE_KEY)
+    //return await httpService.get(`order`);
   }
 
 async function add(order) {
-    // const addedOrder = await httpService.post(`order`, order)
     const addedOrder = storageService.post(STORAGE_KEY, order)
+       // const addedOrder = await httpService.post(`order`, order)
     return addedOrder
   }
 
