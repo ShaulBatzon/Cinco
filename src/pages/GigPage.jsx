@@ -148,8 +148,8 @@ export class GigPage extends React.Component {
                   <p>{seller.fullname}</p>
                   <p>{seller.description}</p>
                   <div className="gigPageRate">
-                    <StarRate reviews={reviews} />
-                    <p>(16223)</p>
+                  <StarRate reviews={reviews} />
+                  <p>({reviews.length})</p>
                   </div>
                   <button className="contact-the-seller">Contact Me</button>
                 </div>

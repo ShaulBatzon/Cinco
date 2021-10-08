@@ -107,8 +107,8 @@ export class GigPreview extends React.Component {
                         56 46z"
             ></path>
           </svg>
-          <span>{Number(rate.toFixed(1)) / gig.reviews.length}</span>
-          <span> ({gig.reviews.length}K+)</span>
+          <span>{Number((rate / gig.reviews.length)).toFixed(1)}</span>
+          <span> ({(gig.reviews.length)*10})</span>
         </span>
         <footer className="preview-card-footer">
           <svg

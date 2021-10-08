@@ -5,16 +5,15 @@ import { BecomeASeller } from "./pages/BecomeASeller.jsx";
 import { GigPage } from "./pages/GigPage.jsx";
 import { userService } from "./services/user.service";
 import { SignUp } from "./cmps/SignUp.jsx";
-import { BuyerPage } from "./pages/BuyerPage.jsx";
 import { SellerProfile } from "./pages/sellerProfile/SellerProfile.jsx";
 import { Orders } from "./pages/sellerProfile/Orders.jsx";
 import { SellerGigs } from "./pages/sellerProfile/SellerGigs.jsx";
 import { AddGig } from "./pages/sellerProfile/AddGig";
 // Routes accesible from the main navigation (in AppHeader)
 
-
-const username =  userService.getLoginUser().username;
-const isSeller =  userService.getLoginUser().isSeller;
+const user = userService.getLoginUser();
+const username = userService.getLoginUser().username;
+const isSeller = userService.getLoginUser().isSeller;
 
 const routes = [
   {
@@ -41,7 +40,11 @@ const routes = [
         : "/join",
     component:
       username && isSeller ? SellerProfile : username ? HomePage : Login,
-    label: username ? `Hello ${username}` : "join",
+    label: username ? (
+      <img className="UserImgHeader" src={user.imgUrl} />
+    ) : (
+      "join"
+    ),
   },
   // {
   // username ? HomePage : Login,
@@ -50,21 +53,21 @@ const routes = [
   //     // label: (username && seller_mode) ? `Hello ${username}` : 'join'
   // },
   // {
-  //     path: '/sellerProfile/',
-  //     component: SellerProfile,
+  //   path: "/sellerProfile/",
+  //   component: SellerProfile,
   // },
-  {
-    path: "/sellerProfile/gigs",
-    component: SellerGigs,
-  },
-  {
-    path: "/sellerProfile/orders",
-    component: Orders,
-  },
-  {
-    path: "/sellerProfile/gigs/addGig",
-    component: AddGig,
-  },
+  // {
+  //   path: "/sellerProfile/gigs",
+  //   component: SellerGigs,
+  // },
+  // {
+  //   path: "/sellerProfile/orders",
+  //   component: Orders,
+  // },
+  // {
+  //   path: "/sellerProfile/gigs/addGig",
+  //   component: AddGig,
+  // },
   // {
   //     path: '/buyerPage',
   //     component: BuyerPage,

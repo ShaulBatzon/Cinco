@@ -1,6 +1,5 @@
 import React from "react";
 // import { connect } from 'react-redux'
-import { Link, NavLink } from "react-router-dom";
 import { AppHeaderW } from "./AppHeader-wihte";
 import { AppHeaderR } from "./AppHeaderR";
 import routes from "../routes";
