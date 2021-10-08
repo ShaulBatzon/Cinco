@@ -1,6 +1,5 @@
 import { httpService } from './http.service'
 import { storageService } from './async-storage.service.js'
-import { userService } from './user.service.js'
 
 const STORAGE_KEY = 'orders'
 // const listeners = []

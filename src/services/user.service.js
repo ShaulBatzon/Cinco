@@ -1,16 +1,6 @@
 import { httpService } from './http.service.js'
-import { storageService } from './async-storage.service.js'
 import { socketService, SOCKET_EVENT_USER_UPDATED } from './socket.service'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
-var gWatchedUser = null;
-
-
-
-//function user-service
-//get users by id
-//delete user
-//add user
-//calculate rate of user
 
 export const userService = {
     query,
@@ -72,25 +62,6 @@ async function logout() {
     socketService.emit('unset-user-socket');
     return await httpService.post('auth/logout')
 }
-
-// async function checkValidLogin(username, password) {
-//     try {
-//         const users = await query()
-//         console.log(users);
-//         const user = users.find(user => user.username === username)
-//         if (!user) throw 'No such username'
-//         if (user.password === password) {
-//             user.password = ''
-//             sessionStorage['loginUser'] = JSON.stringify(user);
-//             window.location.href = '/';
-//         }
-//         else throw 'wrong password'
-//     }
-//     catch (_err) {
-//         throw (_err)
-//     }
-// }
-
 
 // async function add(user) {
 //  user.wishList=[];

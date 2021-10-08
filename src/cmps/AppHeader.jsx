@@ -1,10 +1,7 @@
 import React from "react";
 // import { connect } from 'react-redux'
-import { Link, NavLink } from "react-router-dom";
 import { AppHeaderW } from "./AppHeader-wihte";
 import { AppHeaderR } from "./AppHeaderR";
-import routes from "../routes";
-
 // import { onLogin, onLogout, onSignup, loadUsers, removeUser } from '../store/user.actions.js'
 // import { LoginSignup } from './login-signup.jsx'
 

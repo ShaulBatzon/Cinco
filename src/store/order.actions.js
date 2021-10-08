@@ -1,7 +1,6 @@
 import { orderService } from '../services/order.service'
 import { socketService, SOCKET_EVENT_ORDER_ADDED } from '../services/socket.service'
-import { userService } from '../services/user.service'
-import { gigService } from '../services/gig.service'
+
 
 
 export function loadOrders() {

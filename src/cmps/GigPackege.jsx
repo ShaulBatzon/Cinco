@@ -52,8 +52,6 @@ class _GigPackage extends React.Component {
 
   continue = (ev) => {
     ev.preventDefault();
-    const { gig } = this.props;
-    const { name } = this.state.pack;
     orderService.save({
       user: userService.getLoginUser().username,
       price: this.state.packagePrice,
@@ -84,6 +82,7 @@ class _GigPackage extends React.Component {
     const standardPirce = gig.price * 2;
     const PremiumPirce = standardPirce * 2;
     this.setState({ packageSelected: currLabel });
+    // eslint-disable-next-line default-case
     switch (currLabel) {
       case "Basic":
         this.setState({ packagePrice: gig.price });
