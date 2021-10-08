@@ -3,11 +3,22 @@
   justify-content: space-between;
   max-width: 1300px;
   margin: 0 auto;
-  gap: 15px;
+  gap: 80px;
+  margin-top: 120px;
 
   .seller-gigs {
     order: 1;
-    flex: 1;
+    flex: 2;
+    @media (max-width: $mobile-breakpoint) {
+      flex: 0;
+    }
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    max-width: $mobile-breakpoint;
+    flex-direction: column;
+    margin-top: 80px;
+    gap: 5px;
   }
 }
 
@@ -27,7 +38,7 @@
   border: 1px solid #ddd;
   border-radius: 2px;
   padding: 0 25px;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
   position: relative;
   margin-top: unset;
 
@@ -77,6 +88,18 @@
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+  aside {
+    float: right;
+    border: 1px solid #dadbdd;
+    margin-top: 25px;
+    position: static;
+    top: 120px;
+    order: 1;
+    flex-grow: 0.5;
+    height: 70%;
+    z-index: 0;
+    background-color: white;
+  }
 
   .textarea-description {
     background-color: inherit;
@@ -88,6 +111,7 @@
     border-radius: 3px;
     resize: none;
     font-size: 16px;
+    margin-bottom: 15px;
   }
 
   input {
@@ -108,9 +132,24 @@
     border-radius: 3px;
   }
 
-  section :last-child {
-    background-color: #1dbf73;
-    color: #fff;
+  aside {
+    order: 0;
+    margin-bottom: 15px;
+    padding-left: 15px;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $mobile-breakpoint) {
+      width: 100%;
+      justify-content: space-evenly;
+      padding-left: 3px;
+    }
+    input:last-of-type {
+      background-color: #1dbf73;
+      color: white;
+    }
   }
 }
 

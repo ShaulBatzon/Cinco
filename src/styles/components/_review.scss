@@ -21,6 +21,11 @@ ul {
       }
     }
 
+    @media (max-width: $mobile-breakpoint) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
     .user-on-review {
       // grid-column: 1;
       //   float: left;

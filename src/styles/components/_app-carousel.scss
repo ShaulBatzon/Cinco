@@ -20,6 +20,18 @@
     width: 100%;
     height: 100%;
   }
+  .react-multiple-carousel__arrow {
+    @media (max-width: $mobile-breakpoint) {
+      // margin-top: 10px;
+      display: none;
+    }
+  }
+  .react-multi-carousel-dot-list {
+    @media (max-width: $mobile-breakpoint) {
+      // margin-top: 10px;
+      display: none;
+    }
+  }
 }
 
 .react-multiple-carousel__arrow--right {
