@@ -12,14 +12,14 @@ export const orderService = {
 };
 
 async function query(filterBy) {
-  // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
-  // return httpService.get(`order${queryStr}`) // query to filter orders from db
-  return await storageService.query(STORAGE_KEY);
+  var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
+  return httpService.get(`order${queryStr}`) // query to filter orders from db
+  // return await storageService.query(STORAGE_KEY);
 }
 
 async function add(order) {
-  // const addedOrder = await httpService.post(`order`, order)
-  const addedOrder = storageService.post(STORAGE_KEY, order);
+  const addedOrder = await httpService.post(`order`, order)
+  // const addedOrder = storageService.post(STORAGE_KEY, order);
   return addedOrder;
 }
 

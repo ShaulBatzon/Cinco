@@ -27,13 +27,9 @@ class _GigPackage extends React.Component {
   };
 
   componentDidMount() {
-    socketService.on('store-update', this.updateSeller)
     this.props.loadOrders();
   }
 
-  updateSeller = order => {
-    sendOrder(order)
-}
 
   cheakPrice = (packageSelected) => {
     const { gig } = this.props;
@@ -68,6 +64,7 @@ class _GigPackage extends React.Component {
       const { gig } = this.props;
       await this.props.addOrder({
         buyer: loginUser.username,
+        buyerId: loginUser._id,
         gigId: gig._id,
         sellerId: gig.seller._id,
         dueOn: utilService.getDate(),
