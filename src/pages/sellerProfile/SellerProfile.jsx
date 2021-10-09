@@ -4,14 +4,22 @@ import { userService } from "../../services/user.service";
 import { Loader } from "../../cmps/Loader.jsx";
 import { SellerGigs } from "./SellerGigs.jsx";
 import { Orders } from "./Orders.jsx";
+import { socketService } from "../../services/socket.service";
+
 // import { MyChart } from "./Chart.jsx";
 
 export class SellerProfile extends React.Component {
   state = {
     selecetTab: "gigs",
+    notify: 0,
   };
 
   async componentDidMount() {
+    console.log('in sellerProfile');
+    socketService.on('new order', order => {
+      console.log('HEY SELLER, ', order.txt, 'order: ',order);
+      this.setState({notify: this.state.notify + 1})
+    })
     const user = userService.getLoginUser();
     try {
       const seller = await userService.getById(user._id);
@@ -20,6 +28,12 @@ export class SellerProfile extends React.Component {
       console.log(err);
     }
   }
+
+  componentWillUnmount() {
+    socketService.off('new order');
+    // socketService.terminate()
+  }
+  
 
   toggle = (tab) => {
     this.setState({ selecetTab: tab });
@@ -40,8 +54,7 @@ export class SellerProfile extends React.Component {
   };
 
   render() {
-    const { seller, selecetTab } = this.state;
-
+    const { seller, selecetTab, notify } = this.state;
     // const { gigs, description, languages} = this.state.sellerProfile
     // const {sellerProfile } = this.state
     // console.log("sellerProfile: ", seller);
@@ -51,7 +64,7 @@ export class SellerProfile extends React.Component {
         <section className="seller-gigs">
           <ul className="seller-gigs-bar">
             <li onClick={() => this.toggle("gigs")}>Active gigs</li>
-            <li onClick={() => this.toggle("orders")}>Orders</li>
+            <li onClick={() => this.toggle("orders")}>Orders<label>{notify}</label></li>
             <li onClick={() => this.toggle("draft")}>Draft</li>
           </ul>
           <div className="gigSellerList">

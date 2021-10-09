@@ -1,5 +1,4 @@
 import { userService } from "../services/user.service.js";
-import { showErrorMsg } from '../services/event-bus.service.js'
 import { socketService, SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED } from "../services/socket.service.js";
 
 export function loadUsers() {
@@ -36,7 +35,6 @@ export function onLogin(credentials) {
                 user
             })
         } catch (err) {
-            showErrorMsg('Cannot login')
             console.log('Cannot login', err)
         }
     }
@@ -53,7 +51,6 @@ export function onSignup(credentials) {
                 })
             })
             .catch(err => {
-                showErrorMsg('Cannot signup')
                 console.log('Cannot signup', err)
             })
 
@@ -68,7 +65,6 @@ export function onLogout() {
                 user: null
             }))
             .catch(err => {
-                showErrorMsg('Cannot logout')
                 console.log('Cannot logout', err)
             })
     }
@@ -86,7 +82,6 @@ export function loadAndWatchUser(userId) {
                 dispatch({ type: 'SET_WATCHED_USER', user })
             })
         } catch (err) {
-            showErrorMsg('Cannot load user')
             console.log('Cannot load user', err)
         }
     }

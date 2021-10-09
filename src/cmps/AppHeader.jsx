@@ -22,11 +22,7 @@ export class AppHeader extends React.Component {
   
   componentWillUnmount() {
     socketService.off('order accepted')
-    socketService.terminate()
-  }
-  
-  connectSocket = () => {
-    
+    // socketService.terminate()
   }
 
   change = () => {
