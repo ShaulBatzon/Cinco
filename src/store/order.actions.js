@@ -1,15 +1,15 @@
 import { orderService } from '../services/order.service'
 import { socketService, SOCKET_EVENT_ORDER_ADDED } from '../services/socket.service'
-
+import { userService } from '../services/user.service'
 
 
 export function loadOrders() {
   return async dispatch => {
     try {
       const orders = await orderService.query()
-      // const loggedinUser = await userService.getLoginUser()
-      // const userOrders = orders.filter(order => order.sellerId === loggedinUser._id)
-      dispatch({ type: 'SET_ORDERS', orders })
+      const loggedinUser = await userService.getLoginUser()
+      const userOrders = orders.filter(order => order.sellerId === loggedinUser._id)
+      dispatch({ type: 'SET_ORDERS', userOrders })
       // socketService.on('new order', (order) => {
       //   dispatch({ type: 'ADD_ORDER', order: order })
       // })
@@ -44,17 +44,10 @@ export function removeOrder(orderId) {
   }
 }
 
-export function acceptOrder(orders, acceptedOrder) {
+export function acceptOrder(acceptedOrder) {
   return async dispatch => {
     try {
-      console.log('orders: ', orders);
-      console.log('acceptedOrder: ', acceptedOrder);
-      orders.foreach(order => {
-        if (order._id === acceptedOrder._id) {
-          order.status = 'active'
-        }
-      })
-
+     orderService.update()
       const orderId = acceptedOrder._id
       dispatch({ type: 'UPDATE_ORDER', orderId })
     } catch (err) {
@@ -62,3 +55,4 @@ export function acceptOrder(orders, acceptedOrder) {
     }
   }
 }
+
