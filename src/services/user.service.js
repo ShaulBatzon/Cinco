@@ -13,7 +13,7 @@ const STORAGE_KEY = "users";
 export const userService = {
   query,
   getById,
-  remove,
+  update,
   getLoginUser,
   // add,
   login,
@@ -25,20 +25,22 @@ function getLoginUser() {
 }
 
 async function query() {
-  // return await storageService.query(STORAGE_KEY);
+ // return await storageService.query(STORAGE_KEY);
   return await httpService.get(`users`);
 }
 
 async function getById(userId) {
-  // const user = await storageService.get("user", userId);
-  const user = await httpService.get(`user/${userId}`)
-  gWatchedUser = user;
+  //const user = await storageService.get("user", userId);
+   const user = await httpService.get(`users/${userId}`)
+  // gWatchedUser = users;
   return user;
 }
 
-async function remove(userId) {
-  // return await storageService.remove(STORAGE_KEY, userId);
-  return httpService.delete(`users/${userId}`);
+async function update(user) {
+  //await storageService.put('user', user)
+   user = await httpService.put(`user/${user._id}`, user)
+  // Handle case in which admin updates other user's details
+  return user;
 }
 
 async function login(userCred) {
@@ -57,6 +59,7 @@ async function login(userCred) {
     console.log(err);
   }
 }
+
 
 async function signup(userCred) {
   // const user = await storageService.post("user", userCred);

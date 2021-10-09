@@ -30,8 +30,8 @@ async function remove(gigId) {
 
 async function save(gig) {
   if (gig._id) {
-    // return await storageService.put(STORAGE_KEY, gig);
-      return httpService.put(`gig/${gig._id}`,gig)
+    //return await storageService.put(STORAGE_KEY, gig);
+       return httpService.put(`gig/${gig._id}`,gig)
   } else {
     return httpService.post(`gig`,gig)
     // gig.owner = userService.getLoggedinUser()
