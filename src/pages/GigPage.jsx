@@ -139,7 +139,7 @@ export class GigPage extends React.Component {
               <div className="about-seller">
                 <div className="about-the-seller-img">
                   <img
-                    src={seller.imgUrl}
+                    src={seller.imgUrl2}
                     className="profile-pict-img"
                     alt="seller"
                   />
