@@ -14,6 +14,7 @@ export const userService = {
   query,
   getById,
   update,
+  getLoggedinUser,
   getLoginUser,
   // add,
   login,

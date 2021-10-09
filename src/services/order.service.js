@@ -38,10 +38,3 @@ async function update(order) {
 //         return await storageService.post(STORAGE_KEY, order)
 //     }
 // }
-
-async function update(order) {
-  //await storageService.put('user', user)
-   order = await httpService.put(`order/${order._id}`, order)
-  // Handle case in which admin updates other user's details
-  return order;
-}

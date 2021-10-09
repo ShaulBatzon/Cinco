@@ -16,7 +16,6 @@ export class SellerProfile extends React.Component {
   };
 
   async componentDidMount() {
-    const user = userService.getLoginUser();
     socketService.on('new order', order => {
       console.log('HEY SELLER, ', order.txt, 'order: ',order);
       console.log('order.txt: ',order.txt);
@@ -26,7 +25,7 @@ export class SellerProfile extends React.Component {
       this.setState({notify: this.state.notify + 1})
     })
     try {
-      const seller = await userService.getById(user._id);
+      const seller = userService.getLoginUser();
       this.setState({ seller });
     } catch (err) {
       console.log(err);
@@ -35,8 +34,12 @@ export class SellerProfile extends React.Component {
 
   componentWillUnmount() {
     socketService.off('new order');
-    socketService.terminate()
+    // socketService.terminate()
   }
+  
+  // componentWillUpdate() {
+  //   scrollIntoView({ behavior: "smooth" }); 
+  // }
   
 
   toggle = (tab) => {
