@@ -86,6 +86,7 @@ class _GigPackage extends React.Component {
       packName: this.state.packageSelected,
       status: "pending",
     });
+    this.setState({ isSell: true });
   };
 
   onClick = (currLabel) => {
