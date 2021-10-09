@@ -42,6 +42,16 @@
   position: relative;
   margin-top: unset;
 
+  li {
+    position: relative;
+    .notf {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: red;
+    }
+  }
+
   > * {
     padding: 23px 0;
     margin-right: 35px;
@@ -53,7 +63,7 @@
     position: relative;
     ::after {
       content: "";
-      background-color: #1dbf73;
+      // background-color: #1dbf73;
       width: 100%;
       left: 0;
       // background-color: transparent;
