@@ -139,7 +139,7 @@ export class GigPage extends React.Component {
               <div className="about-seller">
                 <div className="about-the-seller-img">
                   <img
-                    src={seller.imgUrl}
+                    src={seller.imgUrl2}
                     className="profile-pict-img"
                     alt="seller"
                   />
@@ -148,8 +148,8 @@ export class GigPage extends React.Component {
                   <p>{seller.fullname}</p>
                   <p>{seller.description}</p>
                   <div className="gigPageRate">
-                    <StarRate reviews={reviews} />
-                    <p>(16223)</p>
+                  <StarRate reviews={reviews} />
+                  <p>({reviews.length})</p>
                   </div>
                   <button className="contact-the-seller">Contact Me</button>
                 </div>

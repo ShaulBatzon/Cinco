@@ -9,7 +9,6 @@ export function gigReducer(state = initialState, action) {
     var newState = state
     switch (action.type) {
         case 'SET_GIGS':
-            console.log('kk');
             newState = { ...state, gigs: action.gigs }
             break
         case 'SELECT_GIG':

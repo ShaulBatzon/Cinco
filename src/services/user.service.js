@@ -13,7 +13,7 @@ const STORAGE_KEY = "users";
 export const userService = {
   query,
   getById,
-  remove,
+  update,
   getLoginUser,
   // add,
   login,
@@ -25,30 +25,32 @@ function getLoginUser() {
 }
 
 async function query() {
-  return await storageService.query(STORAGE_KEY);
-  // return await httpService.get(`users`);
+ // return await storageService.query(STORAGE_KEY);
+  return await httpService.get(`users`);
 }
 
 async function getById(userId) {
-  const user = await storageService.get("user", userId);
-  // const users = await httpService.get(`users/${userId}`)
+  //const user = await storageService.get("user", userId);
+   const user = await httpService.get(`users/${userId}`)
   // gWatchedUser = users;
   return user;
 }
 
-async function remove(userId) {
-  return await storageService.remove(STORAGE_KEY, userId);
-  // return httpService.delete(`users/${userId}`);
+async function update(user) {
+  //await storageService.put('user', user)
+   user = await httpService.put(`user/${user._id}`, user)
+  // Handle case in which admin updates other user's details
+  return user;
 }
 
 async function login(userCred) {
-  const users = await storageService.query("user");
-  const user = users.find((user) => user.username === userCred.username);
+  // const users = await storageService.query("user");
+  // const user = users.find((user) => user.username === userCred.username);
   // return _saveLocalUser(user)
   try {
     console.log("user: ", userCred);
-    // const user = await httpService.post("auth/login", userCred);
-    // socketService.emit("set-user-socket", user._id);
+    const user = await httpService.post("auth/login", userCred);
+    socketService.emit("set-user-socket", user._id);
     _saveLocalUser(user);
 
     window.location.href = "/";
@@ -58,16 +60,15 @@ async function login(userCred) {
   }
 }
 
+
 async function signup(userCred) {
-  const user = await storageService.post("user", userCred);
-  // const user = await httpService.post('auth/signup', userCred)
-  socketService.emit("set-user-socket", user._id);
+  // const user = await storageService.post("user", userCred);
+  const user = await httpService.post('auth/signup', userCred)
   return _saveLocalUser(user);
 }
 
 async function logout() {
-  sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
-  // socketService.emit('unset-user-socket');
+  // sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
   return await httpService.post("auth/logout");
 }
 

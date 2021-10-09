@@ -3,16 +3,12 @@ const initialState = {
 };
 
 export function orderReducer(state = initialState, action = {}) {
-  console.log("is order reducer");
   switch (action.type) {
     case "SET_ORDERS":
-      console.log("action", action);
-      console.log("initialState", state);
       return { ...state, orders: [...action.userOrders] };
     case "ADD_ORDER":
-      console.log("action", action);
-      console.log("initialState", state);
-      return { ...state, orders: [...state.orders, action.order] };
+      console.log('ADD_ORDER: ', action.addedOrder);
+      return { ...state, orders: [...state.orders, action.addedOrder] };
     case "REMOVE_ORDER":
       return {
         ...state,
@@ -26,6 +22,7 @@ export function orderReducer(state = initialState, action = {}) {
         ),
       };
     default:
+      console.log('state: ',state);
       return state;
   }
 }

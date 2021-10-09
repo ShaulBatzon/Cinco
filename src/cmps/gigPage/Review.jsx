@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React from "react";
 import { star } from "../../imgs/star.js";
 export class Review extends React.Component {
@@ -10,7 +9,7 @@ export class Review extends React.Component {
       <li className="review">
         <div className="user-on-review">
           {/* <label className="profile-pic"> */}
-          <img className="user-img" src={review.by.imgUrl} />
+          <img  alt=""className="user-img" src={review.by.imgUrl} />
           {/* </label> */}
         </div>
         <header>

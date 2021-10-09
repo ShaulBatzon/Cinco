@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export class HeaderSeller extends React.Component {
+
+  state = {
+  }
+
+ 
   render() {
     return (
       <div>

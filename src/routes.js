@@ -5,7 +5,6 @@ import { BecomeASeller } from "./pages/BecomeASeller.jsx";
 import { GigPage } from "./pages/GigPage.jsx";
 import { userService } from "./services/user.service";
 import { SignUp } from "./cmps/SignUp.jsx";
-import { BuyerPage } from "./pages/BuyerPage.jsx";
 import { SellerProfile } from "./pages/sellerProfile/SellerProfile.jsx";
 import { Orders } from "./pages/sellerProfile/Orders.jsx";
 import { SellerGigs } from "./pages/sellerProfile/SellerGigs.jsx";
