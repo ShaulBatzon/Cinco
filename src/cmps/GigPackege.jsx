@@ -39,7 +39,7 @@ class _GigPackage extends React.Component {
       ],
     },
     packageSelected: "Basic",
-    packagePrice: "60",
+    packagePrice: this.props.packagePrice,
     isSell: false,
   };
 
