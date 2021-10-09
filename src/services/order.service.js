@@ -9,6 +9,7 @@ export const orderService = {
   // save,
   query,
   add,
+  update
 };
 
 async function query(filterBy) {
@@ -23,6 +24,12 @@ async function add(order) {
   return addedOrder;
 }
 
+async function update(order) {
+  //await storageService.put('user', user)
+   order = await httpService.put(`order/${order._id}`, order)
+  // Handle case in which admin updates other user's details
+  return order;
+}
 // async function save(order) {
 //     if (order._id) {
 //         return await storageService.put(STORAGE_KEY, order)
