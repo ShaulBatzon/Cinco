@@ -44,13 +44,13 @@ async function update(user) {
 }
 
 async function login(userCred) {
-  const users = await storageService.query("user");
-  const user = users.find((user) => user.username === userCred.username);
+  // const users = await storageService.query("user");
+  // const user = users.find((user) => user.username === userCred.username);
   // return _saveLocalUser(user)
   try {
     console.log("user: ", userCred);
-    // const user = await httpService.post("auth/login", userCred);
-    // socketService.emit("set-user-socket", user._id);
+    const user = await httpService.post("auth/login", userCred);
+    socketService.emit("set-user-socket", user._id);
     _saveLocalUser(user);
 
     window.location.href = "/";
@@ -62,15 +62,13 @@ async function login(userCred) {
 
 
 async function signup(userCred) {
-  const user = await storageService.post("user", userCred);
-  // const user = await httpService.post('auth/signup', userCred)
-  socketService.emit("set-user-socket", user._id);
+  // const user = await storageService.post("user", userCred);
+  const user = await httpService.post('auth/signup', userCred)
   return _saveLocalUser(user);
 }
 
 async function logout() {
-  sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
-  // socketService.emit('unset-user-socket');
+  // sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
   return await httpService.post("auth/logout");
 }
 

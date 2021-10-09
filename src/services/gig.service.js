@@ -14,17 +14,18 @@ export const gigService = {
 window.gs = gigService;
 
 async function query() {
-  return await httpService.get(`gig`);
+  // return await storageService.query(STORAGE_KEY);
+   return await httpService.get(`gig`);
 }
 
 async function getById(gigId) {
-  //return await storageService.get(STORAGE_KEY, gigId);
-  return httpService.get(`gig/${gigId}`)
+  // return await storageService.get(STORAGE_KEY, gigId);
+    return httpService.get(`gig/${gigId}`)
 }
 
 async function remove(gigId) {
-  //return await storageService.remove(STORAGE_KEY, gigId);
-  return httpService.delete(`gig/${gigId}`)
+  // return await storageService.remove(STORAGE_KEY, gigId);
+    return httpService.delete(`gig/${gigId}`)
 }
 
 async function save(gig) {
@@ -32,7 +33,7 @@ async function save(gig) {
     //return await storageService.put(STORAGE_KEY, gig);
        return httpService.put(`gig/${gig._id}`,gig)
   } else {
-    // return httpService.post(`gig`,gig)
+    return httpService.post(`gig`,gig)
     // gig.owner = userService.getLoggedinUser()
     // return await storageService.post(STORAGE_KEY, gig)
   }

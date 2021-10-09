@@ -4,8 +4,6 @@ import { orderService } from "../services/order.service";
 import { userService } from "../services/user.service";
 import { addOrder, loadOrders } from "../store/order.actions";
 import { utilService } from "../services/util.service";
-import { sendOrder } from "../services/event-bus.service";
-import { socketService } from "../services/socket.service";
 
 class _GigPackage extends React.Component {
   state = {
@@ -45,13 +43,9 @@ class _GigPackage extends React.Component {
   };
 
   componentDidMount() {
-    socketService.on("store-update", this.updateSeller);
     this.props.loadOrders();
   }
 
-  updateSeller = (order) => {
-    sendOrder(order);
-  };
 
   cheakPrice = (packageSelected) => {
     const { gig } = this.props;
@@ -81,17 +75,19 @@ class _GigPackage extends React.Component {
     ev.preventDefault();
     const loginUser = userService.getLoginUser();
     if (Object.keys(loginUser).length === 0) return null;
-    const { gig } = this.props;
-    await this.props.addOrder({
-      buyer: loginUser.username,
-      gigId: gig._id,
-      sellerId: gig.seller._id,
-      dueOn: utilService.getDate(),
-      price: this.state.packagePrice,
-      packName: this.state.packageSelected,
-      status: "pending",
-    });
-  };
+      const { gig } = this.props;
+      await this.props.addOrder({
+        buyer: loginUser.username,
+        buyerId: loginUser._id,
+        gigId: gig._id,
+        sellerId: gig.seller._id,
+        dueOn: utilService.getDate(),
+        price: this.state.packagePrice,
+        packName: this.state.packageSelected,
+        status: 'pending'
+      })
+    
+  }
 
   onClick = (currLabel) => {
     // const { packageSelected } = this.state;

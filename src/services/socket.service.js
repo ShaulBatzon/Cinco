@@ -38,8 +38,7 @@ function createSocketService() {
   return socketService
 }
 
-socketService.on(SOCKET_EVENT_YOU_GOT_ORDER, order => {
+socketService.on(SOCKET_EVENT_ORDER_ADDED, order => {
   console.log('I got order!', order);
-
 })
 
