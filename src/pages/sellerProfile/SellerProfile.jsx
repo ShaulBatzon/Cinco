@@ -35,7 +35,7 @@ export class SellerProfile extends React.Component {
 
   componentWillUnmount() {
     socketService.off('new order');
-    // socketService.terminate()
+    socketService.terminate()
   }
   
 
