@@ -5,7 +5,7 @@ const initialState = {
 export function orderReducer(state = initialState, action = {}) {
   switch (action.type) {
     case "SET_ORDERS":
-      return { ...state, orders: [...action.orders] };
+      return { ...state, orders: [...action.userOrders] };
     case "ADD_ORDER":
       console.log('ADD_ORDER: ', action.addedOrder);
       return { ...state, orders: [...state.orders, action.addedOrder] };
@@ -22,6 +22,7 @@ export function orderReducer(state = initialState, action = {}) {
         ),
       };
     default:
+      console.log('state: ',state);
       return state;
   }
 }

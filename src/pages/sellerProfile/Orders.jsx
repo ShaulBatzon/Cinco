@@ -8,36 +8,33 @@ import { Loader } from "../../cmps/Loader.jsx";
 
 class _Orders extends React.Component {
     state = {
-        orders: [],
         selected: 'active',
     }
 
     async componentDidMount() {
-        try {
-            this.props.loadOrders()
-        }
-        catch (_err) {
-            console.log(_err)
-        }
+        await this.props.loadOrders()
     }
 
+    async componentDidUpdate() {
+        await this.props.loadOrders()
+    }
+  
     toggleSelected = (ev) => {
         const val = ev.target.innerHTML
         this.setState({ selected: val })
     }
 
-    acceptOrder = (orders, acceptedOrder) => {
+    acceptOrder = (acceptedOrder) => {
         if (acceptedOrder.status === 'active') return
-        this.props.acceptOrder(orders, acceptedOrder)
+        this.props.acceptOrder(acceptedOrder)
         // const orderFromState = this.props.orders.filter(order => order._id === currOrder._id)
         acceptedOrder.status = 'active'
         this.setState({selected: 'active'})
     }
 
     render() {
-        const { selected } = this.state
-        const { orders } = this.props
-        // console.log('selected: ', selected);
+        const { selected} = this.state
+        const {orders} = this.props
         if (!orders) return <Loader />
         return (
             <section>
@@ -89,7 +86,7 @@ class _Orders extends React.Component {
                                                 {order.status}
                                             </td>
                                             <td>
-                                                <button onClick={() => this.acceptOrder(orders ,order)}>Accept</button>
+                                                <button onClick={() => this.acceptOrder(order)}>Accept</button>
                                             </td>
                                         {/* </div> */}
                                     </tr>
