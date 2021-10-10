@@ -14,6 +14,7 @@ export const userService = {
   query,
   getById,
   update,
+  getLoggedinUser,
   getLoginUser,
   // add,
   login,
@@ -30,15 +31,15 @@ async function query() {
 }
 
 async function getById(userId) {
-  const user = await storageService.get("user", userId);
-  // const user = await httpService.get(`users/${userId}`);
+  //const user = await storageService.get("user", userId);
+  const user = await httpService.get(`user/${userId}`);
   // gWatchedUser = users;
   return user;
 }
 
 async function update(user) {
   //await storageService.put('user', user)
-  user = await httpService.put(`user/${user._id}`, user);
+  const newUsser = await httpService.put(`user/${user._id}`, user);
   // Handle case in which admin updates other user's details
   return user;
 }
