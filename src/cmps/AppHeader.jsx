@@ -14,16 +14,16 @@ export class AppHeader extends React.Component {
     comp: <AppHeaderR />,
   };
 
-  componentDidMount() {
-    socketService.on('order accepted', order => {
-      console.log('HEY BUYER, ', order.txt, 'order: ',order);
-    })
-  }
+  // componentDidMount() {
+  //   socketService.on('order accepted', order => {
+  //     console.log('HEY BUYER, ', order.txt, 'order: ',order);
+  //   })
+  // }
   
-  componentWillUnmount() {
-    socketService.off('order accepted')
-    // socketService.terminate()
-  }
+  // componentWillUnmount() {
+  //   socketService.off('order accepted')
+  //   // socketService.terminate()
+  // }
 
   change = () => {
     if (window.scrollY >= 100) {

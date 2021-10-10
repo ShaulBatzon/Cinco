@@ -18,9 +18,6 @@ export class GigPage extends React.Component {
   };
 
   componentDidMount() {
-    // const { currGig } = this.props;
-    // console.log("currGig: ", currGig);
-    // this.setState({gig: currGig})
     const gigId = gigService.getGigId();
     gigService.getById(gigId).then((gig) => {
       this.setState({ reviews: gig.reviews });

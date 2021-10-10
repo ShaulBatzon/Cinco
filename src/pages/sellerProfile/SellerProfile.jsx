@@ -7,18 +7,19 @@ import { Orders } from "./Orders.jsx";
 import { socketService } from "../../services/socket.service";
 import { orderService } from "../../services/order.service.js";
 
-// import { MyChart } from "./Chart.jsx";
+import LineChart from "./Chart.jsx";
 
 export class SellerProfile extends React.Component {
   state = {
-    selecetTab: "gigs",
+    selecetTab: "",
     notify: 0,
     seller: {},
+    user: null
   };
 
   async componentDidMount() {
     socketService.on('new order', order => {
-      const user = userService.getLoginUser();
+      const user = userService.getLoggedinUser();
       const notifyTxt = order.txt
       console.log('HEY SELLER, ', notifyTxt, 'order: ', order);
       user.notifications.push(notifyTxt)
@@ -43,6 +44,7 @@ export class SellerProfile extends React.Component {
     socketService.off("new order");
     // socketService.terminate()
   }
+  
 
   toggle = (tab) => {
     this.setState({ selecetTab: tab });
@@ -63,25 +65,32 @@ export class SellerProfile extends React.Component {
   };
 
   render() {
-    const { seller, selecetTab, notify } = this.state;
-    console.log("notify: ", this.state.notify);
+    const { seller, selecetTab } = this.state;
+    const user = userService.getLoggedinUser()
+    const notify = user.notifications.length
     // const { gigs, description, languages} = this.state.sellerProfile
     // const {sellerProfile } = this.state
     // console.log("sellerProfile: ", seller);
     if (!seller) return <Loader />;
     return (
       <div className="main-profile">
-        {console.log('seller',seller)}
+        {console.log('seller', seller)}
         <section className="seller-gigs">
           <ul className="seller-gigs-bar">
             <li onClick={() => this.toggle("gigs")}>Active gigs</li>
             <li onClick={() => this.toggle("orders")}>
-              Orders<spen className="notf">{notify}</spen>
+              Orders (<spen className="notf">{notify}</spen>)
             </li>
-            <li onClick={() => this.toggle("draft")}>Draft</li>
+            <li onClick={() => this.toggle("draft")}>Dashboard</li>
           </ul>
           <div className="gigSellerList">
-            {selecetTab === "gigs" ? <SellerGigs /> : <Orders />}
+            {selecetTab === "gigs" ? (
+              <SellerGigs />
+            ) : selecetTab === "orders" ? (
+              <Orders />
+            ) : (
+              <LineChart />
+            )}
           </div>
         </section>
         <section className="form-thin">

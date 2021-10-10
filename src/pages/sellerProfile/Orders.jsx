@@ -71,7 +71,7 @@ class _Orders extends React.Component {
                                                 {order.buyer}
                                             </td>
                                             <td>
-                                                {order.gigId}
+                                                {order.gigName}
                                             </td>
                                             <td>
                                                 {order.dueOn}

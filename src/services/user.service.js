@@ -14,6 +14,7 @@ export const userService = {
   query,
   getById,
   update,
+  getLoggedinUser,
   getLoginUser,
   getLoggedinUser,
   // add,
@@ -47,7 +48,7 @@ async function update(user) {
   //await storageService.put('user', user)
   const newUsser = await httpService.put(`user/${user._id}`, user);
   // Handle case in which admin updates other user's details
-  return user;
+  return newUsser;
 }
 
 async function login(userCred) {
