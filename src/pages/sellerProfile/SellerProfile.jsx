@@ -7,11 +7,11 @@ import { Orders } from "./Orders.jsx";
 import { socketService } from "../../services/socket.service";
 import { orderService } from "../../services/order.service.js";
 
-// import { MyChart } from "./Chart.jsx";
+import LineChart from "./Chart.jsx";
 
 export class SellerProfile extends React.Component {
   state = {
-    selecetTab: "gigs",
+    selecetTab: "",
     notify: 0,
     seller: {},
   };
@@ -70,12 +70,18 @@ export class SellerProfile extends React.Component {
           <ul className="seller-gigs-bar">
             <li onClick={() => this.toggle("gigs")}>Active gigs</li>
             <li onClick={() => this.toggle("orders")}>
-              Orders<spen className="notf">{notify}</spen>
+              Orders (<spen className="notf">{notify}</spen>)
             </li>
-            <li onClick={() => this.toggle("draft")}>Draft</li>
+            <li onClick={() => this.toggle("draft")}>Dashboard</li>
           </ul>
           <div className="gigSellerList">
-            {selecetTab === "gigs" ? <SellerGigs /> : <Orders />}
+            {selecetTab === "gigs" ? (
+              <SellerGigs />
+            ) : selecetTab === "orders" ? (
+              <Orders />
+            ) : (
+              <LineChart />
+            )}
           </div>
         </section>
         <section className="form-thin">

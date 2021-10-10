@@ -38,7 +38,7 @@
   border: 1px solid #ddd;
   border-radius: 2px;
   padding: 0 25px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   position: relative;
   margin-top: unset;
 
@@ -98,10 +98,11 @@
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+
   aside {
     float: right;
     border: 1px solid #dadbdd;
-    margin-top: 25px;
+    margin-top: 20px;
     position: static;
     top: 120px;
     order: 1;
@@ -117,7 +118,7 @@
     border: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
     box-shadow: none;
-    height: 140px;
+    height: 100px;
     border-radius: 3px;
     resize: none;
     font-size: 16px;
