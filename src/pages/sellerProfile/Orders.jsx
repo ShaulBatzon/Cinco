@@ -65,7 +65,7 @@ class _Orders extends React.Component {
                         <tbody>
                             {orders.map((order, idx) => {
                                 return (
-                                    <tr className="flex" key={idx}>
+                                    <tr key={idx}>
                                         {/* <div> */}
                                             <td>
                                                 {order.buyer}
