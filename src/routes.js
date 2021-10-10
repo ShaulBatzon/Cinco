@@ -46,6 +46,7 @@ const routes = [
       "join"
     ),
   },
+
   // {
   // username ? HomePage : Login,
   //     path: (username && seller_mode) ? '/sellerPage':'/become_a_seller',

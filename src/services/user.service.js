@@ -26,46 +26,44 @@ function getLoginUser() {
 }
 
 async function query() {
- // return await storageService.query(STORAGE_KEY);
-  return await httpService.get(`users`);
+  return await storageService.query(STORAGE_KEY);
+  // return await httpService.get(`users`);
 }
 
 async function getById(userId) {
   //const user = await storageService.get("user", userId);
-   const user = await httpService.get(`users/${userId}`)
+  const user = await httpService.get(`user/${userId}`);
   // gWatchedUser = users;
   return user;
 }
 
 async function update(user) {
   //await storageService.put('user', user)
-   user = await httpService.put(user)
-   console.log('user3',user);
+  const newUsser = await httpService.put(`user/${user._id}`, user);
   // Handle case in which admin updates other user's details
   return user;
 }
 
 async function login(userCred) {
-  // const users = await storageService.query("user");
-  // const user = users.find((user) => user.username === userCred.username);
-  // return _saveLocalUser(user)
-  try {
-    console.log("user: ", userCred);
-    const user = await httpService.post("auth/login", userCred);
-    socketService.emit("set-user-socket", user._id);
-    _saveLocalUser(user);
+  const users = await storageService.query("user");
+  const user = users.find((user) => user.username === userCred.username);
+  return _saveLocalUser(user);
+  // try {
+  //   console.log("user: ", userCred);
+  //   const user = await httpService.post("auth/login", userCred);
+  //   socketService.emit("set-user-socket", user._id);
+  //   _saveLocalUser(user);
 
-    window.location.href = "/";
-    return user;
-  } catch (err) {
-    console.log(err);
-  }
+  //   window.location.href = "/";
+  //   return user;
+  // } catch (err) {
+  //   console.log(err);
+  // }
 }
-
 
 async function signup(userCred) {
   // const user = await storageService.post("user", userCred);
-  const user = await httpService.post('auth/signup', userCred)
+  const user = await httpService.post("auth/signup", userCred);
   return _saveLocalUser(user);
 }
 

@@ -4,7 +4,7 @@
   max-width: 1300px;
   margin: 0 auto;
   gap: 80px;
-  margin-top: 120px;
+  margin-top: 20px;
 
   .seller-gigs {
     order: 1;
@@ -42,6 +42,16 @@
   position: relative;
   margin-top: unset;
 
+  // li {
+  //   position: relative;
+  //   .notf {
+  //     position: absolute;
+  //     top: 10px;
+  //     right: 0;
+  //     background-color: red;
+  //   }
+  // }
+
   > * {
     padding: 23px 0;
     margin-right: 35px;
@@ -53,7 +63,7 @@
     position: relative;
     ::after {
       content: "";
-      background-color: #1dbf73;
+      // background-color: #1dbf73;
       width: 100%;
       left: 0;
       // background-color: transparent;

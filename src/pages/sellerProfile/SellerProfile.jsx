@@ -13,6 +13,7 @@ export class SellerProfile extends React.Component {
   state = {
     selecetTab: "gigs",
     notify: 0,
+    seller: {},
   };
 
   async componentDidMount() {
@@ -37,14 +38,9 @@ export class SellerProfile extends React.Component {
   }
 
   componentWillUnmount() {
-    socketService.off('new order');
+    socketService.off("new order");
     // socketService.terminate()
   }
-  
-  // componentWillUpdate() {
-  //   scrollIntoView({ behavior: "smooth" }); 
-  // }
-  
 
   toggle = (tab) => {
     this.setState({ selecetTab: tab });
@@ -66,17 +62,20 @@ export class SellerProfile extends React.Component {
 
   render() {
     const { seller, selecetTab, notify } = this.state;
-    console.log('notify: ',this.state.notify);
+    console.log("notify: ", this.state.notify);
     // const { gigs, description, languages} = this.state.sellerProfile
     // const {sellerProfile } = this.state
     // console.log("sellerProfile: ", seller);
     if (!seller) return <Loader />;
     return (
       <div className="main-profile">
+        {console.log('seller',seller)}
         <section className="seller-gigs">
           <ul className="seller-gigs-bar">
             <li onClick={() => this.toggle("gigs")}>Active gigs</li>
-            <li onClick={() => this.toggle("orders")}>Orders<label> ({notify})</label></li>
+            <li onClick={() => this.toggle("orders")}>
+              Orders<spen className="notf">{notify}</spen>
+            </li>
             <li onClick={() => this.toggle("draft")}>Draft</li>
           </ul>
           <div className="gigSellerList">
@@ -84,7 +83,7 @@ export class SellerProfile extends React.Component {
           </div>
         </section>
         <section className="form-thin">
-          <SellerCard />
+          <SellerCard seller={seller} />
           <article>
             <form className="description-form">
               <aside>
