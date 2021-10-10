@@ -1,22 +1,43 @@
 import React from "react";
-import { Doughnut, Pie } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 
-export const MyChart = () => {
-  const data = {
-    labels: ["Red", "Blue"],
-    datasets: [
+const data = {
+  labels: ["April ", "May ", "June ", "July ", "August ", "September "],
+  datasets: [
+    {
+      label: "Orders per month",
+      data: [11, 9, 13, 6, 8, 4],
+      fill: false,
+      backgroundColor: "rgb(255, 99, 132)",
+      borderColor: "rgba(255, 99, 132)",
+    },
+    {
+      label: "Accounts reached",
+      data: [10, 5, 9, 7, 12, 6],
+      fill: false,
+      backgroundColor: "rgba(10, 204, 114, 0.747)",
+      borderColor: "rgba(10, 204, 114, 0.747)",
+    },
+  ],
+};
+
+const options = {
+  scales: {
+    yAxes: [
       {
-        label: "# of Votes",
-        data: [18, 19],
-        backgroundColor: ["red", "rgba(54, 162, 235, 0.2)"],
-        borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
-        borderWidth: 3,
+        ticks: {
+          beginAtZero: true,
+        },
       },
     ],
-  };
-
-  return (
-    // <Pie data={data} />
-    <Doughnut data={data} />
-  );
+  },
 };
+
+const LineChart = () => (
+  <>
+    <div className="header">{/* <h1 className="title">Line Chart</h1> */}</div>
+    <Line data={data} options={options} />
+  </>
+);
+
+export default LineChart;
