@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import { userService } from "../../services/user.service";
 export class SellerCard extends React.Component {
@@ -6,6 +7,8 @@ export class SellerCard extends React.Component {
   };
 
   render() {
+    const {seller}=this.props
+     console.log('props:', this.props.seller);
     return (
       <div className="seller-card">
         <div className="online-user-icon">
@@ -19,13 +22,13 @@ export class SellerCard extends React.Component {
               <input type="file" accept="image/png,image/jpeg" hidden={true} />
               <img
                 src={
-                  "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/26c7c4a5fb0d7f00117c66059a673699-1570772119630/e62ce888-a2da-4604-b40e-513384de070d.jpg"
+                seller.imgUrl2
                 }
               />
             </label>
           </div>
           <div className="user-profile-label">
-            <b className="seller-link">shaulbatzon</b>
+            <p className="seller-link">{seller.fullname}</p>
           </div>
         </div>
         <div className="user-stats-desc">

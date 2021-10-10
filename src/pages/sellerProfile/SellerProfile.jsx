@@ -28,6 +28,7 @@ export class SellerProfile extends React.Component {
     });
     try {
       const seller = await userService.getById(user._id);
+      console.log('lalalalala 3 2 1 ',seller);
       this.setState({ seller });
     } catch (err) {
       console.log(err);
@@ -66,6 +67,7 @@ export class SellerProfile extends React.Component {
     if (!seller) return <Loader />;
     return (
       <div className="main-profile">
+        {console.log('seller',seller)}
         <section className="seller-gigs">
           <ul className="seller-gigs-bar">
             <li onClick={() => this.toggle("gigs")}>Active gigs</li>
@@ -79,7 +81,7 @@ export class SellerProfile extends React.Component {
           </div>
         </section>
         <section className="form-thin">
-          <SellerCard />
+          <SellerCard seller={seller}/>
           <article>
             <form className="description-form">
               <aside>
