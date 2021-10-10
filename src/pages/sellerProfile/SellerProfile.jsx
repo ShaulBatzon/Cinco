@@ -17,23 +17,27 @@ export class SellerProfile extends React.Component {
   };
 
   async componentDidMount() {
-    const user = userService.getLoginUser();
-    socketService.on("new order", (order) => {
-      console.log("HEY SELLER, ", order.txt, "order: ", order);
-      console.log("order.txt: ", order.txt);
-      // user.notification.push(notification)
-      // userService.update()
-      // orderService.update(order)
-      this.setState({ notify: this.state.notify + 1 });
-    });
+    socketService.on('new order', order => {
+      const user = userService.getLoginUser();
+      const notifyTxt = order.txt
+      console.log('HEY SELLER, ', notifyTxt, 'order: ', order);
+      user.notifications.push(notifyTxt)
+      try {
+        console.log('user: ', user);
+        userService.update(user)
+      } catch (err) {
+        console.log(err);
+      }
+      this.setState({ notify: user.notifications.length })
+    })
     try {
-      const seller = await userService.getById(user._id);
-      console.log('lalalalala 3 2 1 ',seller);
+      const seller = userService.getLoginUser();
       this.setState({ seller });
     } catch (err) {
       console.log(err);
     }
   }
+
 
   componentWillUnmount() {
     socketService.off("new order");

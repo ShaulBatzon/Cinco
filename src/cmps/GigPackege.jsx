@@ -39,7 +39,7 @@ class _GigPackage extends React.Component {
       ],
     },
     packageSelected: "Basic",
-    packagePrice: this.props.packagePrice,
+    packagePrice: "60",
     isSell: false,
   };
 
@@ -86,7 +86,6 @@ class _GigPackage extends React.Component {
       packName: this.state.packageSelected,
       status: "pending",
     });
-    this.setState({ isSell: true });
   };
 
   onClick = (currLabel) => {

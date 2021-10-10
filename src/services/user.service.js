@@ -15,6 +15,7 @@ export const userService = {
   getById,
   update,
   getLoginUser,
+  getLoggedinUser,
   // add,
   login,
 };
@@ -22,6 +23,12 @@ export const userService = {
 function getLoginUser() {
   var loginUser = JSON.parse(sessionStorage.getItem("loggedinUser")) || {};
   return loginUser;
+}
+
+function getLoggedinUser() {
+  return JSON.parse(
+    sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || null
+  );
 }
 
 async function query() {
@@ -104,13 +111,8 @@ function _saveLocalUser(user) {
   sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user));
 }
 
-function getLoggedinUser() {
-  return JSON.parse(
-    sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || "null"
-  );
-}
 
 (async () => {
-  var user = getLoggedinUser();
+  var user = getLoginUser();
   if (user) socketService.emit("set-user-socket", user._id);
 })();
