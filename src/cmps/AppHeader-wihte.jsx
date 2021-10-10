@@ -10,6 +10,7 @@ import routes from "../routes";
 export class AppHeaderW extends React.Component {
   state = {
     search: "",
+    isChack: false,
   };
 
   handleChange = (ev) => {
@@ -23,6 +24,10 @@ export class AppHeaderW extends React.Component {
       let param = searchParams.get("filterBy");
       return param;
     }
+  };
+
+  toogle = () => {
+    this.setState({ isChack: !this.state.isChack });
   };
 
   submitFrom = (ev) => {
@@ -58,7 +63,7 @@ export class AppHeaderW extends React.Component {
               </button>
             </div>
           </div>
-          <nav className="navbar-links ">
+          <nav className={this.state.isChack ? "screen" : "navbar-links"}>
             {routes.map((route) => (
               <NavLink
                 className="navbar-links-items "
@@ -70,6 +75,9 @@ export class AppHeaderW extends React.Component {
               </NavLink>
             ))}
           </nav>
+          <div className="icon">
+            <i onClick={this.toogle} class="fas fa-th-large"></i>
+          </div>
         </div>
       </div>
     );

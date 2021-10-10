@@ -53,9 +53,7 @@
 .nav-cotiner {
   display: flex;
   justify-content: space-between;
-  @media (max-width: $mobile-breakpoint) {
-    padding-left: 10px;
-  }
+
   // .nav-cotiner-logo-sreah {
 
   // }
@@ -82,12 +80,66 @@
       &:nth-of-type(6) {
         display: none;
       }
+      &:nth-of-type(7) {
+        display: none;
+      }
+      &:nth-of-type(8) {
+        display: none;
+      }
+      &:nth-of-type(9) {
+        display: none;
+      }
       &:not(:nth-of-type(4)) {
         margin-inline-end: 15px;
       }
       &:hover {
         color: $clr1;
       }
+    }
+  }
+  @media (max-width: $mobile-breakpoint) {
+    padding-left: 10px;
+    .navbar-links {
+      display: none;
+    }
+    .screen {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: white;
+      height: 100vh;
+      justify-content: space-between;
+      border: 1px solid black;
+      .navbar-links-items {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:nth-of-type(5) {
+          display: none;
+        }
+        &:nth-of-type(6) {
+          display: none;
+        }
+        &:nth-of-type(7) {
+          display: none;
+        }
+        &:nth-of-type(8) {
+          display: none;
+        }
+        &:nth-of-type(9) {
+          display: none;
+        }
+      }
+      > * {
+        border-bottom: 1px solid rgba(161, 160, 160, 0.651);
+      }
+      transition: 0.6s;
+    }
+    .icon {
+      display: flex;
     }
   }
 }
@@ -101,9 +153,7 @@
   .navbar-links-items {
     color: black;
     text-decoration: none;
-    @media (max-width: $mobile-breakpoint) {
-      display: none;
-    }
+
     // &:last-child {
     //   border-radius: גק5px;
     //   border: 1px solid white;
@@ -124,6 +174,12 @@
       display: none;
     }
     &:nth-of-type(9) {
+      display: none;
+    }
+    &:nth-of-type(10) {
+      display: none;
+    }
+    &:nth-of-type(11) {
       display: none;
     }
     &:not(:nth-of-type(4)) {
@@ -186,4 +242,15 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
+}
+
+.icon {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 25px;
+  .fas {
+    color: black;
+  }
 }

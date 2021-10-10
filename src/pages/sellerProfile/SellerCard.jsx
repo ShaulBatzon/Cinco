@@ -6,6 +6,7 @@ export class SellerCard extends React.Component {
   };
 
   render() {
+    console.log("props:", this.props.seller.username);
     return (
       <div className="seller-card">
         <div className="online-user-icon">
@@ -25,7 +26,7 @@ export class SellerCard extends React.Component {
             </label>
           </div>
           <div className="user-profile-label">
-            <b className="seller-link">shaulbatzon</b>
+            <b className="seller-link">{this.props.seller.username}</b>
           </div>
         </div>
         <div className="user-stats-desc">

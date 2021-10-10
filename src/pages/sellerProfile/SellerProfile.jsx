@@ -70,7 +70,7 @@ export class SellerProfile extends React.Component {
           <ul className="seller-gigs-bar">
             <li onClick={() => this.toggle("gigs")}>Active gigs</li>
             <li onClick={() => this.toggle("orders")}>
-              Orders<spen className="notf">({notify})</spen>
+              Orders<spen className="notf">{notify}</spen>
             </li>
             <li onClick={() => this.toggle("draft")}>Draft</li>
           </ul>
@@ -79,7 +79,7 @@ export class SellerProfile extends React.Component {
           </div>
         </section>
         <section className="form-thin">
-          <SellerCard />
+          <SellerCard seller={seller} />
           <article>
             <form className="description-form">
               <aside>
