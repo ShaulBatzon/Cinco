@@ -39,7 +39,7 @@ class _GigPackage extends React.Component {
       ],
     },
     packageSelected: "Basic",
-    packagePrice: "60",
+    packagePrice: this.props.gig.price,
     isSell: false,
   };
 
@@ -77,6 +77,7 @@ class _GigPackage extends React.Component {
     if (Object.keys(loginUser).length === 0) return null;
     const { gig } = this.props;
     await this.props.addOrder({
+      gigName: gig.gigName,
       buyer: loginUser.username,
       buyerId: loginUser._id,
       gigId: gig._id,
