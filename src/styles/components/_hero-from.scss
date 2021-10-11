@@ -22,6 +22,38 @@
   }
 }
 
+.hero-form-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 650px;
+  max-width: 100%;
+  font-family: Macan;
+
+  & > :not(:last-child) {
+    margin: 0 0 20px;
+  }
+
+  h1 {
+    color: white;
+    font-size: 48px;
+    line-height: 56px;
+    padding-left: 25px;
+    font-family: Macan-Bold;
+    span {
+      font-family: domaine-display-italic;
+      margin-left: 1px;
+    }
+  }
+  .hero-form-search-bar-wrapper {
+    width: 50%;
+    margin: 0 20px;
+    input {
+      font-size: 18px;
+    }
+  }
+}
+
 .hero-form-search-bar-wrapper {
   display: flex;
   width: 100%;
@@ -72,6 +104,9 @@
 .hero-form-tags-wrapper {
   display: flex;
   align-items: center;
+  @media (max-width: $mobile-breakpoint) {
+    display: none;
+  }
 }
 
 .hero-form-tags-text {

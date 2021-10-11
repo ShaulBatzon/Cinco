@@ -15,7 +15,6 @@ export class SellerProfile extends React.Component {
     seller: {},
     user: null
   };
-
   async componentDidMount() {
     try {
       const seller = userService.getLoginUser();
@@ -47,7 +46,7 @@ export class SellerProfile extends React.Component {
 
   render() {
     const { seller, selecetTab } = this.state;
-    const user = userService.getLoggedinUser()
+    const user = userService.getLoginUser()
     
     if (!seller) return <Loader />;
     return (

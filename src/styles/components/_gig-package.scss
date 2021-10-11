@@ -69,6 +69,9 @@ aside {
   margin: 0 30px;
   color: #404145;
   font-family: Macan;
+  h3 {
+    text-transform: uppercase;
+  }
   .from-heder {
     display: flex;
     justify-content: space-between;
@@ -127,4 +130,8 @@ aside {
       fill: $clr1;
     }
   }
+}
+
+.info-after-sell {
+  line-height: 20px;
 }

@@ -16,6 +16,7 @@ export const userService = {
   update,
   getLoggedinUser,
   getLoginUser,
+  getLoggedinUser,
   // add,
   login,
 };
@@ -25,20 +26,26 @@ function getLoginUser() {
   return loginUser;
 }
 
+function getLoggedinUser() {
+  return JSON.parse(
+    sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null'
+  );
+}
+
 async function query() {
-  return await storageService.query(STORAGE_KEY);
-  // return await httpService.get(`users`);
+  //return await storageService.query(STORAGE_KEY);
+  return await httpService.get(`users`);
 }
 
 async function getById(userId) {
-  //const user = await storageService.get("user", userId);
-  const user = await httpService.get(`user/${userId}`);
+ // const user = await storageService.get("user", userId);
+   const user = await httpService.get(`user/${userId}`);
   // gWatchedUser = users;
   return user;
 }
 
 async function update(user) {
-  //await storageService.put('user', user)
+  //await storageService.put("user", user);
   const newUsser = await httpService.put(`user/${user._id}`, user);
   // Handle case in which admin updates other user's details
   return newUsser;
@@ -55,6 +62,7 @@ async function login(userCred) {
     socketService.emit("set-user-socket", user._id);
     _saveLocalUser(user);
 
+    window.location.href = "/";
     return user;
   } catch (err) {
     console.log(err);
@@ -62,8 +70,8 @@ async function login(userCred) {
 }
 
 async function signup(userCred) {
-  // const user = await storageService.post("user", userCred);
-  const user = await httpService.post("auth/signup", userCred);
+  //const user = await storageService.post("user", userCred);
+   const user = await httpService.post("auth/signup", userCred);
   return _saveLocalUser(user);
 }
 
@@ -105,13 +113,8 @@ function _saveLocalUser(user) {
   sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user));
 }
 
-function getLoggedinUser() {
-  return JSON.parse(
-    sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || "null"
-  );
-}
 
 (async () => {
-  var user = getLoggedinUser();
+  var user = getLoginUser();
   if (user) socketService.emit("set-user-socket", user._id);
 })();
