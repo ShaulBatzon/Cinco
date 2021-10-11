@@ -9,6 +9,7 @@ import { SellerProfile } from "./pages/sellerProfile/SellerProfile.jsx";
 import { Orders } from "./pages/sellerProfile/Orders.jsx";
 import { SellerGigs } from "./pages/sellerProfile/SellerGigs.jsx";
 import { AddGig } from "./pages/sellerProfile/AddGig";
+import { Intro } from "./pages/intro.jsx";
 // Routes accesible from the main navigation (in AppHeader)
 
 const user = userService.getLoginUser();

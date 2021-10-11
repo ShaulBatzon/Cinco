@@ -109,7 +109,7 @@ export function CardList() {
                 min: 350,
                 max: 700,
               },
-              items: 2,
+              items: 1,
             },
             three: {
               breakpoint: {

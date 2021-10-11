@@ -38,15 +38,15 @@ async function query() {
 }
 
 async function getById(userId) {
-  //const user = await storageService.get("user", userId);
-  const user = await httpService.get(`user/${userId}`);
+  const user = await storageService.get("user", userId);
+  // const user = await httpService.get(`user/${userId}`);
   // gWatchedUser = users;
   return user;
 }
 
 async function update(user) {
-  //await storageService.put('user', user)
-  const newUsser = await httpService.put(`user/${user._id}`, user);
+  await storageService.put("user", user);
+  // const newUsser = await httpService.put(`user/${user._id}`, user);
   // Handle case in which admin updates other user's details
   return newUsser;
 }
@@ -69,8 +69,8 @@ async function login(userCred) {
 }
 
 async function signup(userCred) {
-  // const user = await storageService.post("user", userCred);
-  const user = await httpService.post("auth/signup", userCred);
+  const user = await storageService.post("user", userCred);
+  // const user = await httpService.post("auth/signup", userCred);
   return _saveLocalUser(user);
 }
 

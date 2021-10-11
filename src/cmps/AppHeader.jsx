@@ -19,14 +19,14 @@ export class AppHeader extends React.Component {
   //     console.log('HEY BUYER, ', order.txt, 'order: ',order);
   //   })
   // }
-  
+
   // componentWillUnmount() {
   //   socketService.off('order accepted')
   //   // socketService.terminate()
   // }
 
   change = () => {
-    if (window.scrollY >= 100) {
+    if (window.scrollY >= 30) {
       this.setState({ actvie: true, comp: <AppHeaderW /> });
     } else {
       this.setState({ actvie: false, comp: <AppHeaderR /> });

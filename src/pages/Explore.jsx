@@ -8,7 +8,7 @@ export class Explore extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="content-container">
         <GigList />
       </div>
     );

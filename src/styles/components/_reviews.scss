@@ -3,7 +3,7 @@
     display: flex;
     gap: 0.6rem;
     margin: 0;
-    padding-bottom: 20px;
+    // padding-bottom: 20px;
     padding-left: 15px;
   }
 
@@ -66,6 +66,17 @@
     font-weight: 700;
     font-size: smaller;
     line-height: 17px;
+  }
+  span {
+    padding-top: 1px;
+    .star-rate {
+      p:first-of-type {
+        padding-top: 3px;
+      }
+      p:last-of-type {
+        padding-top: 1px;
+      }
+    }
   }
 }
 
