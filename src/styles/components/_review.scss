@@ -14,7 +14,7 @@ ul {
     // column-gap: 10px;
     padding: 15px 0 15px 0px;
     header {
-      padding-top: 5px;
+      // padding-top: 5px;
       padding-left: 20px;
       > * {
         margin-bottom: 5px;
@@ -61,9 +61,11 @@ ul {
     padding: 8px 0;
     color: #292929cc;
     font-size: 14px;
+    line-height: 24px;
   }
 }
 
 .user-img {
   border-radius: 50%;
+  margin-top: 5px;
 }

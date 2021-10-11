@@ -24,7 +24,9 @@ export class StarRate extends React.Component {
     return (
       <div className="star-rate">
         <p>{this.starts(Math.ceil(this.rate(this.props.reviews)))}</p>
-        <p>{Number(this.rate(this.props.reviews).toFixed(1))}</p>
+        <p className="star-number">
+          {Number(this.rate(this.props.reviews).toFixed(1))}
+        </p>
       </div>
     );
   }

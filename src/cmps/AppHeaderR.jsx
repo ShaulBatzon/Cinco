@@ -8,11 +8,11 @@ import routes from "../routes";
 // import { LoginSignup } from './login-signup.jsx'
 
 export class AppHeaderR extends React.Component {
-  state = {isOpen: false}
+  state = { isOpen: false };
 
   menuClick = () => {
     this.setState({ isOpen: !this.state.isOpen });
-};
+  };
 
   render() {
     return (
@@ -20,7 +20,10 @@ export class AppHeaderR extends React.Component {
         <Link to={"/"} style={{ color: "white" }} className="navbar-logo">
           Cinco
         </Link>
-        <nav className={`navbar-links ${this.state.isOpen ? 'open' : 'closed'}`} onMouseLeave={()=>this.setState({isOpen:false})}>
+        <nav
+          className={`navbar-links ${this.state.isOpen ? "open" : "closed"}`}
+          onMouseLeave={() => this.setState({ isOpen: false })}
+        >
           {routes.map((route) => (
             <NavLink
               style={{ color: "white" }}
@@ -33,7 +36,9 @@ export class AppHeaderR extends React.Component {
             </NavLink>
           ))}
         </nav>
-          <div className={`hamburger ${this.state.isOpen ? '' : 'closed'}`} onClick={this.menuClick}></div> 
+        <div className="icon">
+          <i class="fas fa-th-large"></i>
+        </div>
       </div>
     );
   }

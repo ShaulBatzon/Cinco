@@ -20,10 +20,28 @@
   top: 0;
   padding: 25px 0;
   margin-bottom: 0;
+  &.content-container {
+    margin-bottom: 5px;
+  }
   .navbar-links-items {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    .navbar-logo {
+      margin-left: 15px;
+    }
+    .navbar-links-items {
+      display: none;
+    }
+    .icon {
+      display: block;
+      .fas {
+        color: white;
+      }
+    }
   }
 }
 
@@ -41,6 +59,9 @@
   margin-bottom: 0px;
   .content-container {
     margin-bottom: 0;
+  }
+  .navbar-logo {
+    padding-top: 5px;
   }
   border-bottom: 1px solid #dddee0;
   @media (max-width: $mobile-breakpoint) {

@@ -60,6 +60,10 @@
   > span {
     font-weight: 400;
     padding-top: 2px;
+    &:first-of-type {
+      font-weight: 700;
+    }
+
     &:last-child {
       color: #b5b6ba;
       padding-top: 0;

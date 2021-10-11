@@ -93,7 +93,7 @@ class _GigPackage extends React.Component {
   onClick = (currLabel) => {
     // const { packageSelected } = this.state;
     const { gig } = this.props;
-    const standardPirce = gig.price * (1.5);
+    const standardPirce = gig.price * 1.5;
     const PremiumPirce = standardPirce * 2;
     this.setState({ packageSelected: currLabel });
     // eslint-disable-next-line default-case
@@ -145,10 +145,19 @@ class _GigPackage extends React.Component {
               Premium
             </label>
           </div>
-          <form className="packs-form" onSubmit={(ev) => this.addOrder(ev)}>
-            <h3>Thank You for your order</h3>
-            <p>
-              your order has been placed and is being processes. you will recive
+          <form
+            className="packs-form"
+            style={this.state.isSell ? { marginTop: "15px" } : ""}
+            onSubmit={(ev) => this.addOrder(ev)}
+          >
+            <h3 style={this.state.isSell ? { color: "#1dbf73" } : ""}>
+              Thank you for your order
+            </h3>
+            <p
+              className="info-after-sell"
+              style={this.state.isSell ? { paddingTop: "0px" } : ""}
+            >
+              Your order has been placed and is being processes. You will recive
               an email with the order details.
             </p>
             <footer>
@@ -156,7 +165,7 @@ class _GigPackage extends React.Component {
                 className="btn"
                 style={
                   this.state.isSell
-                    ? { backgroundColor: "#1dbf73bd" }
+                    ? { display: "none" }
                     : { backgroundColor: "#1dbf73bd" }
                 }
               >
