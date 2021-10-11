@@ -45,20 +45,20 @@ async function update(user) {
 }
 
 async function login(userCred) {
-  const users = await storageService.query("user");
-  const user = users.find((user) => user.username === userCred.username);
-  return _saveLocalUser(user);
-  // try {
-  //   console.log("user: ", userCred);
-  //   const user = await httpService.post("auth/login", userCred);
-  //   socketService.emit("set-user-socket", user._id);
-  //   _saveLocalUser(user);
+  // const users = await storageService.query("user");
+  // const user = users.find((user) => user.username === userCred.username);
+  // window.location.href = "/";
+  // return _saveLocalUser(user);
+  try {
+    console.log("user: ", userCred);
+    const user = await httpService.post("auth/login", userCred);
+    socketService.emit("set-user-socket", user._id);
+    _saveLocalUser(user);
 
-  //   window.location.href = "/";
-  //   return user;
-  // } catch (err) {
-  //   console.log(err);
-  // }
+    return user;
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 async function signup(userCred) {

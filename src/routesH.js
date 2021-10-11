@@ -9,7 +9,6 @@ import { AppHeaderW } from "./cmps/AppHeader-wihte";
 import { AppHeader } from "./cmps/AppHeader";
 import { SellerProfile } from "./pages/sellerProfile/SellerProfile.jsx";
 // Routes accesible from the main navigation (in AppHeader)
-
 const routesH = [
   {
     path: "/:page/:page",

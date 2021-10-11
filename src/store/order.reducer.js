@@ -14,10 +14,11 @@ export function orderReducer(state = initialState, action = {}) {
         orders: state.orders.filter((order) => order._id !== action.ordersId),
       };
     case "UPDATE_ORDER":
+      console.log('state: ',state);
       return {
         ...state,
         orders: state.orders.map((order) =>
-          order._id === action.order._id ? action.order : order
+          order._id === action.updatedOrder._id ? action.updatedOrder : order
         ),
       };
     default:

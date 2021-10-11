@@ -9,6 +9,7 @@ import { Loader } from "./cmps/Loader.jsx";
 // import { AppFooter } from './cmps/app-footer'
 // import {UserDetails} from './pages/user-details'
 import { AppHeaderW } from "./cmps/AppHeader-wihte";
+const user = userService.getLoginUser()
 
 export class RootCmp extends React.Component {
   state = {
@@ -24,31 +25,35 @@ export class RootCmp extends React.Component {
 
   render() {
     const { isSellerMode } = this.state;
+    console.log('isSellerMode: ',isSellerMode);
     if (isSellerMode === null) return <Loader />;
     return (
       <div>
         <main>
-
-          {routesH.map((route) => (
+          {(!isSellerMode) ? 
+           routesH.map((route) => (
             <Route
               key={route.path}
               exact
               component={route.component}
               path={route.path}
-            />
-          ))}
-          <Switch>
-            {routes.map((route) => (
-              <Route
-                key={route.path}
-                exact
-                component={route.component}
-                path={route.path}
               />
-            ))}
-
-            {/* <Route path="/user/:id" component={UserDetails} /> */}
-          </Switch>
+          ))
+        :
+        <HeaderSeller/>
+        }
+              <Switch>
+                {routes.map((route) => (
+                  <Route
+                    key={route.path}
+                    exact
+                    component={route.component}
+                    path={route.path}
+                  />
+                ))}
+    
+                {/* <Route path="/user/:id" component={UserDetails} /> */}
+              </Switch>
         </main>
         {/* <AppFooter /> */}
       </div>

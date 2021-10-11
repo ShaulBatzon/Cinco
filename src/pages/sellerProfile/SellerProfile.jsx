@@ -4,33 +4,19 @@ import { userService } from "../../services/user.service";
 import { Loader } from "../../cmps/Loader.jsx";
 import { SellerGigs } from "./SellerGigs.jsx";
 import { Orders } from "./Orders.jsx";
-import { socketService } from "../../services/socket.service";
 import { orderService } from "../../services/order.service.js";
+import { NavLink } from "react-router-dom";
 
 import LineChart from "./Chart.jsx";
 
 export class SellerProfile extends React.Component {
   state = {
     selecetTab: "",
-    notify: 0,
     seller: {},
     user: null
   };
 
   async componentDidMount() {
-    socketService.on('new order', order => {
-      const user = userService.getLoggedinUser();
-      const notifyTxt = order.txt
-      console.log('HEY SELLER, ', notifyTxt, 'order: ', order);
-      user.notifications.push(notifyTxt)
-      try {
-        console.log('user: ', user);
-        userService.update(user)
-      } catch (err) {
-        console.log(err);
-      }
-      this.setState({ notify: user.notifications.length })
-    })
     try {
       const seller = userService.getLoginUser();
       this.setState({ seller });
@@ -39,10 +25,6 @@ export class SellerProfile extends React.Component {
     }
   }
 
-  componentWillUnmount() {
-    socketService.off("new order");
-    // socketService.terminate()
-  }
   
 
   toggle = (tab) => {
@@ -66,20 +48,13 @@ export class SellerProfile extends React.Component {
   render() {
     const { seller, selecetTab } = this.state;
     const user = userService.getLoggedinUser()
-    const notify = user.notifications.length
-    // const { gigs, description, languages} = this.state.sellerProfile
-    // const {sellerProfile } = this.state
-    // console.log("sellerProfile: ", seller);
+    
     if (!seller) return <Loader />;
     return (
       <div className="main-profile">
-        {console.log('seller', seller)}
         <section className="seller-gigs">
           <ul className="seller-gigs-bar">
             <li onClick={() => this.toggle("gigs")}>Active gigs</li>
-            <li onClick={() => this.toggle("orders")}>
-              Orders (<spen className="notf">{notify}</spen>)
-            </li>
             <li onClick={() => this.toggle("draft")}>Dashboard</li>
           </ul>
           <div className="gigSellerList">
