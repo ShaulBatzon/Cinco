@@ -39,7 +39,7 @@ async function getById(userId) {
 
 async function update(user) {
   await storageService.put("user", user);
-  // const newUsser = await httpService.put(`user/${user._id}`, user);
+  const newUsser = await httpService.put(`user/${user._id}`, user);
   // Handle case in which admin updates other user's details
   return newUsser;
 }
