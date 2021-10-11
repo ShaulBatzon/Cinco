@@ -16,20 +16,23 @@ export class SellerProfile extends React.Component {
     seller: {},
     user: null
   };
-
   async componentDidMount() {
+    const user = userService.getLoggedinUser();
+    console.log('user: ',user);
     socketService.on('new order', order => {
-      const user = userService.getLoggedinUser();
       const notifyTxt = order.txt
       console.log('HEY SELLER, ', notifyTxt, 'order: ', order);
-      user.notifications.push(notifyTxt)
+      // console.log('user.notifications',user);
+      // user.notifications.push(notifyTxt)
+      const {notify} = this.state
+      this.setState({notify: notify + 1})
+      console.log('nofify: ',notify);
       try {
         console.log('user: ', user);
         userService.update(user)
       } catch (err) {
         console.log(err);
       }
-      this.setState({ notify: user.notifications.length })
     })
     try {
       const seller = userService.getLoginUser();
@@ -38,6 +41,7 @@ export class SellerProfile extends React.Component {
       console.log(err);
     }
   }
+
 
 
   componentWillUnmount() {
@@ -65,9 +69,9 @@ export class SellerProfile extends React.Component {
   };
 
   render() {
-    const { seller, selecetTab } = this.state;
-    const user = userService.getLoggedinUser()
-    const notify = user.notifications.length
+    const { seller, selecetTab,notify } = this.state;
+    const user = userService.getLoginUser()
+    //const notify = user.notifications.length || 0
     // const { gigs, description, languages} = this.state.sellerProfile
     // const {sellerProfile } = this.state
     // console.log("sellerProfile: ", seller);
