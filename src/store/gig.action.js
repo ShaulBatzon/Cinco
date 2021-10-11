@@ -17,7 +17,6 @@ export function onSelectGig(gigId) {
     return (dispatch, getState) => {
         gigService.getById(gigId)
             .then(() => {
-                console.log('onSelectGig!!',gigId);
                 dispatch({
                     type: 'SELECT_GIG',
                     gigId

@@ -14,7 +14,6 @@ export function orderReducer(state = initialState, action = {}) {
         orders: state.orders.filter((order) => order._id !== action.ordersId),
       };
     case "UPDATE_ORDER":
-      console.log('state: ',state);
       return {
         ...state,
         orders: state.orders.map((order) =>

@@ -1,8 +1,8 @@
 import { httpService } from "./http.service";
-import { storageService } from "./async-storage.service.js";
-import { userService } from "./user.service.js";
+//import { storageService } from "./async-storage.service.js";
+//import { userService } from "./user.service.js";
 
-const STORAGE_KEY = "orders";
+//const STORAGE_KEY = "orders";
 // const listeners = []
 
 export const orderService = {
@@ -20,6 +20,7 @@ async function query(filterBy) {
 
 async function add(order) {
   const addedOrder = await httpService.post(`order`, order)
+
   return addedOrder;
 }
 
