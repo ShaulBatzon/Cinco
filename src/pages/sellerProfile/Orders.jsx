@@ -32,6 +32,7 @@ class _Orders extends React.Component {
 
     async acceptOrder(acceptedOrder) {
         if (acceptedOrder.status === 'active') return
+        window.location.href = "/sellerProfile/orders"
         this.props.acceptOrder(acceptedOrder)
     }
 

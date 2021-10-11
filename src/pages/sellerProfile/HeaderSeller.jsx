@@ -19,7 +19,6 @@ export class HeaderSeller extends React.Component {
     this.setState({ user })
     socketService.on('new order', order => {
       const notifyTxt = order.txt
-      console.log('HEY SELLER, ', notifyTxt, 'order: ', order);
       // user.notifications.push(notifyTxt)
       this.setState((prevstate) => ({ ...prevstate, notify: prevstate.notify + 1}));
       try {
@@ -82,11 +81,11 @@ export class HeaderSeller extends React.Component {
                 Gigs
               </a>
             </li>
-            <li>
+            {/* <li>
               <a className="clean-link" href="/sellerProfile/analytics">
                 Analytics
               </a>
-            </li>
+            </li> */}
             <li>
               <a className="clean-link" href="/sellerProfile/earnings">
                 Earnings
