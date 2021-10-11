@@ -25,7 +25,6 @@ export class RootCmp extends React.Component {
 
   render() {
     const { isSellerMode } = this.state;
-    console.log('isSellerMode: ',isSellerMode);
     if (isSellerMode === null) return <Loader />;
     return (
       <div>

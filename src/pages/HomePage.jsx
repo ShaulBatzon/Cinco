@@ -26,7 +26,6 @@ export class HomePage extends React.Component {
   }
 
   getRandomColor = () => {
-    console.log("i", this.state.i);
     if (this.state.i > 2) this.setState({ i: 0 });
     var letters = [
       "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png",
@@ -45,7 +44,6 @@ export class HomePage extends React.Component {
   };
 
   change = () => {
-    console.log("W", window.innerWidth);
     if (window.innerWidth >= 1140) {
       this.setState({ actvie: true });
     } else {

@@ -40,7 +40,6 @@ export class SellerProfile extends React.Component {
           [name]: value,
         },
       }),
-      () => console.log("state: ", this.state)
     );
   };
 

@@ -1,9 +1,9 @@
 import { httpService } from "./http.service.js";
-import { storageService } from "./async-storage.service.js";
-import { socketService, SOCKET_EVENT_USER_UPDATED } from "./socket.service";
+//import { storageService } from "./async-storage.service.js";
+import { socketService } from "./socket.service";
 const STORAGE_KEY_LOGGEDIN_USER = "loggedinUser";
-var gWatchedUser = null;
-const STORAGE_KEY = "users";
+//var gWatchedUser = null;
+//const STORAGE_KEY = "users";
 //function user-service
 //get users by id
 //delete user
@@ -16,7 +16,6 @@ export const userService = {
   update,
   getLoggedinUser,
   getLoginUser,
-  getLoggedinUser,
   // add,
   login,
 };
@@ -68,33 +67,15 @@ async function login(userCred) {
   }
 }
 
-async function signup(userCred) {
-  //const user = await storageService.post("user", userCred);
-   const user = await httpService.post("auth/signup", userCred);
-  return _saveLocalUser(user);
-}
+// async function signup(userCred) {
+//   //const user = await storageService.post("user", userCred);
+//    const user = await httpService.post("auth/signup", userCred);
+//   return _saveLocalUser(user);
+// }
 
-async function logout() {
-  // sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
-  return await httpService.post("auth/logout");
-}
-
-// async function checkValidLogin(username, password) {
-//     try {
-//         const users = await query()
-//         console.log(users);
-//         const user = users.find(user => user.username === username)
-//         if (!user) throw 'No such username'
-//         if (user.password === password) {
-//             user.password = ''
-//             sessionStorage['loginUser'] = JSON.stringify(user);
-//             window.location.href = '/';
-//         }
-//         else throw 'wrong password'
-//     }
-//     catch (_err) {
-//         throw (_err)
-//     }
+// async function logout() {
+//   // sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
+//   return await httpService.post("auth/logout");
 // }
 
 // async function add(user) {

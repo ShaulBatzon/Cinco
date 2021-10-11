@@ -8,7 +8,7 @@ function saveToStorage(key, val) {
 }
 
 
-export default {
+export  {
     loadFromStorage,
     saveToStorage
 }

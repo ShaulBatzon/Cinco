@@ -21,7 +21,6 @@ export class Intro extends React.Component {
   }
 
   getRandomColor = () => {
-    console.log("i", this.state.i);
     if (this.state.i > 2) this.setState({ i: 0 });
     var letters = ["#952d0a", "#672031", "#00411e"];
     var color = "";
@@ -30,7 +29,6 @@ export class Intro extends React.Component {
   };
 
   render() {
-    console.log("color", this.state.color);
     return (
       <section>
         <div

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link } from "react-router-dom";
 import { Badge } from '@mui/material';
@@ -19,7 +20,7 @@ export class HeaderSeller extends React.Component {
     this.setState({ user })
     socketService.on('new order', order => {
       const notifyTxt = order.txt
-      console.log('HEY SELLER, ', notifyTxt, 'order: ', order);
+      //console.log('HEY SELLER, ', notifyTxt, 'order: ', order);
       // user.notifications.push(notifyTxt)
       this.setState((prevstate) => ({ ...prevstate, notify: prevstate.notify + 1}));
       try {
@@ -35,23 +36,23 @@ export class HeaderSeller extends React.Component {
     // socketService.terminate()
   }
 
-  clearNotify = () => {
-    // this.setState({notify: 0})
-  }
+  // clearNotify = () => {
+  //   // this.setState({notify: 0})
+  // }
 
-  toggleMode = () => {
-    const { user } = this.state
+  // toggleMode = () => {
+  //   const { user } = this.state
     
-    try {
+  //   try {
      
-    } catch(err) {
-      console.log(err);
-    }
-  }
+  //   } catch(err) {
+  //     console.log(err);
+  //   }
+  // }
 
   render() {
     const { notify, user } = this.state
-    console.log('notify: ',notify);
+    //console.log('notify: ',notify);
     return (
       <div className="header-seller-container">
         <div className="hamburger"></div>
@@ -80,16 +81,6 @@ export class HeaderSeller extends React.Component {
             <li>
               <a className="clean-link" href="/sellerProfile/gigs">
                 Gigs
-              </a>
-            </li>
-            <li>
-              <a className="clean-link" href="/sellerProfile/analytics">
-                Analytics
-              </a>
-            </li>
-            <li>
-              <a className="clean-link" href="/sellerProfile/earnings">
-                Earnings
               </a>
             </li>
           </ul>

@@ -1,6 +1,6 @@
-import { storageService } from "./async-storage.service.js";
+//import { storageService } from "./async-storage.service.js";
 import { httpService } from "./http.service.js";
-const STORAGE_KEY = "gigs";
+//const STORAGE_KEY = "gigs";
 // const listeners = []
 
 export const gigService = {
