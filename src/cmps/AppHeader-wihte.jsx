@@ -64,6 +64,9 @@ export class AppHeaderW extends React.Component {
             </div>
           </div>
           <nav className={this.state.isChack ? "screen" : "navbar-links"}>
+            <div className="icon">
+              <i onClick={this.toogle} class="fas fa-th-large"></i>
+            </div>
             {routes.map((route) => (
               <NavLink
                 className="navbar-links-items "

@@ -46,14 +46,14 @@ export class HomePage extends React.Component {
 
   change = () => {
     console.log("W", window.innerWidth);
-    if (window.innerWidth >= 1140) {
+    if (window.innerWidth <= 1140) {
       this.setState({ actvie: true });
     } else {
       this.setState({ actvie: false });
     }
   };
   render() {
-    window.addEventListener("resize", this.change);
+    window.addEventListener("window", this.change);
     if (this.state.actvie) return <Intro />;
     return (
       <section>
