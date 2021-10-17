@@ -1,6 +1,6 @@
-import { storageService } from "./async-storage.service.js";
+//import { storageService } from "./async-storage.service.js";
 import { httpService } from "./http.service.js";
-const STORAGE_KEY = "gigs";
+//const STORAGE_KEY = "gigs";
 // const listeners = []
 
 export const gigService = {
@@ -48,23 +48,3 @@ function getGigId() {
     return param;
   }
 }
-
-// function subscribe(listener) {
-//     listeners.push(listener)
-// }
-
-// function _notifySubscribersGigsChanged(gigs) {
-//     console.log('Notifying Listeners');
-//     listeners.forEach(listener => listener(gigs))
-// }
-
-// window.addEventListener('storage', () => {
-//     console.log('Storage Changed from another Browser!');
-//     query()
-//         .then(gigs => {
-//             _notifySubscribersGigsChanged(gigs)
-//         })
-// })
-
-// TEST DATA
-// storageService.post(STORAGE_KEY, {vendor: 'Subali Rahok 2', price: 980}).then(x => console.log(x))

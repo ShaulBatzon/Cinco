@@ -1,7 +1,6 @@
 import React from "react";
 // import { connect } from 'react-redux'
 import { Link, NavLink } from "react-router-dom";
-
 import routes from "../routes";
 
 // import { onLogin, onLogout, onSignup, loadUsers, removeUser } from '../store/user.actions.js'

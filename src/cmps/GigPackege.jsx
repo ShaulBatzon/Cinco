@@ -74,8 +74,8 @@ class _GigPackage extends React.Component {
   addOrder = async (ev) => {
     ev.preventDefault();
     const loginUser = userService.getLoginUser();
-    if (Object.keys(loginUser).length === 0) return null;
-    const { gig } = this.props;
+    if (!loginUser._id) return
+    const { gig } = this.props
     await this.props.addOrder({
       gigName: gig.gigName,
       buyer: loginUser.username,
@@ -88,6 +88,7 @@ class _GigPackage extends React.Component {
       status: "pending",
     });
     this.setState({ isSell: true });
+
   };
 
   onClick = (currLabel) => {

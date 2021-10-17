@@ -4,19 +4,17 @@ import { userService } from "../../services/user.service";
 import { Loader } from "../../cmps/Loader.jsx";
 import { SellerGigs } from "./SellerGigs.jsx";
 import { Orders } from "./Orders.jsx";
-import { socketService } from "../../services/socket.service";
 import { orderService } from "../../services/order.service.js";
+import { NavLink } from "react-router-dom";
 
 import LineChart from "./Chart.jsx";
 
 export class SellerProfile extends React.Component {
   state = {
     selecetTab: "",
-    notify: 0,
     seller: {},
     user: null,
   };
-
   async componentDidMount() {
     socketService.on("new order", (order) => {
       const user = userService.getLoggedinUser();
@@ -77,9 +75,6 @@ export class SellerProfile extends React.Component {
         <section className="seller-gigs">
           <ul className="seller-gigs-bar">
             <li onClick={() => this.toggle("gigs")}>Active gigs</li>
-            <li onClick={() => this.toggle("orders")}>
-              Orders (<spen className="notf">{notify}</spen>)
-            </li>
             <li onClick={() => this.toggle("draft")}>Dashboard</li>
           </ul>
           <div className="gigSellerList">

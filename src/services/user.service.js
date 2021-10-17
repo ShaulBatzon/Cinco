@@ -1,9 +1,9 @@
 import { httpService } from "./http.service.js";
-import { storageService } from "./async-storage.service.js";
-import { socketService, SOCKET_EVENT_USER_UPDATED } from "./socket.service";
+//import { storageService } from "./async-storage.service.js";
+import { socketService } from "./socket.service";
 const STORAGE_KEY_LOGGEDIN_USER = "loggedinUser";
-var gWatchedUser = null;
-const STORAGE_KEY = "users";
+//var gWatchedUser = null;
+//const STORAGE_KEY = "users";
 //function user-service
 //get users by id
 //delete user
@@ -25,9 +25,15 @@ function getLoginUser() {
   return loginUser;
 }
 
+function getLoggedinUser() {
+  return JSON.parse(
+    sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || "null"
+  );
+}
+
 async function query() {
-  return await storageService.query(STORAGE_KEY);
-  // return await httpService.get(`users`);
+  //return await storageService.query(STORAGE_KEY);
+  return await httpService.get(`users`);
 }
 
 async function getById(userId) {
@@ -67,27 +73,15 @@ async function signup(userCred) {
   return _saveLocalUser(user);
 }
 
-async function logout() {
-  // sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
-  return await httpService.post("auth/logout");
-}
+// async function signup(userCred) {
+//   //const user = await storageService.post("user", userCred);
+//    const user = await httpService.post("auth/signup", userCred);
+//   return _saveLocalUser(user);
+// }
 
-// async function checkValidLogin(username, password) {
-//     try {
-//         const users = await query()
-//         console.log(users);
-//         const user = users.find(user => user.username === username)
-//         if (!user) throw 'No such username'
-//         if (user.password === password) {
-//             user.password = ''
-//             sessionStorage['loginUser'] = JSON.stringify(user);
-//             window.location.href = '/';
-//         }
-//         else throw 'wrong password'
-//     }
-//     catch (_err) {
-//         throw (_err)
-//     }
+// async function logout() {
+//   // sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
+//   return await httpService.post("auth/logout");
 // }
 
 // async function add(user) {
@@ -105,13 +99,7 @@ function _saveLocalUser(user) {
   sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user));
 }
 
-function getLoggedinUser() {
-  return JSON.parse(
-    sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || "null"
-  );
-}
-
 (async () => {
-  var user = getLoggedinUser();
+  var user = getLoginUser();
   if (user) socketService.emit("set-user-socket", user._id);
 })();

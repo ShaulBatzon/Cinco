@@ -62,10 +62,10 @@ const routes = [
   //   path: "/sellerProfile/gigs",
   //   component: SellerGigs,
   // },
-  // {
-  //   path: "/sellerProfile/orders",
-  //   component: Orders,
-  // },
+  {
+    path: "/sellerProfile/orders",
+    component: Orders,
+  },
   // {
   //   path: "/sellerProfile/gigs/addGig",
   //   component: AddGig,

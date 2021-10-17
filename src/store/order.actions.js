@@ -1,5 +1,4 @@
 import { orderService } from '../services/order.service'
-import { socketService, SOCKET_EVENT_ORDER_ADDED } from '../services/socket.service'
 import { userService } from '../services/user.service'
 
 
@@ -24,9 +23,7 @@ export function addOrder(order) {
   return async dispatch => {
     try {
       const addedOrder = await orderService.add(order)
-      console.log('addedOrder: ', addedOrder);
       dispatch({ type: 'ADD_ORDER', addedOrder })
-        
     } catch (err) {
       console.log('OrderActions: err in addOrder', err)
     }
@@ -47,11 +44,12 @@ export function removeOrder(orderId) {
 export function acceptOrder(acceptedOrder) {
   return async dispatch => {
     try {
-     orderService.update()
-      const orderId = acceptedOrder._id
-      dispatch({ type: 'UPDATE_ORDER', orderId })
+      acceptedOrder.status = 'active'
+      const updatedOrder = await orderService.update(acceptedOrder)
+      console.log('updatedOrder: ',updatedOrder);
+      // dispatch({ type: 'UPDATE_ORDER', updatedOrder })
     } catch (err) {
-      console.log('OrderActions: err in removeOrder', err)
+      console.log('OrderActions: err in acceptOrder', err)
     }
   }
 }

@@ -1,0 +1,71 @@
+.header-seller-container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dadbdd;
+
+    @media (max-width: 1000px) {
+        display: none;
+    }
+
+    &:first-child {
+        display: flex;
+        align-items: center;
+        padding: 32px;
+    }
+
+    .navbar-logo {
+        color: $clrLogo;
+        margin: -4px 32px 0 0;
+    }
+
+}
+
+nav.seller-navbar-links {
+    max-width: 1300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 17px;
+    color: #7a7d85;
+    ul {
+        margin: unset;
+        
+        li {
+            padding: 0 24px 0 0;
+            a:hover {
+                color: $clr1;
+            }
+        }
+    }
+
+    
+}
+
+.prof-pic-nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.prof-pic-nav nav ul {
+    display: flex;
+    align-items: center;
+        li {
+            padding: 0px 24px 0px 0px;
+
+            &:first-of-type {
+                color: $clr1;
+                font-weight: 600;
+                font-size: 17px;
+                letter-spacing: .8px;
+            }
+        }
+}
+
+.badge-notify {
+    padding: 0px 24px 0px 0px;
+    font-size: 17px;
+}
+

@@ -8,7 +8,7 @@ export class SellerCard extends React.Component {
 
   render() {
     const {seller}=this.props
-     console.log('props:', this.props.seller);
+     //console.log('props:', this.props.seller);
     return (
       <div className="seller-card">
         <div className="online-user-icon">
