@@ -5,6 +5,7 @@ import { Loader } from "../../cmps/Loader.jsx";
 import { SellerGigs } from "./SellerGigs.jsx";
 import { Orders } from "./Orders.jsx";
 import { orderService } from "../../services/order.service.js";
+import { socketService } from "../../services/socket.service";
 import { NavLink } from "react-router-dom";
 
 import LineChart from "./Chart.jsx";
