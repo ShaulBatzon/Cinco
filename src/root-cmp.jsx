@@ -1,59 +1,27 @@
 import React from "react";
-import { Switch, Route } from "react-router";
-import routes from "./routes";
-import { userService } from "./services/user.service";
-import routesH from "./routesH";
-import { AppHeader } from "./cmps/AppHeader";
-import { HeaderSeller } from "./pages/sellerProfile/HeaderSeller.jsx";
-import { Loader } from "./cmps/Loader.jsx";
-// import { AppFooter } from './cmps/app-footer'
-// import {UserDetails} from './pages/user-details'
-import { AppHeaderW } from "./cmps/AppHeader-wihte";
-const user = userService.getLoginUser()
-
+import { Header } from "./cmps/Header";
+import { Hero } from "./cmps/Hero";
+import { Main } from "./cmps/Main";
+// import img from './assets/img/bg-pattern-home-1.svg'
+// import img2 from './assets/img/bg-pattern-home-2.svg'
 export class RootCmp extends React.Component {
   state = {
-    isSellerMode: null,
   };
-  componentDidMount() {
-    const user = userService.getLoginUser();
-    if (user) {
-      const { isSeller } = user;
-      this.setState({ isSellerMode: isSeller });
-    }
-  }
+
 
   render() {
-    const { isSellerMode } = this.state;
-    if (isSellerMode === null) return <Loader />;
     return (
-      <div>
-        <main>
-          {(!isSellerMode) ? 
-           routesH.map((route) => (
-            <Route
-              key={route.path}
-              exact
-              component={route.component}
-              path={route.path}
-              />
-          ))
-        :
-        <HeaderSeller/>
-        }
-              <Switch>
-                {routes.map((route) => (
-                  <Route
-                    key={route.path}
-                    exact
-                    component={route.component}
-                    path={route.path}
-                  />
-                ))}
-    
-                {/* <Route path="/user/:id" component={UserDetails} /> */}
-              </Switch>
-        </main>
+      <div className="flex web">
+        <div className="div1 flex">
+        {/* <span><img src={img}/></span>
+        <span className="spanImg"><img src={img2}/></span> */}
+          <Header/>
+          <Hero/>
+        </div>
+        <div className="div2 main-container">
+          <Main/>
+           </div>
+        <div className="div3 main-container"> </div>
         {/* <AppFooter /> */}
       </div>
     );

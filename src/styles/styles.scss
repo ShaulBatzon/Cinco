@@ -10,24 +10,38 @@
 @import "basics/base.scss";
 @import "basics/buttons.scss";
 
-@import "views/home-page";
+// @import "views/home-page";
 // Components
-@import "components/loginIn";
-@import "components/navbar-gigPage";
-@import "components/main-header.scss";
-@import "components/sellerProfile/header-seller";
-@import "components/card-preview.scss";
-@import "components/hero-from.scss";
-@import "components/icon-card-preview";
-@import "components/gig-preview.scss";
-@import "components/gig-package.scss";
-@import "components/starRate.scss";
-@import "components/reviews.scss";
-@import "components/review.scss";
-@import "components/sellerProfile/seller-profile.scss";
-@import "components/sellerProfile/seller-card.scss";
-@import "components/sellerProfile/orders.scss";
-@import "components/sellerProfile/add-gig.scss";
-@import "views/gig-page.scss";
-@import "components/app-carousel.scss";
-@import "views/intro";
+
+@import "components/header.scss";
+@import "components/hero.scss";
+@import "components/main.scss";
+
+
+.web{
+    height: 100%;
+ flex-direction: column;
+}
+
+.div1{
+    flex-direction: column;
+    background-color:#014d56 ;
+   flex-grow: 1;
+   span{
+      position: relative; 
+      img{
+          position: absolute;
+          left: -100px;
+      }
+   }
+
+
+}
+.div2{
+    background-color:#002f34 ;
+    flex-grow: 1;
+}
+.div3{
+    background-color:#014d56 ;
+    flex-grow: 1;
+}

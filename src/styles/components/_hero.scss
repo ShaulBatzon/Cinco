@@ -1,0 +1,38 @@
+
+
+.hero-continer{
+    margin-bottom: 180px;
+
+    &>*{
+        font-family: Livvic;
+    }
+
+    h1{
+        color: white;
+        font-size: rem(100px);
+        font-family: Livvic-Bold;
+        line-height: rem(100px);
+        span{
+            display: block;
+            &::after{
+                content: " talent";
+                color: #f67d7d;
+            }
+        }
+    }
+    .hero-descripson{
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        margin-top:40px;
+        &>*{
+            line-height:rem(25px);
+            color: white;
+        }
+    }
+    // p{
+    //     justify-content: center;
+    //     color: white;
+    //     margin-top: 80px ;
+    // }
+}
