@@ -44,7 +44,7 @@ const routes = [
     label: username ? (
       <img className="UserImgHeader" src={user.imgUrl} />
     ) : (
-      "join"
+      <button className="join">Join</button>
     ),
   },
 

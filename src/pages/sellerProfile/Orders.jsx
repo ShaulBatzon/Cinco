@@ -5,6 +5,9 @@ import { loadOrders, acceptOrder } from "../../store/order.actions"
 // import { userService } from "../../services/user.service"
 // import { gigService } from "../../services/gig.service"
 import { Loader } from "../../cmps/Loader.jsx";
+import { Alert } from '@mui/material';
+import { fontSize } from "@mui/system";
+
 
 class _Orders extends React.Component {
     state = {
@@ -62,6 +65,7 @@ class _Orders extends React.Component {
                                 <th>Buyer</th>
                                 <th>Gig</th>
                                 <th>Due On</th>
+                                <th>pack Name</th>
                                 <th>Total</th>
                                 <th>Status</th>
                             </tr>
@@ -81,12 +85,26 @@ class _Orders extends React.Component {
                                             {order.dueOn}
                                         </td>
                                         <td>
+                                            {order.packName}
+                                        </td>
+                                        <td>
                                             {order.price}
                                         </td>
                                         <td>
-                                            {order.status}
+                                        <Alert
+                                        iconMapping={{
+                                            info: 'new',
+                                            warning:' ',
+                                            success:' '
+    
+                                          }}
+                                          color={ order.status === 'Pending' ? "warning" : order.status === 'Active'? 'info' : "success"}
+                                        severity={ order.status === 'Pending' ? "info" : order.status === 'Active'? 'warning' : "success"}>
+                                        {order.status}</Alert>
+                                    
+                                       
                                         </td>
-                                        <td>
+                                        <td  className="accpet" style={ order.status === 'Active' || order.status === 'Done' ?{display: "none"} :{display: "flex"} }>
                                             <button onClick={() => this.acceptOrder(order)}>Accept</button>
                                         </td>
                                         {/* </div> */}

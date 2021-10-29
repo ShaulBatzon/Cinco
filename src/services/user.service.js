@@ -60,7 +60,9 @@ async function login(userCred) {
     socketService.emit("set-user-socket", user._id);
     _saveLocalUser(user);
 
-    window.location.href = "/";
+    user.isSeller
+      ? (window.location.href = "/sellerProfile")
+      : (window.location.href = "/");
     return user;
   } catch (err) {
     console.log(err);

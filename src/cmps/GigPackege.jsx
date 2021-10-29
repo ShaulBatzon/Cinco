@@ -85,7 +85,7 @@ class _GigPackage extends React.Component {
       dueOn: utilService.getDate(),
       price: this.state.packagePrice,
       packName: this.state.packageSelected,
-      status: "pending",
+      status: "Pending",
     });
     this.setState({ isSell: true });
 
@@ -94,7 +94,7 @@ class _GigPackage extends React.Component {
   onClick = (currLabel) => {
     // const { packageSelected } = this.state;
     const { gig } = this.props;
-    const standardPirce = gig.price * 1.5;
+    const standardPirce = gig.price * 2;
     const PremiumPirce = standardPirce * 2;
     this.setState({ packageSelected: currLabel });
     // eslint-disable-next-line default-case
