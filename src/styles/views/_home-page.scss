@@ -1,9 +1,10 @@
 .content-container {
   max-width: 1300px;
-  margin: 0 auto;
+  margin: 0 15%;
   margin-bottom: 50px;
-  @media (max-width: $mobile-breakpoint) {
-    max-width: $mobile-breakpoint;
+  @media (max-width: 800px) {
+    max-width: 800px;
+    margin: 0 auto;
   }
 }
 

@@ -58,8 +58,8 @@ export function IconList() {
   ];
   return (
     <section className="content-container cards-list">
-      <h2 className="content-container  ">Explore the marketplace</h2>
-      <div className="content-container icon-continer">
+      <h2 >Explore the marketplace</h2>
+      <div className="icon-continer">
         {icons.map((icon, idx) => (
           <IconPreview key={idx} {...icon} />
         ))}

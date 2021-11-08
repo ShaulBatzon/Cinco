@@ -117,10 +117,10 @@
 
     .header-row{
       h1{
-      //   @media screen and (max-width: 750px) {
-      //     text-align: center;
-      //   }
-      // }
+        @media screen and (max-width: 750px) {
+          text-align: center;
+        }
+      }
     }
 }
 
@@ -129,12 +129,12 @@
   justify-content: center;
   .MuiAlert-message.css-acap47-MuiAlert-message{
     margin-left: 20px;
-    // @media screen and (max-width: 600px){
-    //     margin-left: 0;
-    //     .MuiAlert-icon.css-1ytlwq5-MuiAlert-icon{
-    //         display: none;
-    //     }
-    // }
+    @media screen and (max-width: 600px){
+        margin-left: 0;
+        .MuiAlert-icon.css-1ytlwq5-MuiAlert-icon{
+            display: none;
+        }
+    }
   }
 }
 
@@ -196,24 +196,24 @@
     padding-top: 10px;
   }
   
-  // @media screen and (max-width: 750px) {
-  //   table td{
-  //     .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation0.MuiAlert-root.MuiAlert-standardInfo.MuiAlert-standard.css-7uysqn-MuiPaper-root-MuiAlert-root{
-  //       .MuiAlert-icon.css-1ytlwq5-MuiAlert-icon{
-  //         display: none;
-  //       }
-  //     }
+  @media screen and (max-width: 750px) {
+    table td{
+      .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation0.MuiAlert-root.MuiAlert-standardInfo.MuiAlert-standard.css-7uysqn-MuiPaper-root-MuiAlert-root{
+        .MuiAlert-icon.css-1ytlwq5-MuiAlert-icon{
+          display: none;
+        }
+      }
 
-  //     .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation0.MuiAlert-root.MuiAlert-standardSuccess.MuiAlert-standard.css-13rvizp-MuiPaper-root-MuiAlert-root{
-  //       .MuiAlert-icon.css-1ytlwq5-MuiAlert-icon{
-  //         display: none;
-  //       }
-  //       .MuiAlert-message.css-acap47-MuiAlert-message{
-  //         margin: 0;
-  //       }
-  //     }
+      .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation0.MuiAlert-root.MuiAlert-standardSuccess.MuiAlert-standard.css-13rvizp-MuiPaper-root-MuiAlert-root{
+        .MuiAlert-icon.css-1ytlwq5-MuiAlert-icon{
+          display: none;
+        }
+        .MuiAlert-message.css-acap47-MuiAlert-message{
+          margin: 0;
+        }
+      }
       
-  //   }
+    }
 
     table {
       border: 0;
