@@ -2,8 +2,7 @@ import React from "react";
 import CardList from "../cmps/CardList";
 import HeroFrom from "../cmps/HeroFrom";
 import IconList from "../cmps/IconList";
-import { AppHeaderW } from "../cmps/AppHeader-wihte";
-// import AppCarousel from "../cmps/AppCarousel.jsx";
+import { AppHeaderW } from "../cmps/AppHeader-white";
 import { Intro } from "./intro";
 export class HomePage extends React.Component {
   state = {
@@ -43,30 +42,18 @@ export class HomePage extends React.Component {
     this.setState({ color: color, txt: txt, job: job, i: this.state.i + 1 });
   };
 
-  change = () => {
-    if (window.innerWidth >= 1140) {
-      this.setState({ actvie: true });
-    } else {
-      this.setState({ actvie: false });
-    }
-  };
+  
   render() {
-    window.addEventListener("resize", this.change);
     if (this.state.actvie) return <Intro />;
     return (
       <section>
         <div
           className="hero-background"
           style={{
-            // backgroundSize: "auto 100%",
-            // backgroundRepeat: "no-repeat",
-            // // backgroundPosition: "center bottom",
-            // backgroundPositionX: "center",
-            // backgroundPositionY: "bottom",
             backgroundImage: `url(${this.state.color})`,
           }}
         ></div>
-        <div className="content-container hero-content-container">
+        <div className="content-container hero-content-container home-layout">
           <HeroFrom />
           <div className="hero-background-text">
             <div className="stars">⭐⭐⭐⭐⭐</div>
@@ -81,11 +68,3 @@ export class HomePage extends React.Component {
     );
   }
 }
-
-// function mapStateToProps(state) {
-//     return {
-//         gigs: state.userModule.count
-//     }
-// }
-
-// export const HomePage = connect(mapStateToProps)(_HomePage)

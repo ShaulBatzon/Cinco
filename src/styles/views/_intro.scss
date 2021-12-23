@@ -1,16 +1,6 @@
-.content-container {
-  max-width: 1300px;
-  margin: 0 auto;
-  margin-bottom: 50px;
-  @media (max-width: $mobile-breakpoint) {
-    max-width: $mobile-breakpoint;
-  }
-}
-
 .intro-hero-content-container {
   display: flex;
   flex-direction: column;
-  // height: 100vh;
   color: white;
   position: relative;
   margin-top: 85px;
@@ -30,6 +20,10 @@
   background-position: center bottom;
   z-index: -1;
   transition: 0.8s;
+
+  @media(max-width: $mobile-breakpoint) {
+    transform: translateX(-50%);
+  }
 }
 
 .hero-background-text {
@@ -63,7 +57,7 @@
 .icon-continer {
   margin-left: 20px;
   display: grid;
-  grid-template-columns: repeat(5, 200px);
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
   gap: 30px;
   font-family: Macan;
 }

@@ -8,11 +8,18 @@ import routes from "../routes";
 // import { LoginSignup } from './login-signup.jsx'
 
 export class AppHeaderR extends React.Component {
-  state = { isOpen: false };
+  state = { 
+    isOpen: false,
+    isSideBarOpen: false
+  };
 
   menuClick = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
+
+  toggleSideBar = () => {
+    this.setState({isSideBarOpen: !this.state.isSideBarOpen})
+  }
 
   render() {
     return (
@@ -21,8 +28,8 @@ export class AppHeaderR extends React.Component {
           Cinco
         </Link>
         <nav
-          className={`navbar-links ${this.state.isOpen ? "open" : "closed"}`}
-          onMouseLeave={() => this.setState({ isOpen: false })}
+          className={`navbar-links ${this.state.isOpen ? "open" : "closed"} ${this.state.isSideBarOpen ? 'side-bar-open' : ''}`}
+          onMouseLeave={() => this.setState({ isOpen: false , isSideBarOpen: false})}
         >
           {routes.map((route) => (
             <NavLink
@@ -36,8 +43,8 @@ export class AppHeaderR extends React.Component {
             </NavLink>
           ))}
         </nav>
-        <div className="icon">
-          <i class="fas fa-th-large"></i>
+        <div className={`icon ${this.state.isSideBarOpen ? 'none' : ''}`} onClick={()=>this.toggleSideBar()}>
+          <i className="fas fa-th-large"></i>
         </div>
       </div>
     );

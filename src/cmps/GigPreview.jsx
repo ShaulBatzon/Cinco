@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Loader } from "./Loader";
 // import { onSelectGig } from "../store/gig.action";
 // import { connect } from "react-redux";
 export class GigPreview extends React.Component {
@@ -20,6 +21,7 @@ export class GigPreview extends React.Component {
 
   render() {
     const { gig } = this.props;
+    if (!gig) return <Loader />
     const { isCollect } = this.state;
     const rate = gig.reviews.reduce((sum, review) => {
       return (sum += review.rate);
@@ -72,9 +74,9 @@ export class GigPreview extends React.Component {
           swipeable
         >
           {/* <img className="imge" src={gig.imgUrls} /> */}
-          {gig.imgUrls.map((imgUrl) => (
+          {gig.imgUrls.map((imgUrl,idx) => (
             <Link to={`/gig/?id=${gig._id}`}>
-              <img className="gigs-imgs" src={imgUrl} alt="gig-img" />
+              <img className="gigs-imgs" key={idx} src={imgUrl} alt="gig-img" />
             </Link>
           ))}
         </Carousel>

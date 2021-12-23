@@ -1,8 +1,7 @@
 import React from "react";
 // import { connect } from 'react-redux'
-import { AppHeaderW } from "./AppHeader-wihte";
+import { AppHeaderW } from "./AppHeader-white";
 import { AppHeaderR } from "./AppHeaderR";
-import routes from "../routes";
 import { socketService } from "../services/socket.service";
 
 // import { onLogin, onLogout, onSignup, loadUsers, removeUser } from '../store/user.actions.js'

@@ -32,7 +32,6 @@ class _Orders extends React.Component {
 
     async acceptOrder(acceptedOrder) {
         if (acceptedOrder.status === 'active') return
-        window.location.href = "/sellerProfile/orders"
         this.props.acceptOrder(acceptedOrder)
     }
 
@@ -87,7 +86,7 @@ class _Orders extends React.Component {
                                             {order.status}
                                         </td>
                                         <td>
-                                            <button onClick={() => this.acceptOrder(order)}>Accept</button>
+                                            {(order.status === 'pending') &&  <button onClick={() => this.acceptOrder(order)}>Accept</button>}
                                         </td>
                                         {/* </div> */}
                                     </tr>

@@ -76,7 +76,7 @@ export function CardList() {
     },
   ];
   return (
-    <section className="cards-list content-container">
+    <section className="cards-list content-container home-layout">
       <h2>Popular professional services</h2>
       <div className="cards-continer">
         <Carousel

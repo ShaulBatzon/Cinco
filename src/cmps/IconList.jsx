@@ -57,7 +57,7 @@ export function IconList() {
     },
   ];
   return (
-    <section className="content-container cards-list">
+    <section className="content-container cards-list home-layout">
       <h2 className="content-container  ">Explore the marketplace</h2>
       <div className="content-container icon-continer">
         {icons.map((icon, idx) => (

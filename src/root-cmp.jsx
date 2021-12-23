@@ -6,9 +6,9 @@ import routesH from "./routesH";
 import { AppHeader } from "./cmps/AppHeader";
 import { HeaderSeller } from "./pages/sellerProfile/HeaderSeller.jsx";
 import { Loader } from "./cmps/Loader.jsx";
-// import { AppFooter } from './cmps/app-footer'
+import { AppFooter } from './cmps/AppFooter'
 // import {UserDetails} from './pages/user-details'
-import { AppHeaderW } from "./cmps/AppHeader-wihte";
+import { AppHeaderW } from "./cmps/AppHeader-white";
 const user = userService.getLoginUser()
 
 export class RootCmp extends React.Component {
@@ -54,7 +54,7 @@ export class RootCmp extends React.Component {
                 {/* <Route path="/user/:id" component={UserDetails} /> */}
               </Switch>
         </main>
-        {/* <AppFooter /> */}
+        <AppFooter />
       </div>
     );
   }

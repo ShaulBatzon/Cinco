@@ -1,7 +1,7 @@
 .navbar-logo {
   font-size: 2rem;
   text-decoration: none;
-  color: black;
+  color: $clrLogo;
   font-family: Macan-Bold;
   &::after {
     content: ".";
@@ -13,47 +13,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
-  font-family: Macan-Bold;
+  font: 400 18px/24px Macan-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
   position: sticky;
   z-index: 15;
   top: 0;
-  padding: 25px 0;
-  margin-bottom: 0;
-  &.content-container {
-    margin-bottom: 5px;
-  }
+
+
   .navbar-links-items {
-    display: flex;
+    display: flex;  
     justify-content: center;
     align-items: center;
 
   }
   .navbar-links-items:nth-child(4) {
     order: 1;
-    margin-left: 15px;
+  }
+
+  @media only screen and(min-width: 600px) {
+    height: 80px;
+    padding-right: 32px;
+    padding-left: 32px;
   }
 
   @media (max-width: $mobile-breakpoint) {
-    .navbar-logo {
-      margin-left: 15px;
-    }
-    .navbar-links-items {
-      display: none;
-    }
-    .icon {
-      display: block;
-      .fas {
-        color: white;
-      }
-    }
+    justify-content: flex-end;
   }
 }
 
 .page-navbar-white {
   width: 100%;
   align-items: center;
-  // padding-top: 20px;
   font-family: Macan-Bold;
   position: sticky;
   z-index: 1001;
@@ -62,27 +51,51 @@
   color: black;
   padding: 25px 0;
   margin-bottom: 0px;
-  .content-container {
-    margin-bottom: 0;
-  }
+
   .navbar-logo {
     padding-top: 5px;
   }
   border-bottom: 1px solid #dddee0;
   @media (max-width: $mobile-breakpoint) {
     position: fixed;
+    // display: grid;
+    // grid-template-areas:
+    //     'head' 'head' 'nav'
+    //     'search' 'search' 'search';
+    //     grid-template-rows: 1fr 1fr;
+    //     grid-template-columns: 1fr; 
     max-width: $mobile-breakpoint;
     margin-bottom: 0px;
   }
 }
 
-.nav-cotiner {
+.navbar-links {
+  @media(max-width: $mobile-breakpoint) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    min-width: 250px;
+    height: 100vh;
+    background-color: rgba(255,255,255, .9);
+    box-shadow: 0px 0px 0px transparent;
+    transform: translateX(100%);
+    
+    transition: .6s;
+
+    &.side-bar-open {
+      transform: translateX(0);
+      box-shadow: -8px 0px 20px rgba(0, 0, 0, .2);
+    }
+  }
+
+}
+
+.nav-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
-  // .nav-cotiner-logo-sreah {
-
-  // }
   .navbar-links {
     display: flex;
     justify-content: center;
@@ -93,41 +106,36 @@
     .navbar-links-items {
       color: #62646a;
       text-decoration: none;
-      // &:last-child {
-      //   border-radius: גק5px;
-      //   border: 1px solid white;
-      //   padding: 5px 10px;
-      //   font-size: 0.9rem;
-      // }
       transition: 0.4s;
-      &:nth-of-type(5) {
-        display: none;
-      }
-      &:nth-of-type(6) {
-        display: none;
-      }
-      &:nth-of-type(7) {
-        display: none;
-      }
-      &:nth-of-type(8) {
-        display: none;
-      }
-      &:nth-of-type(9) {
-        display: none;
-      }
-      &:not(:nth-of-type(4)) {
-        margin-inline-end: 15px;
-      }
+     
       &:hover {
         color: $clr1;
+      }
+
+      @media (max-width: 900px) {
+        &:nth-of-type(1) {
+          display: none;
+        }
+      }
+      @media (max-width: 850px) {
+        &:nth-of-type(2) {
+          display: none;
+        }
+      }
+      @media (max-width: 750px) {
+        &:nth-of-type(3) {
+          display: none;
+        }
       }
     }
   }
   @media (max-width: $mobile-breakpoint) {
     padding-left: 10px;
+
     .navbar-links {
       display: none;
     }
+
     .screen {
       display: flex;
       flex-direction: column;
@@ -166,8 +174,19 @@
     }
     .icon {
       display: flex;
+      // @media (max-width: $mobile-breakpoint) {
+      //   display: inline-block;
+      //   left: 100%;
+      //   top: 50%;
+      //   position: absolute;
+      //   transform: translate(-100%, -50%);
+      // }
     }
   }
+}
+
+.app-nav-wrapper {
+  order: 1;
 }
 
 .navbar-links {
@@ -179,14 +198,8 @@
   .navbar-links-items {
     color: black;
     text-decoration: none;
-
-    // &:last-child {
-    //   border-radius: גק5px;
-    //   border: 1px solid white;
-    //   padding: 5px 10px;
-    //   font-size: 0.9rem;
-    // }
     transition: 0.4s;
+    margin: 0 10px;
     &:nth-of-type(5) {
       display: none;
     }
@@ -208,26 +221,33 @@
     &:nth-of-type(11) {
       display: none;
     }
-    &:not(:nth-of-type(4)) {
-      margin-inline-end: 15px;
+
+    @media(max-width: $mobile-breakpoint) {
+      display: block;
+      color: black !important;
+      margin: unset;
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #cbcbcb;
     }
   }
 }
 
-.nav-cotiner-logo-sreah {
+.nav-container-logo-sreah {
   display: flex;
   gap: 30px;
   .header-form-search-bar-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    @media (max-width: $mobile-breakpoint) {
-      display: none;
-    }
+    // @media (max-width: $mobile-breakpoint) {
+    //   display: none;
+    // }
   }
 }
 
 .header-form-search-bar-wrapper {
+  display: flex;
   position: relative;
   input {
     flex-grow: 1;
@@ -274,9 +294,13 @@
   display: none;
   justify-content: center;
   align-items: center;
-  margin-right: 15px;
   font-size: 25px;
+ 
   .fas {
     color: black;
+  }
+
+  @media(max-width: $mobile-breakpoint) {
+    display: block;
   }
 }

@@ -2,9 +2,11 @@ import { gigService } from "../services/gig.service"
 
 
 export function loadGigs() {
-    return async dispatch => {
+  console.log('loadGigs');
+    return async (dispatch, getState) => {
+      const { filterBy } = getState().gigModule
       try {
-        const gigs = await gigService.query()
+        const gigs = await gigService.query(filterBy)
         dispatch({ type: 'SET_GIGS', gigs })
       } catch (err) {
         console.log('ReviewActions: err in loadGigs', err)
@@ -28,6 +30,12 @@ export function onSelectGig(gigId) {
     }
 }
 
+export function setFilterBy(filterBy) {
+  console.log('filterBy: ',filterBy);
+  return dispatch => {
+    dispatch({ type: 'SET_FILTER_BY', filterBy })
+  }
+}
 
 // export function loadGigsBySeller(sellerId) {
 //     return (dispatch, getState) => {

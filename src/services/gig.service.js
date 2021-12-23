@@ -14,8 +14,19 @@ export const gigService = {
 window.gs = gigService;
 
 async function query() {
-  //return await storageService.query(STORAGE_KEY);
   return await httpService.get(`gig`);
+  // let gigs = await httpService.get(`gig`);
+  
+  //   const { tag } = filterBy
+
+  //   if (tag) {
+  //     var gigsByTags = gigs.filter((entity) =>
+  //       entity.tags.find((tagg) => tagg === tag)
+  //     )
+  //     const filteredGigs = gigsByTags;
+  //     return filteredGigs;
+  //   }else return gigs
+  //return await storageService.query(STORAGE_KEY);
 }
 
 async function getById(gigId) {

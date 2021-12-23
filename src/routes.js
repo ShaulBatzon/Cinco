@@ -7,19 +7,21 @@ import { userService } from "./services/user.service";
 import { SignUp } from "./cmps/SignUp.jsx";
 import { SellerProfile } from "./pages/sellerProfile/SellerProfile.jsx";
 import { Orders } from "./pages/sellerProfile/Orders.jsx";
+import { Avatar } from '@mui/material';
 import { SellerGigs } from "./pages/sellerProfile/SellerGigs.jsx";
 import { AddGig } from "./pages/sellerProfile/AddGig";
 import { Intro } from "./pages/intro.jsx";
-// Routes accesible from the main navigation (in AppHeader)
 
+// Routes accesible from the main navigation (in AppHeader)
 const user = userService.getLoginUser();
 const username = userService.getLoginUser().username;
 const isSeller = userService.getLoginUser().isSeller;
-
+const isMobile = (window.innerWidth > 380) ? false : true;
 const routes = [
   {
     path: "/",
-    component: HomePage,
+    component: 
+    isMobile ? Explore : HomePage,
     label: "Home",
   },
   {
@@ -37,44 +39,20 @@ const routes = [
       username && isSeller
         ? "/sellerProfile"
         : username
-        ? "/userPage"
-        : "/join",
+        ? "/explor"
+        : "/signIn",
     component:
       username && isSeller ? SellerProfile : username ? HomePage : Login,
     label: username ? (
-      <img className="UserImgHeader" src={user.imgUrl} />
+      <Avatar className="avatar" alt="userImg" src={user.imgUrl} onClick={userService.logout()}/>
     ) : (
-      "join"
+      "Sign In"
     ),
   },
-
-  // {
-  // username ? HomePage : Login,
-  //     path: (username && seller_mode) ? '/sellerPage':'/become_a_seller',
-  //     component:  (username && seller_mode) ? SellerPage : BecomeASeller,
-  //     // label: (username && seller_mode) ? `Hello ${username}` : 'join'
-  // },
-  // {
-  //   path: "/sellerProfile/",
-  //   component: SellerProfile,
-  // },
-  // {
-  //   path: "/sellerProfile/gigs",
-  //   component: SellerGigs,
-  // },
   {
     path: "/sellerProfile/orders",
     component: Orders,
   },
-  // {
-  //   path: "/sellerProfile/gigs/addGig",
-  //   component: AddGig,
-  // },
-  // {
-  //     path: '/buyerPage',
-  //     component: BuyerPage,
-  //     label: 'buyer page'
-  // },
   {
     path: "/gig/",
     component: GigPage,

@@ -64,67 +64,16 @@
   }
 }
 
-
-.hamburger {
+.none {
   display: none;
 }
 
-@media ($mobile-breakpoint) {
-  
-  .hamburger {
-      display: inline-block;
-      position: relative;
-      top: 20px;
-      right: 20px;
-      height: 50px;
-      width: 50px;
-      z-index: 100;
-      cursor: pointer;
-      color: white;
-  }
-
-  .hamburger::before {
-      font-family: Icons;
-      content: '\f00d';
-      color: whitesmoke;
-      position: fixed;
-  }
-  .hamburger.closed::before {
-      position: absolute;
-      font-family: Icons;
-      content: '\f0c9';
-      color: whitesmoke;
-  }
-
-  header > nav.closed {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      position: fixed;
-      right: 0;
-      top: 0;
-      background-color: #333;
-      padding: 40px 15px;
-      line-height: 2.5rem;
-      z-index: 10;
-      box-shadow: -5px 0px 15px 0px #333;
-      transform: translateX(110%);
-      transition: all 0.4s;
-      }
-
-      header > nav.open {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      position: fixed;
-      right: 0;
-      top: 0;
-      background-color: #333;
-      padding: 40px 15px;
-      line-height: 2.5rem;
-      z-index: 10;
-      box-shadow: -5px 0px 15px 0px #333;
-      transform: translateX(0%);
-      transition: all 0.4s;
-  }
+.dim-screen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  background-color: rgba(0, 0, 0, .5);
 }

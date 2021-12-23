@@ -20,7 +20,7 @@ export class HeaderSeller extends React.Component {
     this.setState({ user })
     socketService.on('new order', order => {
       const notifyTxt = order.txt
-      // user.notifications.push(notifyTxt)
+      user.notifications.push(notifyTxt)
       this.setState((prevstate) => ({ ...prevstate, notify: prevstate.notify + 1}));
       try {
         // userService.update(user)
@@ -48,10 +48,13 @@ export class HeaderSeller extends React.Component {
   //     console.log(err);
   //   }
   // }
+ onToggleMode = () => {
+  this.state.user.isSeller = !this.state.user.isSeller
+ }
 
   render() {
     const { notify, user } = this.state
-    //console.log('notify: ',notify);
+    //console.log('notify: ',notify); 
     return (
       <div className="header-seller-container">
         <div className="hamburger"></div>
@@ -63,8 +66,8 @@ export class HeaderSeller extends React.Component {
         <nav className="seller-navbar-links">
           <ul className="flex">
             <li>
-              <a className="clean-link" href="/sellerProfile">
-                Profile
+              <a className="clean-link" href="/sellerProfile/dashboard">
+              Dashboard
               </a>
             </li>
             <li>
@@ -82,12 +85,27 @@ export class HeaderSeller extends React.Component {
                 Gigs
               </a>
             </li>
+            <li>
+              <a className="clean-link" href="/sellerProfile/analytics">
+                Analytics
+              </a>
+            </li>
+            <li>
+              <a className="clean-link" href="/sellerProfile/earnings">
+                Earnings
+              </a>
+            </li>
+            <li>
+              <a className="clean-link" href="/sellerProfile/community">
+                Community
+              </a>
+            </li>
           </ul>
         </nav>
         <div className="prof-pic-nav">
           <nav>
             <ul>
-              <li><a className="pointer">Switch to Buying</a></li>
+              <li><a className="pointer" onClick={this.onToggleMode()}>Switch to Buying</a></li>
               <div className="badge-notify pointer">
                 <Badge badgeContent={notify} color="error">
                 <a className="clean-link" href="/sellerProfile/orders"><i class="far fa-bell"></i></a>

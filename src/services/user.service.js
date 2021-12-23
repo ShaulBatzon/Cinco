@@ -18,6 +18,7 @@ export const userService = {
   getLoginUser,
   // add,
   login,
+  logout
 };
 
 function getLoginUser() {
@@ -56,7 +57,7 @@ async function login(userCred) {
   // window.location.href = "/";
   // return _saveLocalUser(user);
   try {
-    const user = await httpService.post("auth/login", userCred);
+    const user = await httpService.post("auth/signIn", userCred);
     socketService.emit("set-user-socket", user._id);
     _saveLocalUser(user);
     if (user.isSeller) window.location.href = "/sellerProfile";
@@ -73,10 +74,11 @@ async function login(userCred) {
 //   return _saveLocalUser(user);
 // }
 
-// async function logout() {
-//   // sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
-//   return await httpService.post("auth/logout");
-// }
+async function logout() {
+  // sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
+  console.log('Logout func');
+  return await httpService.post("auth/logout");
+}
 
 // async function add(user) {
 //  user.wishList=[];

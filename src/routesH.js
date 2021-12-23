@@ -5,7 +5,7 @@ import { BecomeASeller } from "./pages/BecomeASeller.jsx";
 import { GigPage } from "./pages/GigPage.jsx";
 import { userService } from "./services/user.service";
 import { SignUp } from "./cmps/SignUp.jsx";
-import { AppHeaderW } from "./cmps/AppHeader-wihte";
+import { AppHeaderW } from "./cmps/AppHeader-white";
 import { AppHeader } from "./cmps/AppHeader";
 import { SellerProfile } from "./pages/sellerProfile/SellerProfile.jsx";
 // Routes accesible from the main navigation (in AppHeader)

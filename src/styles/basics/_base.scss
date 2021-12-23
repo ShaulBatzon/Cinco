@@ -8,9 +8,31 @@ html {
 
 body {
   margin: 0;
-  // background-color: #fff !important;
+  color: $clrBudy;
+}
+
+img {
+  width: 100%;
 }
 
 button {
   cursor: pointer;
+}
+
+.navbar-logo {
+  font-size: 2rem;
+  text-decoration: none;
+  color: $clrLogo;
+  font-family: Macan-Bold;
+  &::after {
+    content: ".";
+    color: green;
+  }
+  @media (max-width: $mobile-breakpoint) {
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
 }
