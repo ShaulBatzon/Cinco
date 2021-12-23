@@ -19,6 +19,7 @@ async function query(filterBy) {
 }
 
 async function add(order) {
+  console.log('order from serv',order);
   const addedOrder = await httpService.post(`order`, order)
 
   return addedOrder;

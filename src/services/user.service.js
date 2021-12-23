@@ -28,7 +28,7 @@ function getLoginUser() {
 
 function getLoggedinUser() {
   return JSON.parse(
-    sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null'
+    sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || "null"
   );
 }
 
@@ -38,14 +38,14 @@ async function query() {
 }
 
 async function getById(userId) {
- // const user = await storageService.get("user", userId);
-   const user = await httpService.get(`user/${userId}`);
+  // const user = await storageService.get("user", userId);
+  const user = await httpService.get(`user/${userId}`);
   // gWatchedUser = users;
   return user;
 }
 
 async function update(user) {
-  //await storageService.put("user", user);
+  // await storageService.put("user", user);
   const newUsser = await httpService.put(`user/${user._id}`, user);
   // Handle case in which admin updates other user's details
   return newUsser;
@@ -54,18 +54,25 @@ async function update(user) {
 async function login(userCred) {
   // const users = await storageService.query("user");
   // const user = users.find((user) => user.username === userCred.username);
-  // window.location.href = "/";
   // return _saveLocalUser(user);
   try {
-    const user = await httpService.post("auth/signIn", userCred);
+    const user = await httpService.post("auth/login", userCred);
     socketService.emit("set-user-socket", user._id);
     _saveLocalUser(user);
-    if (user.isSeller) window.location.href = "/sellerProfile";
-    else window.location.href = "/";
+
+    user.isSeller
+      ? (window.location.href = "/sellerProfile")
+      : (window.location.href = "/");
     return user;
   } catch (err) {
     console.log(err);
   }
+}
+
+async function signup(userCred) {
+  // const user = await storageService.post("user", userCred);
+  const user = await httpService.post("auth/signup", userCred);
+  return _saveLocalUser(user);
 }
 
 // async function signup(userCred) {
@@ -94,7 +101,6 @@ async function logout() {
 function _saveLocalUser(user) {
   sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user));
 }
-
 
 (async () => {
   var user = getLoginUser();

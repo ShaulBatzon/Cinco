@@ -5,6 +5,7 @@ import { Loader } from "../../cmps/Loader.jsx";
 import { SellerGigs } from "./SellerGigs.jsx";
 import { Orders } from "./Orders.jsx";
 import { orderService } from "../../services/order.service.js";
+import { socketService } from "../../services/socket.service";
 import { NavLink } from "react-router-dom";
 
 import LineChart from "./Chart.jsx";
@@ -13,9 +14,22 @@ export class SellerProfile extends React.Component {
   state = {
     selecetTab: "",
     seller: {},
-    user: null
+    user: null,
   };
   async componentDidMount() {
+    socketService.on("new order", (order) => {
+      const user = userService.getLoggedinUser();
+      const notifyTxt = order.txt;
+      // console.log("HEY SELLER, ", notifyTxt, "order: ", order);
+      user.notifications.push(notifyTxt);
+      try {
+        // console.log("user: ", user);
+        // userService.update(user);
+      } catch (err) {
+        console.log(err);
+      }
+      this.setState({ notify: this.state.notify + 1 });
+    });
     try {
       const seller = userService.getLoginUser();
       this.setState({ seller });
@@ -24,7 +38,10 @@ export class SellerProfile extends React.Component {
     }
   }
 
-  
+  componentWillUnmount() {
+    socketService.off("new order");
+    // socketService.terminate()
+  }
 
   toggle = (tab) => {
     this.setState({ selecetTab: tab });
@@ -39,17 +56,23 @@ export class SellerProfile extends React.Component {
           ...prevState.seller,
           [name]: value,
         },
-      }),
+      })
+      // () => console.log("state: ", this.state)
     );
   };
 
   render() {
-    const { seller, selecetTab } = this.state;
-    const user = userService.getLoginUser()
-    
+    const { seller, selecetTab, notify } = this.state;
+    const user = userService.getLoggedinUser();
+    // const notify =;
+    console.log("notify", notify);
+    // const { gigs, description, languages} = this.state.sellerProfile
+    // const {sellerProfile } = this.state
+    // console.log("sellerProfile: ", seller);
     if (!seller) return <Loader />;
     return (
       <div className="main-profile">
+        {console.log("seller", seller)}
         <section className="seller-gigs">
           <ul className="seller-gigs-bar">
             <li onClick={() => this.toggle("gigs")}>Active gigs</li>

@@ -13,6 +13,7 @@ export class HomePage extends React.Component {
     i: 0,
     txt: "Andrea",
     job: "Fashion Designer",
+    rgbColor: "#023a15",
   };
 
   componentDidMount() {
@@ -36,10 +37,18 @@ export class HomePage extends React.Component {
     var color = "";
     var txt = "";
     var job = "";
+    var rgbColor = ["#7d1a00", "#b64762", "#023a15"];
     color = letters[this.state.i];
     txt = texts[this.state.i];
     job = jobs[this.state.i];
-    this.setState({ color: color, txt: txt, job: job, i: this.state.i + 1 });
+    rgbColor = rgbColor[this.state.i];
+    this.setState({
+      color: color,
+      txt: txt,
+      job: job,
+      rgbColor: rgbColor,
+      i: this.state.i + 1,
+    });
   };
 
   
@@ -51,6 +60,7 @@ export class HomePage extends React.Component {
           className="hero-background"
           style={{
             backgroundImage: `url(${this.state.color})`,
+            backgroundColor: this.state.rgbColor,
           }}
         ></div>
         <div className="content-container hero-content-container home-layout">

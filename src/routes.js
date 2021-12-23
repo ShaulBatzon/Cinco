@@ -46,7 +46,7 @@ const routes = [
     label: username ? (
       <Avatar className="avatar" alt="userImg" src={user.imgUrl} onClick={userService.logout()}/>
     ) : (
-      "Sign In"
+      <button className="join">Join</button>
     ),
   },
   {

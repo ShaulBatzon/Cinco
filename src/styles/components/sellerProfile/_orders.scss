@@ -82,7 +82,11 @@
     padding-bottom: 14px;
     padding-top: 14px;
     font-size: 12px;
+    &:last-of-type{
+        padding-left: 41px;
+    }
 }
+
 
 .order-filter-title {
     text-transform: uppercase;
@@ -110,4 +114,164 @@
     &:last-of-type {
         margin-bottom: 30px;
     }
+
+    .header-row{
+      h1{
+        @media screen and (max-width: 750px) {
+          text-align: center;
+        }
+      }
+    }
 }
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation0.MuiAlert-root.MuiAlert-standardInfo{
+  background-color: transparent;
+  justify-content: center;
+  .MuiAlert-message.css-acap47-MuiAlert-message{
+    margin-left: 20px;
+    @media screen and (max-width: 600px){
+        margin-left: 0;
+        .MuiAlert-icon.css-1ytlwq5-MuiAlert-icon{
+            display: none;
+        }
+    }
+  }
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation0.MuiAlert-root.MuiAlert-standardWarning{
+    background-color: transparent;
+    justify-content: center;
+    padding: 10px 0;
+    .MuiAlert-icon.css-1ytlwq5-MuiAlert-icon{
+        font-size: 16px;
+        color: green;
+    }
+    .css-acap47-MuiAlert-message{
+      padding: 10px 0;
+    }
+  }
+
+  .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation0.MuiAlert-root.MuiAlert-standardSuccess{
+    background-color: transparent;
+    justify-content: center;
+    .MuiAlert-message.css-acap47-MuiAlert-message{
+        margin-left: 20px;
+      }
+    .MuiSvgIcon-root.MuiSvgIcon-fontSizeInherit.css-1vooibu-MuiSvgIcon-root{
+        color:#6eda72
+    }
+  }
+
+
+  // table {
+  //   border: 1px solid #ccc;
+  //   border-collapse: collapse;
+  //   margin: 0;
+  //   padding: 0;
+  //   width: 100%;
+  //   table-layout: fixed;
+  // }
+  
+  
+  // table tr {
+  //   background-color: #f8f8f8;
+  //   border: 1px solid #ddd;
+  //   padding: .35em;
+  // }
+  
+  // table th,
+  // table td {
+  //   padding: .625em;
+  //   text-align: center;
+  // }
+  
+  // table th {
+  //   font-size: .85em;
+  //   letter-spacing: .1em;
+  //   text-transform: uppercase;
+  // }
+  .accpet{
+    justify-content: start;
+    align-items: center;
+    padding-top: 10px;
+  }
+  
+  @media screen and (max-width: 750px) {
+    table td{
+      .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation0.MuiAlert-root.MuiAlert-standardInfo.MuiAlert-standard.css-7uysqn-MuiPaper-root-MuiAlert-root{
+        .MuiAlert-icon.css-1ytlwq5-MuiAlert-icon{
+          display: none;
+        }
+      }
+
+      .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation0.MuiAlert-root.MuiAlert-standardSuccess.MuiAlert-standard.css-13rvizp-MuiPaper-root-MuiAlert-root{
+        .MuiAlert-icon.css-1ytlwq5-MuiAlert-icon{
+          display: none;
+        }
+        .MuiAlert-message.css-acap47-MuiAlert-message{
+          margin: 0;
+        }
+      }
+      
+    }
+
+    table {
+      border: 0;
+      background-color: #f8f8f8;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+    }
+    
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      font-size: .8em;
+      text-align: right;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &.accpet{
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+      }
+    }
+
+    
+    table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+
+    .orders-tabs{
+      display: none;
+    }
+
+  }
+
+
+
+ 

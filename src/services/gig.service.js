@@ -30,13 +30,13 @@ async function query() {
 }
 
 async function getById(gigId) {
-  //return await storageService.get(STORAGE_KEY, gigId);
-    return httpService.get(`gig/${gigId}`)
+  // return await storageService.get(STORAGE_KEY, gigId);
+  return httpService.get(`gig/${gigId}`);
 }
 
 async function remove(gigId) {
-  //return await storageService.remove(STORAGE_KEY, gigId);
-   return httpService.delete(`gig/${gigId}`)
+  // return await storageService.remove(STORAGE_KEY, gigId);
+  return httpService.delete(`gig/${gigId}`);
 }
 
 async function save(gig) {

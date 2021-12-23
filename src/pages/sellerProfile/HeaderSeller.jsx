@@ -12,7 +12,8 @@ export class HeaderSeller extends React.Component {
 
   state = {
     notify: 0,
-    user: {}
+    user: {},
+    isChack: false,
   }
 
   async componentDidMount() {
@@ -47,17 +48,25 @@ export class HeaderSeller extends React.Component {
   //   } catch(err) {
   //     console.log(err);
   //   }
+  
   // }
  onToggleMode = () => {
   this.state.user.isSeller = !this.state.user.isSeller
  }
 
+  toogle = () => {
+    this.setState({ isChack: !this.state.isChack });
+  };
+
+
+
   render() {
     const { notify, user } = this.state
     //console.log('notify: ',notify); 
     return (
-      <div className="header-seller-container">
-        <div className="hamburger"></div>
+      <>
+      <div className={this.state.isChack ? "screen header-seller-container" : "header-seller-container"}>
+        <div className="hamburger" onClick={this.toogle}> <i class="fas fa-th-large" ></i></div>
         <div>
           <Link to={"/sellerProfile"} className="navbar-logo">
             Cinco
@@ -126,6 +135,8 @@ export class HeaderSeller extends React.Component {
           </nav>
         </div>
       </div>
+        <div  className={this.state.isChack ? 'blackScreen' :''}></div>
+      </>
     );
   }
 }

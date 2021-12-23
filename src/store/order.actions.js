@@ -20,6 +20,7 @@ export function loadOrders() {
 }
 
 export function addOrder(order) {
+  console.log('order from action ',order);
   return async dispatch => {
     try {
       const addedOrder = await orderService.add(order)
@@ -44,7 +45,7 @@ export function removeOrder(orderId) {
 export function acceptOrder(acceptedOrder) {
   return async dispatch => {
     try {
-      acceptedOrder.status = 'active'
+      acceptedOrder.status = 'Active'
       const updatedOrder = await orderService.update(acceptedOrder)
       console.log('updatedOrder: ',updatedOrder);
       // dispatch({ type: 'UPDATE_ORDER', updatedOrder })
