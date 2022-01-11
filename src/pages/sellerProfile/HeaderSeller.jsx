@@ -5,68 +5,47 @@ import { Badge } from '@mui/material';
 import { Avatar } from '@mui/material';
 import { socketService } from "../../services/socket.service";
 import { userService } from "../../services/user.service";
-
+import { Component, useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import {loadUsers, addNotification, updateNotifications} from '../../store/user.actions'
 
 // import NotificationsIcon from '@mui/icons-material/Notifications';
-export class HeaderSeller extends React.Component {
+export const HeaderSeller = (props) => {
 
-  state = {
-    notify: 0,
-    user: {},
-    isChack: false,
-  }
+  const { notifications, users } = useSelector(state => state.userModule)
+  const dispatch = useDispatch()
+  const [user, setUser] = useState({})
+  const [isChack, setIsChack] = useState(false)
 
-  async componentDidMount() {
+  useEffect(() => {
     const user = userService.getLoginUser();
-    this.setState({ user })
+    setUser(user)
+    dispatch(updateNotifications()) 
+    dispatch(loadUsers())
     socketService.on('new order', order => {
-      const notifyTxt = order.txt
-      user.notifications.push(notifyTxt)
-      this.setState((prevstate) => ({ ...prevstate, notify: prevstate.notify + 1}));
-      try {
-        // userService.update(user)
-      } catch (err) {
-        console.log(err);
+      dispatch(addNotification(order)) 
+      dispatch(updateNotifications()) 
+      return () => {
+        socketService.off("new order");
       }
     })
-  }
-
-  componentWillUnmount() {
-    socketService.off("new order");
-    // socketService.terminate()
-  }
-
-  // clearNotify = () => {
-  //   // this.setState({notify: 0})
-  // }
-
-  // toggleMode = () => {
-  //   const { user } = this.state
     
-  //   try {
-     
-  //   } catch(err) {
-  //     console.log(err);
-  //   }
-  
-  // }
- onToggleMode = () => {
-  this.state.user.isSeller = !this.state.user.isSeller
- }
+  }, [])
 
-  toogle = () => {
-    this.setState({ isChack: !this.state.isChack });
+  const onToggleMode = () => {
+    user.isSeller = !user.isSeller
+  }
+
+  const toogle = () => {
+    setIsChack(!isChack);
   };
 
 
 
-  render() {
-    const { notify, user } = this.state
-    //console.log('notify: ',notify); 
-    return (
-      <>
-      <div className={this.state.isChack ? "screen header-seller-container" : "header-seller-container"}>
-        <div className="hamburger" onClick={this.toogle}> <i class="fas fa-th-large" ></i></div>
+  return (
+    <>
+      <div className={isChack ? "screen header-seller-container" : "header-seller-container"}>
+        {/* <div className="hamburger" onClick={toogle}> <i class="fas fa-th-large" ></i></div> */}
         <div>
           <Link to={"/sellerProfile"} className="navbar-logo">
             Cinco
@@ -76,7 +55,7 @@ export class HeaderSeller extends React.Component {
           <ul className="flex">
             <li>
               <a className="clean-link" href="/sellerProfile/dashboard">
-              Dashboard
+                Dashboard
               </a>
             </li>
             <li>
@@ -114,10 +93,10 @@ export class HeaderSeller extends React.Component {
         <div className="prof-pic-nav">
           <nav>
             <ul>
-              <li><a className="pointer" onClick={this.onToggleMode()}>Switch to Buying</a></li>
+              <li><a className="pointer" onClick={onToggleMode()}>Switch to Buying</a></li>
               <div className="badge-notify pointer">
-                <Badge badgeContent={notify} color="error">
-                <a className="clean-link" href="/sellerProfile/orders"><i class="far fa-bell"></i></a>
+                <Badge badgeContent={notifications.length} color="error">
+                  <a className="clean-link" href="/sellerProfile/orders"><i className="far fa-bell"></i></a>
                 </Badge>
               </div>
               <li>
@@ -135,8 +114,7 @@ export class HeaderSeller extends React.Component {
           </nav>
         </div>
       </div>
-        <div  className={this.state.isChack ? 'blackScreen' :''}></div>
-      </>
-    );
-  }
+      <div className={isChack ? 'blackScreen' : ''}></div>
+    </>
+  );
 }

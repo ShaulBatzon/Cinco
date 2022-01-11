@@ -5,7 +5,7 @@ export function loadUsers() {
     return async dispatch => {
         try {
             dispatch({ type: 'LOADING_START' })
-            const users = await userService.getUsers()
+            const users = await userService.query()
             dispatch({ type: 'SET_USERS', users })
         } catch (err) {
             console.log('UserActions: err in loadUsers', err)
@@ -67,6 +67,47 @@ export function onLogout() {
             .catch(err => {
                 console.log('Cannot logout', err)
             })
+    }
+}
+
+export function addNotification(order) {
+    return async (dispatch) => {
+        try {
+            const user = await userService.getById(order.order.sellerId)
+            user.notifications.push(order.txt)
+            const updatedUser = await userService.update(user)
+            dispatch({ type: 'UPDATE_USER', updatedUser })
+
+            // socketService.on('new order', (order) => {
+
+            // })
+        } catch (err) {
+            console.log('Cannot update user', err)
+        }
+    }
+}
+
+export function updateNotifications(acceptedOrder) {
+    return async (dispatch) => {
+        try {
+            const user = await userService.getById(userService.getLoginUser()._id)
+            if (acceptedOrder) {
+                user.notifications.pop()
+                const updatedUser = await userService.update(user)
+                const notifications = user.notifications
+                dispatch({ type: 'UPDATE_USER', updatedUser })
+                dispatch({ type: 'SET_NOTIFICATIONS', notifications })
+            } else {
+                const notifications = user.notifications
+                dispatch({ type: 'SET_NOTIFICATIONS', notifications })
+            }
+
+            // socketService.on('new order', (order) => {
+
+            // })
+        } catch (err) {
+            console.log('Cannot update user', err)
+        }
     }
 }
 

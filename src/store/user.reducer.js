@@ -5,32 +5,26 @@ const initialState = {
     user: userService.getLoginUser(),
     users: [],
     isSeller: false,
-    watchedUser : null
+    watchedUser : null,
+    notifications: userService.getLoginUser().notifications
 }
 export function userReducer(state = initialState, action) {
-    var newState = state;
     switch (action.type) {
         case 'SET_USER':
-            newState = { ...state, user: action.user }
-            newState = { ...state, isSeller: action.user.isSeller }
-            break;
+            return { ...state, user: action.user, isSeller: action.user.isSeller }
         case 'SET_WATCHED_USER':
-            newState = { ...state, watchedUser: action.user }
-            break;
+            return { ...state, watchedUser: action.user }
         case 'REMOVE_USER':
-            newState = {
-                ...state,
-                users: state.users.filter(user => user._id !== action.userId)
-            }
-            break;
+            return {...state, users: state.users.filter(user => user._id !== action.userId)}
         case 'SET_USERS':
-            newState = { ...state, users: action.users }
-            break;
+            return { ...state, users: action.users }
+        case 'SET_NOTIFICATIONS':
+            return { ...state, notifications: action.notifications }
+            case "UPDATE_USER":
+                return {...state, users: state.users.map((user) => user._id === action.updatedUser._id ? action.updatedUser : user), 
+                    notifications: action.updatedUser.notifications}
         default:
     }
-    // For debug:
-    // window.userState = newState;
-    // console.log('State:', newState);
-    return newState;
+    return state;
 
 }

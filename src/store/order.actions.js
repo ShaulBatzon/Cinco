@@ -1,5 +1,6 @@
 import { orderService } from '../services/order.service'
 import { userService } from '../services/user.service'
+import { socketService } from "../services/socket.service";
 
 
 export function loadOrders() {
@@ -20,7 +21,6 @@ export function loadOrders() {
 }
 
 export function addOrder(order) {
-  console.log('order from action ',order);
   return async dispatch => {
     try {
       const addedOrder = await orderService.add(order)
@@ -45,10 +45,11 @@ export function removeOrder(orderId) {
 export function acceptOrder(acceptedOrder) {
   return async dispatch => {
     try {
+      console.log('acceptedOrder: ',acceptedOrder);
       acceptedOrder.status = 'Active'
       const updatedOrder = await orderService.update(acceptedOrder)
       console.log('updatedOrder: ',updatedOrder);
-      // dispatch({ type: 'UPDATE_ORDER', updatedOrder })
+      dispatch({ type: 'UPDATE_ORDER', updatedOrder })
     } catch (err) {
       console.log('OrderActions: err in acceptOrder', err)
     }
